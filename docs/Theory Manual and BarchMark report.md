@@ -116,6 +116,10 @@
         - [10.1.2.2 API 接口调用](#10122-api-接口调用)
     - [10.2 时域预测器](#102-时域预测器)
   - [11 多目标优化(MoptL)](#11-多目标优化moptl)
+    - [11.1 API的接口使用](#111-api的接口使用)
+    - [11.3 自定义WTAI接口定义](#113-自定义wtai接口定义)
+      - [11.3.1 Python脚本接口定义](#1131-python脚本接口定义)
+      - [11.3.2 c#/c++/Fortran 接口定义](#1132-ccfortran-接口定义)
   - [12 应用程序接口(APIL)](#12-应用程序接口apil)
   - [13 CLI系统介绍与使用](#13-cli系统介绍与使用)
     - [13.1 CLI 命令行工具](#131-cli-命令行工具)
@@ -1071,6 +1075,205 @@ Console.WriteLine("实际: " + string.Join(" ", actual));
 
 ## 11 多目标优化(MoptL)
 
+### 11.1 API的接口使用
+
+### 11.3 自定义WTAI接口定义
+该模块的主要目的是实现基于代理模型的快速多目标优化算法,为了实现对不同语言的广泛支持，HawtC支持了解释性脚本语言的接口定义，以及 C#(需要AOT表一为c接口),C++,Fortran等编程语言的编译形接口定义。为了使HawtC 调用你的忌口，你需要对MoptL主文件进行以下设置：
+1）必须启用数据驱动模块
+```csharp
+true   DADAf          - 是否使用数据驱动
+```
+2）必须设置数据驱动方法
+```csharp
+0     DPyaf          - 数据驱动方式{0：外部Python,1:HawtC2管理的内置算法，2：c++/c#/C 等符合API标准的外置DLL动态链接库文件}
+```
+（3.1）如果你使用了Python脚本接口定义，那么你需要额外设置以下内容：
+```csharp
+"D://Python.exe"                                       DPythonExepath - python 解释器绝对路径，需要提前部署好环境，否则会报错{used only Dpyaf=0}
+"D://demo.py"                                       DPythonModelpath  -.py程序文件绝对路径{used only Dpyaf=0}       
+```
+（3.2）如果你使用了程序自定义的算法，那么你需要设置你想要的算法：
+```csharp
+0                                        DMethod         - 内置数据驱动的实际方法{used only Dpyaf=1，0：贝叶斯网络；1：BP网络(支持，但效果差，所以直接禁用)；2：克里金模型(不支持，太简单)；3：梯度提升的克里金模型(支持，但效果差，所以直接禁用)}  
+```
+我建议使用贝叶斯网络，因为贝叶斯网络支持多分类，并且效果不错。其他模型完全不建议使用。
+（3.3）如果你使用了自定义的动态链接库文件，南无你需要设置你的dll路径：
+```csharp
+"d://demo.dll"                                       DateDDLL        - 数据驱动算法动态链接库文件{used only Dpyaf=2}
+```
+我们在data/Mopt文件夹当中给出了Python的实力代码以及基于c#开发的符合c++接口标准的工程文件。如果你熟悉c++或者Fortran，请你参考c#工程文件，并在你的c文件当中导出接口函数名称。
+
+#### 11.3.1 Python脚本接口定义
+为了了解HawtC如何实现Python脚本的调用，我们给出了源代码，如下所示：
+```csharp
+//**********************************************************************************************************************************
+//LICENSING
+// Copyright(C) 2021, 2025  TG Team,Key Laboratory of Jiangsu province High-Tech design of wind turbine,WTG,WL,赵子祯
+//
+//    This file is part of OpenWECD.WTAI
+//
+// Licensed under the Boost Software License - Version 1.0 - August 17th, 2003
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.HawtC.cn/licenses.txt
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+// SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+// FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+// ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+// DEALINGS IN THE SOFTWARE.
+//
+//**********************************************************************************************************************************
+
+using OpenWECD.IO.Log;
+using MathNet.Numerics.LinearAlgebra;
+using OpenWECD.IO.math;
+using OpenWECD.IO.IO;
+using System.Diagnostics;
+
+namespace OpenWECD.WTAI.Prodictor
+{
+    /// <summary>
+    /// python脚本预测
+    /// </summary>
+    public class PythonScript : WAI_IPredict
+    {
+        private readonly string PythonExepath;
+        private readonly string PythonScriptpath;
+        private readonly int _varnum;
+        private readonly int _objnum;
+        private Matrix<double> _data;//数据库
+        public PythonScript(string PythonExepath,string PythonScriptpath,int varnum,int objnum)
+        {
+
+            //# 检查路径
+            CheckError.Filexists(PythonExepath);
+            CheckError.Filexists(PythonScriptpath);
+
+            this.PythonExepath = PythonExepath;
+            this.PythonScriptpath = PythonScriptpath;
+            this._varnum = varnum;
+            this._objnum = objnum;
+            
+        }
+
+        public void Train(Matrix<double> data)
+        {
+            _data = data.Clone();
+
+            //# 将数据写出以供python脚本调用
+            OutFile outFile=new OutFile(PythonScriptpath.GetDirectoryName()+"./Train.data.txt",15);
+            outFile.WriteLine(_varnum);
+            outFile.WriteLine(_objnum);
+            outFile.WriteLine(data);
+            outFile.Outfinish();
+           
+        }
+        public void ReTrain(Matrix<double> data)
+        {
+            _data = LinearAlgebraHelper.Vact(_data, data);
+            //# 将数据写出以供python脚本调用
+            OutFile outFile = new OutFile(PythonScriptpath.GetDirectoryName() + "./Train.data.txt", 15);
+            outFile.WriteLine(_varnum);
+            outFile.WriteLine(_objnum);
+            outFile.WriteLine(data);
+            outFile.Outfinish();
+        }
+        public Matrix<double>? Predict(Matrix<double> x)
+        { 
+            //# 将预测数据输出以供python脚本调用
+            OutFile outFile = new OutFile(PythonScriptpath.GetDirectoryName() + "./Predict.data.txt", 15);
+            outFile.WriteLine(_varnum);
+            outFile.WriteLine(_objnum);
+            outFile.WriteLine(x);
+            outFile.Outfinish();
+
+            //# 由于训练阶段输出了训练数据，而预测阶段输出了调用数据，因此我们需要调用脚本
+            try
+            {
+                using (Process p1 = new Process())
+                {
+                    p1.StartInfo.FileName = PythonExepath; // @"C:\Users\1821216780\anaconda3win32\python.exe";
+                    p1.StartInfo.Arguments = PythonScriptpath;// @"C:\Users\1821216780\Downloads\untitled0.py";               
+                    p1.StartInfo.UseShellExecute = false; //是否使用操作系统shell启动                
+                    p1.StartInfo.RedirectStandardInput = true;//接受来自调用程序的接收信息              
+                    p1.StartInfo.RedirectStandardOutput = true;//由调用程序获取输出信息               
+                    p1.StartInfo.RedirectStandardError = true;//重定向标准错误输出                
+                    p1.StartInfo.CreateNoWindow = false;//不显示cmd命令行窗口              
+                    p1.Start();  //启动Pyth0n脚本
+                    p1.WaitForExit();
+                }
+            }
+            catch (Exception ax)
+            {
+                Console.WriteLine("ERROR! No python!" + ax.ToString());
+            }
+            //# 读取python脚本的文档输出值
+            var res=LinearAlgebraHelper.ReadMatrixFromFile(PythonScriptpath.GetDirectoryName() + "./Predict.Result.txt");
+
+            //检查计算结果大小是否一致
+            if(res.RowCount!=x.RowCount)
+            {
+                LogHelper.WriteLog(res);
+                LogHelper.ErrorLog($"The Python Result RowCount{res.RowCount} not equal x.RowCount{x.RowCount}!",FunctionName: "PythonScript.Predict");
+                return null;
+            }
+            if(res.ColumnCount!=_objnum)
+            {
+                LogHelper.WriteLog(res);
+                LogHelper.ErrorLog($"The Python Result ColumnCount{res.ColumnCount} not equal _objnum{_objnum}!",FunctionName: "PythonScript.Predict");
+                return null;
+            }
+
+            return res;
+        }
+        public Vector<double>? Predict(Vector<double> x)
+        {
+            LogHelper.ErrorLog("The Python cant use this!",FunctionName: "PythonScript.Predict");
+            return default;
+        }
+    }
+}
+
+```
+
+我们注意到，原始代码中，HawtC通过将数据库写入到文本文件Train.data.txt当中，然后调用Predict方法，将需要预测的数据输出到脚本所在的文件夹的Predict.data.txt当中，并通过PowerShell来调用脚本，并读取脚本生成的Predict.Result.txt文件
+Train.data.txt与Predict.data.txt文件的格式为：
+```matlab
+4！变量数
+7！目标数
+1 2 3 4 1 2 3 4 5 6 7 !数据矩阵
+1 2 3 4 1 2 3 4 5 6 7 
+1 2 3 4 1 2 3 4 5 6 7 
+
+``` 
+Predict.Result.txt文件格式为：
+```matlab
+1 2 3 4 1 2 3 4 5 6 7 !数据矩阵
+1 2 3 4 1 2 3 4 5 6 7 
+1 2 3 4 1 2 3 4 5 6 7 
+``` 
+上述文件需要注意的是：文件当中不允许有空行，且Train.data.txt与Predict.data.txt文件有HawtC文件自动输出，而脚本文件需要输出预测的结果到Predict.Result.txt文件当中。
+#### 11.3.2 c#/c++/Fortran 接口定义
+与python类似，你需要实现以下接口：
+```csharp
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate int Train([In] double[,] X,int var,int obj);
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate void Predict([In] double[,] X, [In,Out] ref double[,] res);
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        private delegate int ReTrain([In] double[,] X,int var,int obj);
+```
+因此，你的DLL需要导出Train(double[,] X),Predict(double[,] X,  ref double[,] res),ReTrain(double[,] X)三个函数。
+1）Train(double[,] X)函数接口：
+该函数的输入参数为double[,] X，表示训练数据集。你需要在代码当中对输入数据进行训练，其中var表示变量个数，obj表示目标个数。X的行数表示训练数据集的样本个数，列数的前var列为变量，后obj列为目标。
+2）Predict(double[,] X,  ref double[,] res)函数接口：
+该函数的输入参数为double[,] X和ref double[,] res，表示待预测数据集和预测结果。你需要在代码当中对输入数据X进行预测，并将结果矩阵存储到res中。且res的列数应该与obj数目一致，X的列数应该与var 数目一致。
+3）ReTrain([In] double[,] X,int var,int obj)函数接口：
+该函数与Train函数类似，但是传入的不是完全的训练集，因此需要根据传入的参数进行训练。当前函数接口在HawtC当中的主代码当中没有使用，可以不实现内容，但必须给出函数体。
 ## 12 应用程序接口(APIL)
 
 ## 13 CLI系统介绍与使用
