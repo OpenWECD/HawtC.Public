@@ -1257,6 +1257,56 @@ Predict.Result.txt文件格式为：
 1 2 3 4 1 2 3 4 5 6 7 
 ``` 
 上述文件需要注意的是：文件当中不允许有空行，且Train.data.txt与Predict.data.txt文件有HawtC文件自动输出，而脚本文件需要输出预测的结果到Predict.Result.txt文件当中。
+
+示例python脚本函数：
+
+```python
+import numpy as np
+var_count, target_count, matrix=read_data_file('./Train.data.txt')
+#在下面实现模型训练。。。
+
+
+#训练完毕！
+#读取要预测的数据
+var_count1, target_count1, matrix1=read_data_file('./Predict.data.txt')
+#在下面实现模型预测。。。
+
+
+
+#预测完毕！将结果输出到Predict.Result.txt文件当中
+write_result_file('./Predict.Result.txt',result)
+
+
+def read_data_file(filename):
+    """
+    读取数据文件，返回数据矩阵和标签列表
+    """
+    with open(filename, 'r') as f:
+        # 读取前两行获取参数
+        var_count = int(f.readline().split('!')[0].strip())  # 提取"4"并转为整数
+        target_count = int(f.readline().split('!')[0].strip())  # 提取"7"并转为整数
+        
+        # 读取剩余行构建矩阵
+        matrix = []
+        for line in f:
+            # 去除注释部分并分割数值
+            data_part = line.split('!',' ','\t')[0].strip()
+            if data_part:  # 忽略空行
+                row = list(map(int, data_part.split()))
+                matrix.append(row)
+        return var_count, target_count, matrix
+
+def write_data_file(filename, var_count, target_count, data_matrix):
+    with open(filename, 'w', encoding='utf-8') as f:
+        # 写入数据矩阵
+        for row in data_matrix:
+            line_str = ' '.join(map(str, row))  # 转换为空格分隔的字符串
+            f.write(line_str + '\n')
+
+
+
+
+```
 #### 11.3.2 c#/c++/Fortran 接口定义
 与python类似，你需要实现以下接口：
 ```csharp
@@ -1268,12 +1318,15 @@ Predict.Result.txt文件格式为：
         private delegate int ReTrain([In] double[,] X,int var,int obj);
 ```
 因此，你的DLL需要导出Train(double[,] X),Predict(double[,] X,  ref double[,] res),ReTrain(double[,] X)三个函数。
-1）Train(double[,] X)函数接口：
+（1）Train(double[,] X)函数接口：
 该函数的输入参数为double[,] X，表示训练数据集。你需要在代码当中对输入数据进行训练，其中var表示变量个数，obj表示目标个数。X的行数表示训练数据集的样本个数，列数的前var列为变量，后obj列为目标。
-2）Predict(double[,] X,  ref double[,] res)函数接口：
+
+（2）Predict(double[,] X,  ref double[,] res)函数接口：
 该函数的输入参数为double[,] X和ref double[,] res，表示待预测数据集和预测结果。你需要在代码当中对输入数据X进行预测，并将结果矩阵存储到res中。且res的列数应该与obj数目一致，X的列数应该与var 数目一致。
-3）ReTrain([In] double[,] X,int var,int obj)函数接口：
+
+（3）ReTrain([In] double[,] X,int var,int obj)函数接口：
 该函数与Train函数类似，但是传入的不是完全的训练集，因此需要根据传入的参数进行训练。当前函数接口在HawtC当中的主代码当中没有使用，可以不实现内容，但必须给出函数体。
+
 ## 12 应用程序接口(APIL)
 
 ## 13 CLI系统介绍与使用
