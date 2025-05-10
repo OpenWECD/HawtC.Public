@@ -9,12 +9,13 @@ ebook:
 <br/>
 <br/>
 <br/>
-! <center>![图标](./image/TheoryManualandBarchMarkreport/图标.png) </center>
+@import "./image/TheoryManualandBarchMarkreport/图标.png"
 <br>
 <br/>
 <br/>
 
-# <center> ***HawtC2 理论手册与使用验证报告***  </center>
+
+# ***<div style="text-align: center;">HawtC2 理论手册与使用验证报告</div>***
 
 <br/>
 <br/>
@@ -30,14 +31,14 @@ ebook:
 <br/>
 <br/>
 
-### </center>目录</center>
+# **<div style="text-align: center;">目录</div>**
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
-- [ ***HawtC2 理论手册与使用验证报告***  ](#center-hawtc2-理论手册与使用验证报告--center)
-    - [目录](#center目录center)
+- [***HawtC2 理论手册与使用验证报告***](#div-styletext-align-centerhawtc2-理论手册与使用验证报告div)
+- [**目录**](#div-styletext-align-center目录div)
   - [引言](#引言)
   - [1 术语缩略表](#1-术语缩略表)
   - [2 气动力计算方法与实现(AeroL)](#2-气动力计算方法与实现aerol)
@@ -125,7 +126,7 @@ ebook:
         - [13.1.2.4 Interpolate插值命令](#13124-interpolate插值命令)
   - [致谢](#致谢)
   - [软件许可与开发](#软件许可与开发)
-      - [ 参考文献](#center-参考文献center)
+  - [**参考文献**](#div-styletext-align-center参考文献div)
 
 <!-- /code_chunk_output -->
 
@@ -171,11 +172,10 @@ ebook:
 基于BEM方法耦合Glauert校正以及叶尖与叶根损失修正模型,可以获取叶片的稳态功率......
 下图给出了HawtC与bladed 4.11 的计算结果对比，验证了该方法的准确性
 
-!<center>
-![对比](image/TheoryManualandBarchMarkreport/功率曲线与Bladed%204.11对比.jpg)
 
-<figcaption>图：HawtC与Bladed的计算结果对比</figcaption>
-</center>
+@import "./image/TheoryManualandBarchMarkreport/功率曲线与Bladed%204.11对比.jpg"{width="100%" style="display: block; margin-left: auto; margin-right: auto;" title="功率曲线与Bladed 4.11对比"}
+
+
 
 #### 2.9.2 考虑柔性变形的功率曲线
 
@@ -257,14 +257,20 @@ PCS当中实现了PreComp所实现的经典层板理论方法,与Giavotto等人�
 #### 5.2.1 坐标与参数
 
 材料坐标$(e_1, e_2, e_3)$如下图所示：主轴$e_1$沿层的主纤维方向，侧轴$e_2$位于铺层当中但垂直于主轴，垂直于主侧轴的轴为$e_3$。
-!<center>![材料坐标系](image/TheoryManualandBarchMarkreport/1742976652366.png)</center>
+
+@import "image/TheoryManualandBarchMarkreport/1742976652366.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="横截面坐标系"}
 
 截面坐标系$(x^{\prime}, y^{\prime}, z^{\prime})$如下图所示:
-!<center>![横截面坐标系](image/TheoryManualandBarchMarkreport/1742976356352.png)</center>
+
+@import "image/TheoryManualandBarchMarkreport/1742976356352.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="横截面坐标系"}
 
 对比二者的定义，当铺层角度$F$为0时，二者的坐标系方向完全一致，但对于叶片来说，铺层角度往往不为0。同样的，由于翼型的气动扭角和结构扭角，横截面坐标系与梁的坐标$(X,Y,Z)$同样存在扭转关系，该关系如下图所示：
-!<center>![从截面到梁](image/TheoryManualandBarchMarkreport/1742977128710.png)</center>
+
+@import "image/TheoryManualandBarchMarkreport/1742977128710.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="从截面到梁"}
+
+
 基于上述坐标的定义，正交各向异性复合材料的材料参数需要独立的10个变量来描述。这些参数如下表所示:
+
 
 | 参数          | 意义                                                     | 单位                         |
 | ------------- | -------------------------------------------------------- | ---------------------------- |
@@ -325,10 +331,14 @@ $$
 \mathbf{Z}=\left[\begin{array}{cccccc}1&0&0&0&0& -y \\0&1&0&0&0& x \\0&0&1& y & -x &0\end{array}\right]
 $$
 
-!<center>![梁截面微元](image/TheoryManualandBarchMarkreport/1742982377350.png)</center>
+@import "image/TheoryManualandBarchMarkreport/1742982377350.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="梁截面微元"}
+
+
 如果该微元发生很小的位移形变，那么该运动可以描述为微元刚性运动与弹性位移的叠加，如下图所示：
 
-!<center>![横截面变形](image/TheoryManualandBarchMarkreport/1742984970560.png)</center>
+
+@import "image/TheoryManualandBarchMarkreport/1742984970560.png" {width="80%" style="display: block; margin-left: auto; margin-right: auto;" title="梁截面微元"}
+
 因此，截面上微元的形变可以描述为：
 
 $$
@@ -532,8 +542,7 @@ $$
 ##### 6.2.1.1 前言 {ignore=true}
 模态分析(modal analysis)是研究结构动态特性的一种有效方法之一，主要应用于工程振动领域。模态通常指结构的固有振动特性，每一阶模态都有特定的固有频率、阻尼比和振型。获取上述模态参数的过程称为模态分析。它可以分为数值模态分析和试验模态分析。
 
-!<center>![汽车排气管道的模态分析](image/TheoryManualandBarchMarkreport/1743226965427.png)
-图:汽车排气管道的模态分析</center>
+@import "image/TheoryManualandBarchMarkreport/1743226965427.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="汽车排气管道的模态分析"}
 
 如果模态参数是通过数值分析方法(如FEA分析)计算获得的，则称为数值模态分析；如果模态参数是通过试验设备获得的输入输出信号，借助参数识别方法获得的，则称为试验模态分析。本文主要从数值计算角度介绍什么是模态分析。
 
@@ -544,7 +553,7 @@ $$
 m \ddot{x}+k x=0
 $$
 
-!<center>![1743227125758](image/TheoryManualandBarchMarkreport/1743227125758.png)</center>
+@import "image/TheoryManualandBarchMarkreport/1743227125758.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="无阻尼系统的自由振动"}
 
 上式的自由振动响应为:
 
@@ -589,13 +598,16 @@ $$
 $$
 
 式中，T为简谐振动的周期。如下图所示:
-!<center> ![1743227732805](image/TheoryManualandBarchMarkreport/1743227732805.png) </center>
+
+@import "image/TheoryManualandBarchMarkreport/1743227732805.png" {width="80%" style="display: block; margin-left: auto; margin-right: auto;" title="无阻尼系统的自由振动"}
 
 ###### 6.2.1.1.2 粘性阻尼系统的自由振动 {ignore=true}
 
 考虑上图单自由度粘性阻尼系统的自由振动微分方程
 
-!<center> ![1743228036217](image/TheoryManualandBarchMarkreport/1743228036217.png)</center>
+@import "image/TheoryManualandBarchMarkreport/1743228036217.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="粘性阻尼系统的自由振动"}
+
+
 $$
 m \ddot{x}+c \dot{x}+k x=0
 $$
@@ -650,8 +662,7 @@ $$x(t)=e^{-\zeta \omega_n t}\left(C_1e^{j \omega_d t}+C_2e^{-j \omega_a t}\right
 
 $$x(t)=e^{-\zeta \omega_n t}\left(x_0\cos \omega_d t+\frac{\dot{x}_0+\zeta \omega_n x_0}{\omega_d} \sin \omega_d t\right)$$
 
-!<center> ![1743228900090](image/TheoryManualandBarchMarkreport/1743228900090.png)
-</center> 
+@import "image/TheoryManualandBarchMarkreport/1743228900090.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="粘性阻尼系统的自由振动"}
 
 从上图可以发现，随着阻尼的增加时，振动响应的幅值衰减越快。
 
@@ -713,7 +724,9 @@ $$\varphi_r^I M \varphi_r=1$$
 正是这一特点，决定了模态分析得到的振型幅值没有绝对的物理意义。HAWTC当中的模态是取了叶片的前三阶模态和塔架的前4阶模态来计算，输入形式是归一化后的系数拟合形式，这一点域OpenFAST是一样的，但HAWTC支持模态的自行计算，得益于FEML模块，HAWTC可以计算梁和框架系统的模态。以上介绍了模态分析的计算原理。那么怎样去理解模态呢？它可以理解为在某一固有频率下，系统中各点按照某一固定比例同时做同相或反相的同频简谐振动。当外部激励频率与某阶模态的固有频率接近时，在合适的作用点更容易激励起与之振型相似的振动。
 同时,为了实现与Bladed相同的计算精度,HawtC2将通过TurbineL模块计算更多的叶片模态,以实现高精度计算.
 
-!<center> ![1743229622980](image/TheoryManualandBarchMarkreport/1743229622980.gif)</center> 
+
+@import "image/TheoryManualandBarchMarkreport/1743229622980.gif" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="模态叠加"}
+
 ##### 6.2.1.3 模态叠加理论 {ignore=true}
 模态叠加法与有限元方法密切相关，是有限元方法的降阶模型。其基本思想是以有限元为平台,反复利用瞬态分析求解风力机在周期性载荷作用下的稳态响应。瞬态分析包括完全法、缩减法和模态叠加法。完全法计算量大且计算时间较长;缩减法不能在时间单元上添加载荷且所有荷载必须加载用户定义的主自由度上;模态叠加法相对于其它方法计算速度较快、效率高。风力机中叶片和塔架的多自由度运动方程为：
 
@@ -776,10 +789,9 @@ $$
 
 有多种方法可以使用HawtC2模型化土壤与结构的相互作用。最简单的方法（例如固定结构或线性弹簧）可以通过模板进行建模，而更复杂的模型（例如 PISA 模型或滞回阻尼）可以通过导入支撑结构进行建模。还可以通过阻尼器来建模阻尼效果。在HawtC2中，弹簧被建模为“支撑力”。支撑可以应用于支撑结构的任何节点（不一定在海床下方）。同样地，阻尼器也可以添加到任何节点上。即使通常用它们来模拟土壤与结构的相互作用，也可以用它们来模拟任何其他需要弹簧或阻尼器的效果。Jonkman 等人 [Jonkman et al. (2010k)]给出了简单岩土工程模型的概述,下图显示了一些可以在HawtC中建模的简单模型。
 
-!<center><img src="image/TheoryManualandBarchMarkreport/简单的状图模型.png" alt="简单的状图模型" width="600" height="300">
 
-<figcaption>简单的状图模型</figcaption>
-</center>
+@import "image/TheoryManualandBarchMarkreport/简单的状图模型.png" {width="60%" style="display: block; margin-left: auto; margin-right: auto;" title="简单的状图模型"}
+
 
 ### 7.1 土壤刚度
 
@@ -843,7 +855,7 @@ $$
 
 HawtC2 提供了实现非线性弹簧的功能，即弹簧的刚度取决于节点的位移。非线性弹簧可以用作平移弹簧或旋转弹簧。非线性弹簧以位移与力的查找表形式（所谓的 P-y 曲线）输入到描述导入的支撑结构的文本文件中。当一个节点发生位移时，其会受到一个与位移在弹簧方向上的投影值相对应的力，并且该力的方向与位移方向相反。如果位移介于查找表中的两个值之间，力将在最接近的值之间进行线性插值。下图展示了一个 P-y 曲线的示例：
 
-<div align=center><img src="image/TheoryManualandBarchMarkreport/P-y 曲线的示例.png" alt="P-y 曲线的示例" width="400" height="300"><div align=left>
+@import "image/TheoryManualandBarchMarkreport/P-y 曲线的示例.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="P-y 曲线的示例"}
 
 非线性弹簧可以应用于所有六个自由度，这使得PISA模型(Byrne, Byron W., Harvey J. Burd, Lidija Zdravković, Ross A. McAdam, David M. G. Taborda, Guy T. Houlsby, Richard J. Jardine, Christopher M. Martin, David M. Potts, and Kenneth G. Gavin. “PISA: New Design Methods for Offshore Wind Turbine Monopiles.” Revue Française de Géotechnique, no. 158 (2019): 3. https://doi.org/10.1051/geotech/2019009.)得以在代码当中实现
 当非线性弹簧应用于模型时，如果查找表包含如下定义的力$F$和位移$d$为:
@@ -903,21 +915,14 @@ $$
 $$
 
 从文献当中可以获取$K_{\text {opt }}=0.02557N m \cdot R P M^{-2}$这给出了以下最佳扭矩曲线，即一种策略对应的曲线，在该策略中始终实现最佳功率系数：
-!<center>
-<img src="image/TheoryManualandBarchMarkreport/最优控制曲线.png" alt="最优控制曲线" width="400" height="300">
-图 ：最优控制曲线
 
-</center>
+@import "image/TheoryManualandBarchMarkreport/最优控制曲线.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="最优控制曲线"}
 
 ##### 区域 1 {ignore=true}
 
 对于低转速情况下，发电机不会产生任何扭矩。这个转速范围被称为区域 1，对NREL 5MW 而言，该范围是 0 到 670 RPM。在这一区域内，发电机的扭矩与RPM曲线将是平坦的，如下图所示：
 
-!<center>
-<img src="image/TheoryManualandBarchMarkreport/区域1.png" alt="区域1" width="400" height="300">
-图 ：区域1示意图
-
-</center>
+@import "image/TheoryManualandBarchMarkreport/区域1.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="区域1"}
 
 第一区域的上限由参数 "Transition RPM region 1 to 1.5" 给出，并定义为额定发电机速度的百分比。对于 NREL 5 MW 风机，额定发电机速度为 1173.7 RPM，因此 "Transition RPM region 1 to 1.5" 参数的值将为 57.08%。下限始终为 0。
 
@@ -925,10 +930,7 @@ $$
 
 在区域 1.5 中，曲线从 0 线性变化到最佳扭矩曲线。对于 NREL 5 MW 涡轮机，区域 1.5 的上限为 871 RPM，其对应的曲线如下：
 
-!<center>
-<img src="image/TheoryManualandBarchMarkreport/区域1.5.png" alt="区域1.5" width="400" height="300">
-
-</center>
+@import "image/TheoryManualandBarchMarkreport/区域1.5.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="区域1.5"}
 
 区域 1.5 的上限由参数“Transition RPM region 1.5 to 12”给出，并定义为额定发电机速度的百分比。对于 NREL 5 MW 涡轮机，额定发电机速度为 1173.7 rpm，因此“Transition RPM region 1.5 to 12”参数的值为 74.21%。
 
@@ -936,10 +938,7 @@ $$
 
 在区域 2 中，曲线遵循最优转矩曲线，因此涡轮机在最大功率系数下运行。曲线将如下所示：
 
-!<center>
-<img src="image/TheoryManualandBarchMarkreport/区域2.png" alt="区域2" width="400" height="300">
-
-</center>
+@import "image/TheoryManualandBarchMarkreport/区域2.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="区域2"}
 
 区域 2 的上限定义为区域 2.5 的下限，其将在下一部分进行计算。$K_opt$的值确定最佳曲线的系数由比例因子区域 2 参数给出，并定义为额定转矩与额定转速平方的比率的百分比。由于额定转速为 1173.7，额定转矩为 43093 Nm，我们此前发现:
 
@@ -951,21 +950,15 @@ $k_opt=0.02557N m \cdot R P M^2$
 区域 2.5 是另一个线性区域。在 NREL 5MW 案例中，其上限对应 99%。由于这是到区域 3 的过渡点，此点产生的功率将等于额定功率。请注意，这里我们讨论的是机械功率，而不是电功率。两者之间的区别在于发电机效率。在 NREL 5MW 风机的情况下，额定电功率为 5MW，发电机效率为 94.4%，因此额定机械功率为 5.29661MW。在区域 2.5 的上限处产生的扭矩因此为 43528 Nm。注意，这是额定扭矩的 1%更高，因为我们在额定速度的 99%生产额定功率。
 下图中显示了区域 2.5 的上限为一个红点，额定扭矩为一条水平虚线。
 
-!<center>
-<img src="image/TheoryManualandBarchMarkreport/区域2.5.png" alt="区域2.5" width="400" height="300">
-
-</center>
+@import "image/TheoryManualandBarchMarkreport/区域2.5.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="区域2.5"}
 
 为了找到区域 2.5 的下限，首先计算线性曲线的斜率，使其在对应于发电机滑差的转速下与 x 轴相交。在 NREL 5 MW 的情况下，发电机滑差为 10%，这意味着区域 2.5 的线性曲线将在比额定转速低 10%的转速处与 x 轴相交，即 1056.33 RPM。这在下图中通过红色虚线进行了说明：
 
-!<center>
-<img src="image/TheoryManualandBarchMarkreport/区域2.5.1.png" alt="区域2.5" width="400" height="300">
-
-</center>
+@import "image/TheoryManualandBarchMarkreport/区域2.5.1.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="区域2.5"}
 
 区域 2.5 的下限（同时也是区域 2 的上限）被设定为红线与最佳扭矩曲线的交点，如下面的图所示：
 
-!`<center><img src="image/TheoryManualandBarchMarkreport/区域2.5.2.png" alt="区域2.5" width="400" height="300"></center>
+@import "image/TheoryManualandBarchMarkreport/区域2.5.2.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="区域2.5"}
 
 区域 2.5 的上限由参数“区域 2.5 至 3 的转速过渡点”定义，作为额定速度的百分比。区域 2.5 的斜率基于上述解释的滑差参数计算。
 
@@ -973,10 +966,7 @@ $k_opt=0.02557N m \cdot R P M^2$
 
 在区域 3 中，叶片开始调整桨距以保持恒定的功率输出。根据之前建立的关系，该区域的转矩定义为 转矩与转速的关系曲线如下所示：
 
-!<center>
-<img src="image/TheoryManualandBarchMarkreport/区域3.png" alt="区域2.5" width="400" height="300">
-
-</center>
+@import "image/TheoryManualandBarchMarkreport/区域3.png" {width="50%" style="display: block; margin-left: auto; margin-right: auto;" title="区域3"}
 
 ### 8.2 Bladed接口控制器
 
@@ -1399,5 +1389,6 @@ G:\2026\OpenhastV7\build\HawtC2.exe CLI tool Interpolate txt G:\2026\共旋论�
 
 该软件目前由王同光教授与王珑教授知道,赵子祯在读博士独立开发，期待更多志同道合的兴趣人士加入我的工作。该软件为了防止侵权，目前采用授权但完全免费的方法。请勿在没有许可的情况下使用本软件或者文档内容发表文章、专利等内容，造成的任何学术不端及其他后果，由侵权人员负责！
 
-#### <center> 参考文献</center>
+
+## **<div style="text-align: center;">参考文献</div>**
 [^1]: Hi! This is a footnote
