@@ -1287,6 +1287,25 @@ Predict.Result.txt文件格式为：
 我们在路径“data/Mopt/C++脚本” 当中提供了基于c#语言编写的符合c++接口的示例代码。基于该方法编译的dll可以直接供c++/Fortran语言进行调用。
 
 
+需要注意的一点事,你必须在.h当中导出函数，否则编译器无法识别。
+```c++ 
+#ifdef _WIN32
+#define EXPORT_API extern "C" __declspec(dllexport)
+#else
+#define EXPORT_API extern "C" __attribute__((visibility("default")))
+#endif
+EXPORT_API int Train(const double* X, int var, int obj, int row, int col);
+EXPORT_API void Predict(const double* X, double* res, int rowin, int colin);
+EXPORT_API int ReTrain(const double* X, int var, int obj, int row, int col);
+```
+同时,你可以使用VS Studio的以下命令来查看函数导出情况。
+>dumpbin /exports DLL_Path
+
+
+
+当你运行该命令时，会看到类似如下的输出：
+@import "./image/TheoryManualandBarchMarkreport/截图_20250510120817.png" {width="100%",heught="100%",title="导出dll" alt="我的 alt"}
+证明你运行成功
 ## 12 应用程序接口(APIL)
 
 ## 13 CLI系统介绍与使用
