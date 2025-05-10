@@ -19,7 +19,7 @@
 
 ##  HawtC 与 OpenFAST 计算验证对比
 
-### 1. 15MW 稳态无风剪切
+### 1. 陆上IEA 15MW 稳态无风剪切的OpenFAST验证
 
 #### 1）验证结果
 
@@ -29,7 +29,7 @@ http://www.openwecd.fun/data/稳态无风剪切Compare.html
 
 http://www.openwecd.fun/data/稳态Compare.ipynb
 
-### 4.15MW 湍流风验证
+### 2.陆上IEA 15MW 湍流风的OpenFAST验证
 
 #### 1）验证结果
 
@@ -39,16 +39,35 @@ http://www.openwecd.fun/data/湍流Compare.html
 
 http://www.openwecd.fun/data/湍流Compare.ipynb
 
-## HawtC 与 Bladed 4.11 计算验证对比
+### 3.HawtC.AeroL 气动力模块 与 Bladed 4.11 计算验证对比
 ![Compare_Bladed4_11.jpg](./docs/Compare_Bladed4_11.jpg)
 
+### 4.HawtC.MBD.VTK 多体动力学可视化的NREL 5MW Spar海上漂浮式风力机测试
+![windturbine](./docs/image/TheoryManualandBarchMarkreport/12.gif)
 
-### 源代码下载
+### 5.HawtC.BeamL 非线性梁(3D共旋梁理论)模块的验证
+![windturbine](./docs/image/TheoryManualandBarchMarkreport/BeamL.png)
+
+### 6.HawtC.HydroL.Wave 水动力波浪生成模块验证
+该模块已经通过了与Bladed 4.11的验证
+
+### 7.HawtC.WindL.IECWind IEC风场生成模块验证
+
+
+### 8.HawtC.WindL.SimWind 模块验证
+
+### 9.HawtC.MoptL 整机一体化优化模块数据驱动脚本
+请查阅文件,了解范例接口:
+- 脚本类语言接口(Python/R/Julia/Matlab):
+    BP神经网络模型:[DemoBPNetWork.py](./data/Mopt/Python脚本/DemoBPNetWork.py)
+    自然神经网络模型:[DemoBPNetWork.py](./data/Mopt/Python脚本/DemoBPNetWork.py)
+- 编译形语言接口(C/C++/Fortran/c#):
+    c++接口模版:[MoptL数据驱动案例.sln](./data/Mopt/C++脚本/MoptL数据驱动案例/MoptL数据驱动案例.sln)
+
+## 源代码下载
 请访问[www.HawtC.cn](http://www.openwecd.fun/)
 
-### 交流论坛
+## 交流论坛
 交流论坛 http://www.openwecd.fun:22304/
 
-## 5MW海上漂浮式风力机oc3测试
-![windturbine](./docs/image/TheoryManualandBarchMarkreport/12.gif)
 
