@@ -51,17 +51,29 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 ### 6.HawtC.HydroL.Wave 水动力波浪生成模块验证
 该模块已经通过了与Bladed 4.11的验证
 
-### 7.HawtC.WindL.IECWind IEC风场生成模块验证
+### 7.HawtC.HydroL.MoorL 水动力波浪生成模块验证
+该模块完全耦合了OpenMoor [^1] 与MoorDyn [^2] 模块,以计算系泊力.同时，我们自己的系泊动力学MoorL模块还在开发当中，以支持风场状态下的共享系泊。
+![OpenMoor](./docs/image/TheoryManualandBarchMarkreport/Case1-25.gif)
+![OpenMoor](./docs/image/TheoryManualandBarchMarkreport/Case3-5.gif)
+来源于[http://openmoor.org/](http://openmoor.org/)
 
 
-### 8.HawtC.WindL.SimWind 模块验证
+### 8.HawtC.WindL.IECWind IEC风场生成模块验证
 
-### 9.HawtC.MoptL 整机一体化优化模块数据驱动脚本
+
+### 9.HawtC.WindL.SimWind 湍流风生成模块验证
+该模块与OpenFAST.TurbSim 模块功能类似
+
+
+### 10.HawtC.MoptL 整机一体化优化模块数据驱动脚本
 请查阅文件,了解范例接口:
 - 脚本类语言接口(Python/R/Julia/Matlab):
     BP神经网络模型:[DemoBPNetWork.py](./data/Mopt/Python脚本/DemoBPNetWork.py)
+
     自然神经网络模型:[DemoBPNetWork.py](./data/Mopt/Python脚本/DemoBPNetWork.py)
+
 - 编译形语言接口(C/C++/Fortran/c#):
+
     c++接口模版:[MoptL数据驱动案例.sln](./data/Mopt/C++脚本/MoptL数据驱动案例/MoptL数据驱动案例.sln)
 
 ## 源代码下载
@@ -70,4 +82,6 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 ## 交流论坛
 交流论坛 http://www.openwecd.fun:22304/
 
-
+#### 参考文献
+[^1]:Chen, L., Basu, B. & Nielsen, S.R.K. (2018). A coupled finite difference mooring dynamics model for floating offshore wind turbine analysis. Ocean Engineering,162, 304-315
+[^2]:https://github.com/FloatingArrayDesign/MoorDyn?tab=readme-ov-file
