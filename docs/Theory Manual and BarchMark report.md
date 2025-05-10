@@ -1038,7 +1038,7 @@ Console.WriteLine("实际: " + string.Join(" ", actual));
 
 我们给出使用C# 语言调用程序API的接口示例,同样,也可以使用C++,Python等调用.dll接口:
 
-```csharp
+``` csharp
 //使用命名空间
 using OpenWECD.WTAI.Prodictor
 // 创建示例数据
@@ -1256,7 +1256,7 @@ Predict.Result.txt文件格式为：
 1 2 3 4 1 2 3 4 5 6 7 
 1 2 3 4 1 2 3 4 5 6 7 
 ``` 
-上述文件需要注意的是：文件当中不允许有空行，且Train.data.txt与Predict.data.txt文件有HawtC文件自动输出，而脚本文件需要输出预测的结果到Predict.Result.txt文件当中。
+上述文件需要注意的是：文件当中不允许有空行，且Train.data.txt与Predict.data.txt文件由HawtC自动输出，而脚本文件需要输出预测的结果到Predict.Result.txt文件当中。
 
 我们在路径“data/Mopt/Python脚本“ 当中提供了BP神经网络和深度学习DeepNN两种示例算法脚本,你可以根据需求自定义脚本.
 ![alt text](image/TheoryManualandBarchMarkreport/截图_20250510005730.png)
@@ -1273,18 +1273,18 @@ Predict.Result.txt文件格式为：
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         private delegate int ReTrainItr([In] double[] X, int var, int obj, int row, int col);
 ```
-因此，你的DLL需要导出Train(double[,] X,int var,int obj),Predict(double[,] X,  ref double[,] res),ReTrain(double[,] X,int var,int obj)三个函数。
+因此，你的DLL需要导出Train(double[] X,,int var,int obj,int row,int col),Predict(double[] X,  ref double[] res),ReTrain(double[] X,int var,int obj)三个函数。
 
-- 1、Train(double[,] X,int var,int obj)函数接口：
-该函数的输入参数为double[,] X，表示训练数据集。你需要在代码当中对输入数据进行训练，其中var表示变量个数，obj表示目标个数。X的行数表示训练数据集的样本个数，列数的前var列为变量，后obj列为目标。需要注意的是：如果训练成功要返回1，否则返回0。
+- 1、Train(double[] X,int var,int obj,int row,int col)函数接口：
+该函数的输入参数为double[] X，表示训练数据集。你需要在代码当中对输入数据进行训练，其中var表示变量个数，obj表示目标个数。X的行数表示训练数据集的样本个数，列数的前var列为变量，后obj列为目标。需要注意的是：如果训练成功要返回1，否则返回0。
 
-- 2、Predict(double[,] X,  ref double[,] res)函数接口：
-该函数的输入参数为double[,] X和ref double[,] res，表示待预测数据集和预测结果。你需要在代码当中对输入数据X进行预测，并将结果矩阵存储到res中。且res的列数应该与obj数目一致，X的列数应该与var 数目一致。
+- 2、Predict(double[] X,  ref double[] res, int rowin, int colin)函数接口：
+该函数的输入参数为double[] X和ref double[] res，表示待预测数据集和预测结果。你需要在代码当中对输入数据X进行预测，并将结果矩阵存储到res中。且res的列数应该与obj数目一致，X的列数应该与var 数目一致。
 
-- 3、ReTrain([In] double[,] X,int var,int obj)函数接口：
+- 3、ReTrain([In] double[] X,int var,int obj, int row, int col)函数接口：
 该函数与Train函数类似，但是传入的不是完全的训练集，因此需要根据传入的参数进行训练。当前函数接口在HawtC当中的主代码当中没有使用，可以不实现内容，但必须给出函数体。需要注意的是：如果训练成功要返回1，否则返回0。
 
-我们在路径“data/Mopt/C++脚本” 当中提供了基于c#语言编写的符合c++接口的示例代码。基于该方法编译的dll可以直接供c++/Fortran语言进行调用。
+我们在路径“data/Mopt/C++脚本” 当中提供了基于c++,C语言编写的符合C接口的示例代码。基于该方法编译的dll可以直接供c++/Fortran语言进行调用。
 
 
 需要注意的一点事,你必须在.h当中导出函数，否则编译器无法识别。
