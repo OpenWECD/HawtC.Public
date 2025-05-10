@@ -40,31 +40,15 @@ http://www.openwecd.fun/data/湍流Compare.html
 http://www.openwecd.fun/data/湍流Compare.ipynb
 
 ## HawtC 与 Bladed 4.11 计算验证对比
-<!-- ![Compare_Bladed4_11.jpg](./docs/Compare_Bladed4_11.jpg) -->
-@import "./docs/Compare_Bladed4_11.jpg"
+![Compare_Bladed4_11.jpg](./docs/Compare_Bladed4_11.jpg)
 
-## 源代码支持：
-请访问www.HawtC.cn
-###### 请访问论坛
 
-## 开发计划：
+### 源代码下载
+请访问[www.HawtC.cn](http://www.openwecd.fun/)
 
-###### 目前已经完成了很多开发，后续着重进行精度验证（这是根本），基于这些验证修复软件当中的BUG，之后会加入更多功能，个人能力有限，欢迎有兴趣的同学一起完善。
+### 交流论坛
+交流论坛 http://www.openwecd.fun:22304/
 
-|          功能          |                       描述                       |                              发版计划                              |
-| :--------------------: | :-----------------------------------------------: | :-----------------------------------------------------------------: |
-|       模型线性化       | 计算整机稳态，得到整机频率并使用VTK技术实现可视化 | `<p style="color: red;">`忙着博士毕业，以后再说。。。。。`</p>` |
-|  支持更多动态失速模型  |                     -顾名思义                     | `<p style="color: red;">`忙着博士毕业，以后再说。。。。。`</p>` |
-| 支持GEBT和CR的精确耦合 |                     -顾名思义                     | `<p style="color: red;">`忙着博士毕业，以后再说。。。。。`</p>` |
-|         UI界面         |  技术已经实现，代码太多，懒得写，寻找有缘人一起  | `<p style="color: red;">`忙着博士毕业，以后再说。。。。。`</p>` |
+## 5MW海上漂浮式风力机oc3测试
+![windturbine](./docs/image/TheoryManualandBarchMarkreport/12.gif)
 
-## HawtC.BeamL非线性梁模型下载：
-
-|   梁模型   |        类型        |    动力学特征    |                 下载地址                 |
-| :--------: | :----------------: | :--------------: | :---------------------------------------: |
-| PreBend 梁 | 复合材料弯扭耦合梁 | 3D非线性静态分析 | http://www.openwecd.fun/model/prebend.rar |
-|  15MW塔架  |       线性梁       |  3D线性动态分析  | http://www.openwecd.fun/model/prebend.rar |
-
-## HawtC.AeroL气动力模型下载，支持Cp,功率曲线等计算：
-
-请参考风力机模型
