@@ -40,7 +40,8 @@ http://www.openwecd.fun/data/湍流Compare.html
 http://www.openwecd.fun/data/湍流Compare.ipynb
 
 ## HawtC 与 Bladed 4.11 计算验证对比
-![Compare_Bladed4_11.jpg](./docs/Compare_Bladed4_11.jpg)
+<!-- ![Compare_Bladed4_11.jpg](./docs/Compare_Bladed4_11.jpg) -->
+@import "./docs/Compare_Bladed4_11.jpg"
 
 ## 源代码支持：
 请访问www.HawtC.cn
