@@ -55,7 +55,8 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 该模块完全耦合了OpenMoor [^1] 与MoorDyn [^2] 模块,以计算系泊力.同时，我们自己的系泊动力学MoorL模块还在开发当中，以支持风场状态下的共享系泊。
 ![OpenMoor](./docs/image/TheoryManualandBarchMarkreport/Case1-25.gif)
 ![OpenMoor](./docs/image/TheoryManualandBarchMarkreport/Case3-5.gif)
-来源于[http://openmoor.org/](http://openmoor.org/)
+
+图片来源于[http://openmoor.org/](http://openmoor.org/)
 
 
 ### 8.HawtC.WindL.IECWind IEC风场生成模块验证
