@@ -17,7 +17,7 @@
 - 4、提供了面向Python/c++等用户的动态链接库和手册支持，方便与其他软件耦合</br>
 
 
-##  HawtC 与 OpenFAST 计算验证对比
+##  HawtC 与 OpenFAST/Bladed 4.11 计算验证对比
 
 ### 1. 陆上IEA 15MW 稳态无风剪切的OpenFAST验证
 
@@ -43,7 +43,7 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 ![Compare_Bladed4_11.jpg](./docs/Compare_Bladed4_11.jpg)
 
 ### 4.HawtC.MBD.VTK 多体动力学可视化的NREL 5MW Spar海上漂浮式风力机测试
-![windturbine](./docs/image/TheoryManualandBarchMarkreport/12.gif)
+![windturbine](./docs/image/TheoryManualandBarchMarkreport/13.gif)
 
 ### 5.HawtC.BeamL 非线性梁(3D共旋梁理论)模块的验证
 ![windturbine](./docs/image/TheoryManualandBarchMarkreport/BeamL.png)
