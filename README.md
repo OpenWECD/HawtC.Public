@@ -1,5 +1,4 @@
-![简体中文](./README.md)
-![English](./README_EN.md)
+
 ## 如果你想获取完整代码，并参加HawtC2的开发，请加入我们的组织
 ## HawtC 优势
 ### 理论创新
