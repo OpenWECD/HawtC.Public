@@ -1,8 +1,9 @@
-
+[English](./README_EN.md) | [简体中文](./README.md)|[日本語](./README_JP.md)
+![HawtC](./docs/image/TheoryManualandBarchMarkreport/图标.png)
 ## 如果你想获取完整代码，并参加HawtC2的开发，请加入我们的组织
 ## HawtC 优势
 ### 理论创新
-- 1、基于四元数的运动学变换方法，打破FAST/Bladed的小角度假设，实现了高精度运动描述和计算</br>
+- 1、基于四元数的运动学变换方法，打破FAST[^1]/Bladed的小角度假设，实现了高精度运动描述和计算</br>
 - 2、具有自主知识产权的截面特性计算方法，打破IVABS 和BECAS 的长期垄断</br>
 - 3、全耦合的高效多目标优化算法，支持气动-结构-控制-水动力全流程优化设计，打破传统人工优化设计的低效性</br>
 - 4、基于共旋方法建立了各向异性几何非线性共旋梁方法，打破了传统拉格朗日方法和几何精确梁方法的低效性，实现了少分段、大步长、高精度的叶片非线性计算。</br>
@@ -20,7 +21,7 @@
 
 ##  HawtC 与 OpenFAST/Bladed 4.11 计算验证对比
 
-### 1. 陆上IEA 15MW 稳态无风剪切的OpenFAST验证
+### 1. 与OpenFAST对比的陆上IEA 15MW 稳态无风剪切验证
 
 #### 1）验证结果
 
@@ -30,7 +31,7 @@ http://www.openwecd.fun/data/稳态无风剪切Compare.html
 
 http://www.openwecd.fun/data/稳态Compare.ipynb
 
-### 2.陆上IEA 15MW 湍流风的OpenFAST验证
+### 2.与OpenFAST对比的陆上IEA 15MW 湍流风的验证
 
 #### 1）验证结果
 
@@ -53,7 +54,7 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 该模块已经通过了与Bladed 4.11的验证
 
 ### 7.HawtC.HydroL.MoorL 水动力波浪生成模块验证
-该模块完全耦合了OpenMoor [^1] 与MoorDyn [^2] 模块,以计算系泊力.同时，我们自己的系泊动力学MoorL模块还在开发当中，以支持风场状态下的共享系泊。
+该模块完全耦合了OpenMoor [^2] 与MoorDyn [^3] 模块,以计算系泊力.同时，我们自己的系泊动力学MoorL模块还在开发当中，以支持风场状态下的共享系泊。
 ![OpenMoor](./docs/image/TheoryManualandBarchMarkreport/Case1-25.gif)
 ![OpenMoor](./docs/image/TheoryManualandBarchMarkreport/Case3-5.gif)
 
@@ -86,5 +87,6 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 交流论坛 http://www.openwecd.fun:22304/
 
 #### 参考文献
-[^1]:Chen, L., Basu, B. & Nielsen, S.R.K. (2018). A coupled finite difference mooring dynamics model for floating offshore wind turbine analysis. Ocean Engineering,162, 304-315
-[^2]:https://github.com/FloatingArrayDesign/MoorDyn?tab=readme-ov-file
+[^1]:https://github.com/OpenFAST/openfast
+[^2]:Chen, L., Basu, B. & Nielsen, S.R.K. (2018). A coupled finite difference mooring dynamics model for floating offshore wind turbine analysis. Ocean Engineering,162, 304-315
+[^3]:https://github.com/FloatingArrayDesign/MoorDyn?tab=readme-ov-file
