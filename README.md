@@ -63,7 +63,8 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 
 
 ### 9.HawtC.WindL.SimWind 湍流风生成模块验证
-该模块与OpenFAST.TurbSim 模块功能类似
+该模块与OpenFAST.TurbSim 模块功能类似,下面是ETM风模型:
+![WInd](./docs/image/TheoryManualandBarchMarkreport/wind.mp4)
 
 
 ### 10.HawtC.MoptL 整机一体化优化模块数据驱动脚本
