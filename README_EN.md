@@ -24,9 +24,12 @@
     
 *     
     5\. For the first time, kinematic and dynamic formulas for the blade and tower TMDI have been derived based on the Kane method and coupled into multibody dynamics, achieving full-link coupling computation of aerodynamic-structural-control-hydrodynamic-TMDI control. Utilizing the interface model APIL and multi-objective optimization module MoptL, a complex wind-wave-swell coupled blade TMDI multi-objective optimization design has been realized.  
+
+*     
+    6\. An optimization algorithm driven by real-time data and multi-objective coupling is proposed, which establishes a real data reference vector to solve the problems of poor prediction results and weak model generalization capability inherent in traditional data-driven methods, significantly improving optimization efficiency and prediction accuracy.
     
 *     
-    6\. Tackled the coupling design challenge of ultra-long flexible blades, which involves blade laminates (structural design), blade airfoil stress (safety design), and blade aerodynamics (efficient aerodynamic shape design). Achieved the airfoil-blade-unit coupling design method for large units, and provided modeling and simulation tools.  
+    7\. Tackled the coupling design challenge of ultra-long flexible blades, which involves blade laminates (structural design), blade airfoil stress (safety design), and blade aerodynamics (efficient aerodynamic shape design). Achieved the airfoil-blade-unit coupling design method for large units, and provided modeling and simulation tools.  
       
     
 
