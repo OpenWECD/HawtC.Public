@@ -1,4 +1,7 @@
-[简体中文](./README.md) | [繁體中文](./README_CN.md) | [English](./README_EN.md) | [日本語](./README_JP.md)
+#### [简体中文](./README.md) | [繁體中文](./README_CN.md) | [English](./README_EN.md) | [日本語](./README_JP.md)
+</br>
+</br>
+
 ![HawtC](./docs/image/TheoryManualandBarchMarkreport/图标.png)
 ## 如果你想获取完整代码，并参加HawtC2的开发，请加入我们的组织
 ## HawtC 优势
