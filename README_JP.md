@@ -120,7 +120,7 @@
 ##   ソースコードのダウンロード
 
   
-www.HawtC.cnをご覧ください。
+[www.HawtC.cn](http://www.openwecd.fun/) をご覧ください。
 
 ##   フォーラム
 

@@ -119,7 +119,7 @@
 ##   原始碼下載
 
   
-請訪問 www.HawtC.cn
+請訪問 [www.HawtC.cn](http://www.openwecd.fun/)
 
 ##   交流論壇
 

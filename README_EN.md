@@ -120,12 +120,11 @@ Please review the document to understand the example interface:
 ##  Source Code Download
 
   
-Please visit www.HawtC.cn
+Please visit [www.HawtC.cn](http://www.openwecd.fun/)
 
 ##  Communication Forum
 
-  
-Discussion forum http://www.openwecd.fun:22304/
+Discussion forum : http://www.openwecd.fun:22304/
 
 ####   References
 [^1]:https://github.com/OpenFAST/openfast
