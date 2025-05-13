@@ -10,7 +10,7 @@
 ###  理論創新
 
 *     
-    1、基於四元數的運動學變換方法，打破 FAST1/Bladed 的小角度假設，實現了高精度運動描述和計算  
+    1、基於四元數的運動學變換方法，打破 FAST[^1] /Bladed 的小角度假設，實現了高精度運動描述和計算  
     
 *     
     2、有自主知識產權的截面特性計算方法，打破 IVABS 和 BECAS 的長期壟斷  
@@ -90,7 +90,7 @@
 ###   7.HawtC.HydroL.MoorL 水動力波浪生成模組驗證
 
   
-該模組完全耦合了 OpenMoor 2 與 MoorDyn 3 模組，以計算系泊力。同時，我們自己的系泊動力學 MoorL 模組還在開發當中，以支持風場狀態下的共享系泊。![OpenMoor](./docs/image/TheoryManualandBarchMarkreport/Case1-25.gif) ![OpenMoor](./docs/image/TheoryManualandBarchMarkreport/Case3-5.gif)
+該模組完全耦合了 OpenMoor[^2]與 MoorDyn[^3]模組，以計算系泊力。同時，我們自己的系泊動力學 MoorL 模組還在開發當中，以支持風場狀態下的共享系泊。![OpenMoor](./docs/image/TheoryManualandBarchMarkreport/Case1-25.gif) ![OpenMoor](./docs/image/TheoryManualandBarchMarkreport/Case3-5.gif)
 
   
 圖片來源於 http://openmoor.org/
@@ -132,9 +132,8 @@
 
 ####   參考文獻
 
-1.  [https://github.com/OpenFAST/openfast](https://github.com/OpenFAST/openfast) [↩](#user-content-fnref-1)
+[^1]:[https://github.com/OpenFAST/openfast](https://github.com/OpenFAST/openfast) [↩](#user-content-fnref-1)
     
-2.    
-    Chen, L., Basu, B. & Nielsen, S.R.K.（2018）。用於浮動式海上風力渦輪機分析的耦合有限差分系泊動力學模型。海洋工程, 162, 304-315 ↩
+[^2]:Chen, L., Basu, B. & Nielsen, S.R.K.（2018）。用於浮動式海上風力渦輪機分析的耦合有限差分系泊動力學模型。海洋工程, 162, 304-315 ↩
     
-3.  [https://github.com/FloatingArrayDesign/MoorDyn?tab=readme-ov-file](https://github.com/FloatingArrayDesign/MoorDyn?tab=readme-ov-file) [↩](#user-content-fnref-3)
+[^3]:[https://github.com/FloatingArrayDesign/MoorDyn?tab=readme-ov-file](https://github.com/FloatingArrayDesign/MoorDyn?tab=readme-ov-file) [↩](#user-content-fnref-3)
