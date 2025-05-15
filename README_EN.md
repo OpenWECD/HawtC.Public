@@ -77,6 +77,10 @@
 ###   4\. Testing of HawtC.MBD.VTK Multibody Dynamics Visualization on NREL 5MW Spar Offshore Floating Wind Turbine
 
 ![windturbine](./docs/image/TheoryManualandBarchMarkreport/12.webp)
+<br/>
+<br/>
+#### HAWTC.FARM:
+![windturbine](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
 
 ###   5\. Verification of HawtC.BeamL Nonlinear Beam (3D Co-rotational Beam Theory) Module
 
@@ -95,7 +99,7 @@ This module fully couples the OpenMoor[^2] and MoorDyn[^3] modules to calculate 
   
 The image is sourced from http://openmoor.org/
 
-###   8.HawtC.WindL.IECWind IEC Wind Field Generation Module Validation
+###   8.HawtC.PCSL Cross-sectional characteristic calculation verification
 
 ###   9.HawtC.WindL.SimWind Turbulent Wind Generation Module Validation
 

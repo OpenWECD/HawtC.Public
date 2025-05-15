@@ -77,6 +77,11 @@
 ###   4.HawtC.MBD.VTK 多體動力學可視化的 NREL 5MW Spar 海上漂浮式風力機測試
 
 ![windturbine](./docs/image/TheoryManualandBarchMarkreport/12.webp)
+<br/>
+<br/>
+#### HAWTC.FARM:
+![windturbine](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
+
 
 ###   5.HawtC.BeamL 非線性樑(3D 共旋樑理論)模組的驗證
 
@@ -95,7 +100,9 @@
   
 圖片來源於 http://openmoor.org/
 
-###   8.HawtC.WindL.IECWind IEC 風場生成模組驗證
+###   8.HawtC.PCSL 截面特性計算驗證
+
+
 
 ###   9.HawtC.WindL.SimWind 湍流風生成模組驗證
 

@@ -50,6 +50,10 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 
 ### 4.HawtC.MBD.VTK 多体动力学可视化的NREL 5MW Spar海上漂浮式风力机测试
 ![windturbine](./docs/image/TheoryManualandBarchMarkreport/12.webp)
+<br/>
+<br/>
+#### HAWTC.FARM:
+![windturbine](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
 
 ### 5.HawtC.BeamL 非线性梁(3D共旋梁理论)模块的验证
 ![windturbine](./docs/image/TheoryManualandBarchMarkreport/BeamL.png)
@@ -65,7 +69,7 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 图片来源于[http://openmoor.org/](http://openmoor.org/)
 
 
-### 8.HawtC.WindL.IECWind IEC风场生成模块验证
+### 8.HawtC.PCSL 截面特性计算验证
 
 
 ### 9.HawtC.WindL.SimWind 湍流风生成模块验证
