@@ -80,7 +80,10 @@
 <br/>
 <br/>
 #### HAWTC.FARM:
-![windturbine](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
+
+![111](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
+
+![111](./docs/image/TheoryManualandBarchMarkreport/FARM_WindTurbine.gif)
 
 
 ###   5.HawtC.BeamL 非線性樑(3D 共旋樑理論)模組的驗證
