@@ -54,19 +54,12 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 <br/>
 #### HAWTC.FARM:
 
-<video width="770" height="400" controls> 
-  <source src="https://www.bilibili.com/video/BV1R2JPzKE7u" type="video/mp4"> 
-</video> 
-
-<iframe width="770" height="400" src="https://www.bilibili.com/video/BV1R2JPzKE7u" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="770" height="400" src="https://www.youtube.com/embed/N9tNuwIBdiw?si=3yYdaxrf_NKXapd0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### 5.HawtC.BeamL 非线性梁(3D共旋梁理论)模块的验证
 
-![windturbine](./docs/image/TheoryManualandBarchMarkreport/BeamL.png)
+![windturbine](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
 
-
+[点击这里观看视频](docs/image/TheoryManualandBarchMarkreport/FARM_WindTurbine1.mp4)
 
 ### 6.HawtC.HydroL.Wave 水动力波浪生成模块验证
 该模块已经通过了与Bladed 4.11的验证
