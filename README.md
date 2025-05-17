@@ -54,12 +54,13 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 <br/>
 #### HAWTC.FARM:
 
+![111](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
+
+![111](./docs/image/TheoryManualandBarchMarkreport/FARM_WindTurbine.gif)
 
 ### 5.HawtC.BeamL 非线性梁(3D共旋梁理论)模块的验证
 
-![windturbine](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
-
-[点击这里观看视频](docs/image/TheoryManualandBarchMarkreport/FARM_WindTurbine1.mp4)
+![windturbine](./docs/image/TheoryManualandBarchMarkreport/BeamL.png)
 
 ### 6.HawtC.HydroL.Wave 水动力波浪生成模块验证
 该模块已经通过了与Bladed 4.11的验证
