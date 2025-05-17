@@ -53,8 +53,10 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 <br/>
 <br/>
 #### HAWTC.FARM:
-![windturbine]
-<iframe width="600" height="320" src="https://www.youtube.com/embed/N9tNuwIBdiw?si=3yYdaxrf_NKXapd0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<video width="650" height="320" controls> 
+  <source src="https://www.youtube.com/embed/N9tNuwIBdiw?si=3yYdaxrf_NKXapd0" type="video/mp4"> 
+</video> 
 
 ### 5.HawtC.BeamL 非线性梁(3D共旋梁理论)模块的验证
 ![windturbine](./docs/image/TheoryManualandBarchMarkreport/BeamL.png)
