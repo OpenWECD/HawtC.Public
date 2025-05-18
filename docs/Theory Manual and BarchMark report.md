@@ -71,6 +71,14 @@ ebook:
       - [3.3.2 IFFT 直接生成法](#332-ifft-直接生成法)
     - [3.4 风模型](#34-风模型)
   - [4 海洋动力学(HydroL)](#4-海洋动力学hydrol)
+    - [4.1 波浪动力学](#41-波浪动力学)
+      - [4.1.1 规则波](#411-规则波)
+        - [4.1.1.1 深水近似](#4111-深水近似)
+        - [4.1.1.2 规则波的特征](#4112-规则波的特征)
+      - [4.1.2 不规则波](#412-不规则波)
+      - [4.1.3 洋流(Currents)](#413-洋流currents)
+      - [4.1.4 使用HydroL.Wave 模块生成波浪文件](#414-使用hydrolwave-模块生成波浪文件)
+    - [4.2 波浪载荷](#42-波浪载荷)
   - [5 截面参数有限元(PCS)](#5-截面参数有限元pcs)
     - [5.1 前言](#51-前言)
     - [5.2 理论方法](#52-理论方法)
@@ -238,6 +246,153 @@ $$
 ### 3.4 风模型
 
 ## 4 海洋动力学(HydroL)
+
+
+### 4.1 波浪动力学
+本节描述了 HawtC 中用于描绘水粒子运动学的理论，即每个水粒子的位移、速度和加速度。水粒子运动学可以由波浪或水流引起。
+#### 4.1.1 规则波
+规则波浪的波动运动学是使用线性理论计算的，也称为 Airy 波浪理论。在这种理论中，水被认为是无粘性的、不可压缩的且无旋的。通过假设水是无粘性的、不可压缩的且无旋的，水可以通过速度势来描述，如下公式所示 (Faltinsen, O.M. Sea Loads on Ships and Offshore Structures. Ocean Techmology. Cambridge, 1990.):
+
+$$\Phi=\frac{g A}{\omega} \frac{\cosh [k(z+h)]}{\cosh (k h)} \cos \left(\omega t-k_x x-k_y y\right)$$
+
+其中，
+$ x,y,z$ 是笛卡尔参考系统中的空间坐标 [m]
+$t$ 是时间坐标 [s]
+$A$ 是波幅 [m]
+$g$ 是由于重力作用引起的加速度 [m.s-2]
+$ω$ 是波的圆频率，[rd.s-1]
+$k$ 是波数向量的大小 [rd.m-1]
+$h$ 是水深（对于平底）[m]
+$k_x,k_y$ 是波数向量的水平分量 [rd.m -1 ]
+需要注意的是,描述一个规则波浪时常用波高$H=2A$ 和波周期 $T=2π/ω$ 。
+波数$k$和波频率$w$通过线性色散关系$\omega^2=g k \cdot \tanh (k h)$相互关联,波浪高度则表示为:
+
+$$\zeta=A \cdot \cos \left(\omega t-k_x x-k_y y\right)$$
+
+水粒子在 $x、y$ 和 $z$ 方向的速度分别为:
+
+$$u=\frac{\partial \Phi}{\partial x}
+$$
+
+$$v=\frac{\partial \Phi}{\partial y}
+$$
+
+$$w=\frac{\partial \Psi}{\partial z}
+$$
+水颗粒加速度是水颗粒速度的时间导数。下图描述了波的几何定义：
+![波的几何定义](image/TheoryManualandBarchMarkreport/截图_20250411182900.png)
+
+##### 4.1.1.1 深水近似
+根据波浪特性和水深，通常将深水或无限水与有限水区分开来。在深水中，假设海床不影响波浪运动学。通过定义波长$\lambda$且$\lambda=2π/k$，当$\lambda / h>0.5$时假设为深水。在这些条件下，可以近似$k h \gg1$，故速度势的表达式然后变为：
+
+$$\Phi=\frac{g A}{\omega} e^{k z} \cos \left(\omega t-k_x x-k_y y\right)$$
+
+且色散关系变为：$\omega^2=g k$，在当前HawtC版本当中，并不支持规则波定义，但HawtC2 V2.1.000及其之后的版本支持规则波定义。
+
+##### 4.1.1.2 规则波的特征
+在模拟规则波时，通常会将波高$H$、波周期$T$和水深$h$作为输入。从这些输入中可以得出线性波的几个特征.如下表所示：
+
+| 名称 | 描述 |
+| :---: |  :---: |
+| 波长 | $\lambda=2\pi / k$   |
+| 波数 | 求解$\omega^2=g k \cdot \tanh (k h)$获取   | 
+| 角频率 | $\omega=2\pi / T$   | 
+|波陡度|      $H / \lambda$     |
+|临界波高$H_c$|     $H_c$对应于波浪在破裂之前可能达到的理论最大高度。对于深水有$H_c=\lambda /7$，对于有限水深$H_c=0.78h$        |
+|波(phase)速度|      $c=\lambda / T$      |
+|波群速度|     $c_g=\frac{c}{2}\left(1+\frac{2k h}{\sinh (2k h)}\right)$       |
+
+
+#### 4.1.2 不规则波
+不规则波通过规则波的线性叠加来模拟，即正弦波分量(谐波叠加法)。描述不规则波的速度势可以通过求和各个规则波的速度势来获得，故
+
+$$
+\Phi=\sum_{i=1}^N \frac{g A_i}{\omega_i} \frac{\cosh \left[k_i(z+h)\right]}{\cosh \left(k_i h\right)} \cos \left(\omega_i t-k_i x-\epsilon_i\right)
+$$
+其中$i$表示不规则波的第 $i_{th}$ 分量。相位角$\epsilon_i$在$[-π,π]$之间的均匀分布中随机选择和 。分量的数量由$N$决定。一般来说，数量与频率的上下限和间隔相关。不规则波浪高度由下式给出：
+
+$$
+\zeta=\sum_{i=1}^N A_i \sin \left(\omega_i t-k_i x-\epsilon_i\right)
+$$
+
+每个分量的振幅由波谱$S(\omega)$给出，使得
+
+$$
+\frac{1}{2} A_i^2=S\left(\omega_i\right) d \omega_i
+$$
+
+其中：$d \omega_i=\omega_{i+1}-\omega_i$，不同的谱可以用来表示不规则海浪。在 HawtC中，可以自定义 JONSWAP 谱（Hasselmann, K., T. P. Barnett, E. Bouws, H. Carlson, D. E. Cartwright, K. Enke, J. A. Ewing, et al. “Measurements of Wind-Wave Growth and Swell Decay during the Joint North Sea Wave Project (JONSWAP).” Deutsches Hydrographisches Institut, January 1, 1973.），这是对 Pierson-Moskowitz 谱的修改。取决于波浪圆频率$ω$，Pierson-Moskowitz 谱的功率谱密度由以下公式(DNV-GL. “DNV-RP-C205 Environmental Conditions  and Environmental Loads.” DNV, 2017. http://rules.dnvgl.com/docs/pdf/DNV/codes/docs/2017-08/RP-C205.pdf.)以及Bladed4.11当中关于JS谱和PM谱的定义
+
+$$
+\boldsymbol{S}_{P M}(\omega)=\frac{5}{16} \cdot \boldsymbol{H}_S^2\cdot \boldsymbol{T}_p\left(\frac{\omega}{\omega_p}\right)^{-5} \cdot \exp \left(-\frac{5}{4}\left(\frac{\omega}{\omega_P}\right)^{-4}\right)
+$$
+
+其中，$H_S$为海浪高度，$ω_P$为海浪圆周频率$\omega_p=(2\pi) /\left(T_p\right)[$ rad $\cdot \mathrm{s}-1]$、$Tp$是谱峰值周期[s]。从P-M谱改进的JONSWAP谱的公路密度方程为：
+
+$$
+S_J(\omega)=A_\gamma \cdot S_{P M}(\omega) \cdot \gamma^B
+$$
+
+$$
+B=\exp \left(-0.5\left(\frac{\omega-\omega_P}{\sigma \cdot \omega_P}\right)^2\right)
+$$
+
+$$
+A_Y=1.0-0.287ln (\gamma)
+$$
+
+其中，$\gamma$是无量纲的峰值形状参数（也称为峰值因子或伽马因子）谱形状系数，$σ$是给定的频谱宽度参数，且
+
+$$
+\begin{aligned} & \sigma=0.07\text ， \omega \leq \omega_p  \\ & \sigma=0.09\text ， \omega>\omega_p\end{aligned}
+$$
+
+从上前的方程可以看出，可以通过选择 $\gamma=1$ 在 HawtC.Hydro 中定义一个 Pierson-Moskowitz 谱。下面给了波高为6m、周期为10s、形状参数为3.0的一个周期为JONSWAP谱图像，且与Bladed进行了对比。结果完全一致。
+
+![JONSWAP谱图像](image/TheoryManualandBarchMarkreport/截图_20250412034808.png)
+
+![alt text](image/TheoryManualandBarchMarkreport/截图_20250412034847.png)
+
+
+
+
+#### 4.1.3 洋流(Currents)
+在计算水动力负荷时，可以通过使用“洋流”部分来包括洋流的影响。洋流被定义为以恒定速度在水平方向上移动的水质点的垂直分布。如果模拟中还有波浪，则波浪和洋流的速度分量相加。在HawtC当中，流的运动方向与波浪是一致的，且不可以自定义，如果要自定义请联系我们，我们将提供技术支持和代码帮助。
+
+
+
+
+
+#### 4.1.4 使用HydroL.Wave 模块生成波浪文件
+在HawtC中，可以使用HydroL.Wave模块生成波浪文件，以用于模拟各种波浪。波浪文件的后缀为.wave。且该文件支持3种格式：
+Matlab:Matlab格式,可以直接通过matlab打开
+Excel:Excel格式,可以直接通过Excel打开
+二进制:二进制格式,需要使用HawtC.Hydro.Wave.ReadWaveFile函数读取为wave结构体。
+我们建议使用Matlab文件格式，该格式的生成速度快，且可以减少文件大小。如果对内存大小非常看重，请现在二进制文件。本人为了写文章方便处理数据，所以一般使用Excle文件格式。
+    为了生成水动力文件，首先需要将HydroL主文件当中的'HydroMod'关键字设置为0，以启用波浪文件生成模块，而在HawtC2当中，这个选项不需要用户主动配置，程序会主动识别当前功能。生成波浪文件需要定义如下参数
+``` charp
+//# 洋流的定义：
+---------------------- CURRENT ------------------------------------------------- 
+0,-80,-160,-240,-320                        CurrentCoordinate  - 不同深度位置是一个数组
+0.609, 0.609, 0.609,0.609,0.609              CurrentVelocity    - 不同深度位置下的流速度，是一个数组，大小与CurrentCoordinate匹配
+3                                            CurrentPolyOrder   - 拟合阶数
+
+//# 波浪的参数定义：
+             2   WaveMod        - 入射波的规则/不规则波谱模型 {0: none=still water, 1: regular (periodic), 1P#: regular with user-specified phase, 2: JONSWAP，3：Pierson-Moskowitz spectrum (irregular):    
+           30   WaveTMax       - 入射波计算的分析时间 (sec) 
+           0.05   WaveDT         - 入射波计算的时间步长 (sec) 
+             6	 WaveHs         - 入射波的有效波高 (meters) 
+            10   WaveTp         - 入射波峰值谱周期 Peak-spectral period of incident waves (sec) 
+            3.3  WavePkShp      - 入射波谱的峰形参数（-）JONSWAP谱需要，请查看理论手册
+      0.00001    WvLowCOff      - 波谱的低截止频率或波谱的频率下限，超过该频率，波谱将归零 (rad/s) 
+           5    WvHiCOff       - 波谱的高截止频率或波谱的频率上限，超过该频率，波谱将归零 (rad/s) 
+	   480   WvNumCOff      - 波谱频率生成数量 (-) ！当前只能支持等频率方法，不支持等能量法
+            0   WaveDir        - 入射波传播航向 (degrees) 
+         11111   WaveSeed       - 随机种子[-2147483648 to 2147483647]    (-)      
+3                      FileGes   -  生成文件的格式{1: Matlab, 2: Binary, 3: MsExcle}
+"./demo/test1excle.wave"        WvKinFile      - 外部生成的波数据文件的根名称(或者是要生成文件的绝对路径)(.wave)   如果为 "DEFAULT" 系统在计算时将读取上方参数，否则直接导入文件
+```
+### 4.2 波浪载荷
 
 ## 5 截面参数有限元(PCS)
 

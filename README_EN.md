@@ -94,6 +94,11 @@
   
 This module has been verified with Bladed 4.11
 
+| Blade	| HawtC|
+|----|-----|
+|![Blade](./docs/image/TheoryManualandBarchMarkreport/截图_20250412034847.png)|![HawtC](./docs/image/TheoryManualandBarchMarkreport/截图_20250412034808.png)|
+
+
 ###   7.HawtC.HydroL.MoorL Hydrodynamic wave generation module verification
 
   

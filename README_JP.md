@@ -94,6 +94,11 @@
   
 このモジュールはBladed 4.11との検証に合格しました
 
+| Blade	| HawtC|
+|----|-----|
+|![Blade](./docs/image/TheoryManualandBarchMarkreport/截图_20250412034847.png)|![HawtC](./docs/image/TheoryManualandBarchMarkreport/截图_20250412034808.png)|
+
+
 ###   7.HawtC.HydroL.MoorL 水動力波生成モジュールの検証
 
   

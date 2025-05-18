@@ -63,7 +63,14 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 ![windturbine](./docs/image/TheoryManualandBarchMarkreport/BeamL.png)
 
 ### 6.HawtC.HydroL.Wave 水动力波浪生成模块验证
-该模块已经通过了与Bladed 4.11的验证
+该模块已经通过了与Bladed 4.11的验证,如下图所示:左面为Bladed4.11的波浪谱,有图为HawtC2计算的波浪谱.
+
+| Blade	| HawtC|
+|----|-----|
+|![Blade](./docs/image/TheoryManualandBarchMarkreport/截图_20250412034847.png)|![HawtC](./docs/image/TheoryManualandBarchMarkreport/截图_20250412034808.png)|
+
+
+
 
 ### 7.HawtC.HydroL.MoorL 水动力波浪生成模块验证
 该模块完全耦合了OpenMoor[^2]与MoorDyn[^3]模块,以计算系泊力.同时，我们自己的系泊动力学MoorL模块还在开发当中，以支持风场状态下的共享系泊。
