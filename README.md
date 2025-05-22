@@ -54,9 +54,8 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 <br/>
 #### HAWTC.FARM:
 
-![111](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
+![111](./docs/image/TheoryManualandBarchMarkreport/133.webp)
 
-![111](./docs/image/TheoryManualandBarchMarkreport/FARM_WindTurbine.gif)
 
 ### 5.HawtC.BeamL 非线性梁(3D共旋梁理论)模块的验证
 

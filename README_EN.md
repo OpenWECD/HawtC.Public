@@ -81,9 +81,7 @@
 <br/>
 #### HAWTC.FARM:
 
-![111](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
-
-![111](./docs/image/TheoryManualandBarchMarkreport/FARM_WindTurbine.gif)
+![111](./docs/image/TheoryManualandBarchMarkreport/133.webp)
 
 ###   5\. Verification of HawtC.BeamL Nonlinear Beam (3D Co-rotational Beam Theory) Module
 
