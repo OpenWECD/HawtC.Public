@@ -11,7 +11,7 @@
 
 层编号    铺层数    单层厚度(m)  纤维方向(度)    复合材料ID
 （-）          (-)               (m)                   (deg)               (-)
-lam_num  N_plies    Tply         Tht_lam            Mat_id
+lam_num  N_plies    Tply         Tht_lam            Mat_id  MatDisp
 1            1        0.000381        0            3 (胶衣层)
 2            1        0.000510        0            4 (连接层)
 3           33        0.000530       20            2 (双轴向布)
@@ -21,7 +21,7 @@ lam_num  N_plies    Tply         Tht_lam            Mat_id
 
 层编号    铺层数    单层厚度  纤维方向(度)    复合材料ID
  (-)               (-)               (m)          (deg)                  (-)
-lam_num  N_plies   Tply      Tht_lam       Mat_id
+lam_num  N_plies   Tply      Tht_lam       Mat_id MatDisp
 1            1        0.000381        0              3 (胶衣层)
 2            1        0.000510        0              4 (连接层)
 3           17        0.000530       20            2 (双轴向布)
@@ -35,7 +35,7 @@ lam_num  N_plies   Tply      Tht_lam       Mat_id
 
 层编号    铺层数    单层厚度  纤维方向(度)    复合材料ID
  (-)               (-)               (m)          (deg)                  (-)
-lam_num  N_plies   Tply      Tht_lam       Mat_id
+lam_num  N_plies   Tply      Tht_lam       Mat_id MatDisp
 1            1        0.000381        0            3 (胶衣层)
 2            1        0.000510        0            4 (连接层)
 3           17        0.000530       20            2 (双轴向布)
@@ -54,7 +54,7 @@ lam_num  N_plies   Tply      Tht_lam       Mat_id
 
 层编号    铺层数    单层厚度  纤维方向(度)    复合材料ID
  (-)               (-)               (m)          (deg)                  (-)
-lam_num  N_plies   Tply      Tht_lam       Mat_id
+lam_num  N_plies   Tply      Tht_lam       Mat_id MatDisp
 1            1        0.000381        0            3 (胶衣层)
 2            1        0.000510        0            4 (连接层)
 3           33        0.000530       20            2 (双轴向布)
@@ -64,7 +64,7 @@ lam_num  N_plies   Tply      Tht_lam       Mat_id
 
 层编号    铺层数    单层厚度  纤维方向(度)    复合材料ID
  (-)               (-)               (m)          (deg)                  (-)
-lam_num  N_plies   Tply      Tht_lam       Mat_id
+lam_num  N_plies   Tply      Tht_lam       Mat_id MatDisp
 1            1        0.000381        0             3 (胶衣层)
 2            1        0.000510        0            4 (连接层)
 3           17        0.000530       20            2 (双轴向布)
@@ -78,7 +78,7 @@ lam_num  N_plies   Tply      Tht_lam       Mat_id
 
 层编号    铺层数    单层厚度  纤维方向(度)    复合材料ID
  (-)               (-)               (m)          (deg)                  (-)
-lam_num  N_plies   Tply      Tht_lam       Mat_id
+lam_num  N_plies   Tply      Tht_lam       Mat_id MatDisp
 1            1        0.000381        0            3 (胶衣层)
 2            1        0.000510        0            4 (连接层)
 3           17        0.000530       20            2 (双轴向布)

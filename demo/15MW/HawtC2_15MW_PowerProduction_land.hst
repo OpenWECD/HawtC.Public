@@ -2,7 +2,7 @@
 15MW_Land_BaseLine_LinearBlade_NTM11.01
 ---------------------- SIMULATION CONTROL -------------------------------------- 
 300                    TMax         - 总的仿真时长
-0.03                   DT           - 仿真的时间间隔0.079176563737
+0.05                   DT           - 仿真的时间间隔0.079176563737
 1                      InterpOrder  - 插值方法 {0：线性插值，1：非线性插值}
 true                   AeroElastic  - 是否考虑叶片的气动弹性
 false                  AfShowlog    - 是否在仿真的过程当中输出叶片的转矩和转速以及变桨信息

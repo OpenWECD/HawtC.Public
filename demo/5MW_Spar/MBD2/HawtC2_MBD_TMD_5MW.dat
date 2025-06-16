@@ -4,11 +4,12 @@
 false                           TowerTMDI    - 是否开启塔架TMD计算
 true,true,true              BladeTMDI    - 是否开启塔架TMD计算
 true                            CheckDamperStroke  - 是否启用阻尼器行程检查器
-false                            ErrorDamperStroke     - 行程检查不合规是否报错(true:报错并抛出警告，程序终止；false:不报错，但会警告，计算继续)         
+false                            ErrorDamperStroke     - 行程检查不合规是否报错(true:报错并抛出警告，程序终止；false:不报错，但会警告，计算继续)
 true                             TMDCentrifugal       -  是否考虑叶片离心力（叶片建议考虑，否则警告！）                    
 
 ----------------------  TOWER TMDI [used only TowerTMDI=true]  -------------------
-8                                 TMDIdx              - 惯容器安装位置(从塔架底部为编号1开始计算)
+8                                 InterIdx              - 惯容器安装位置(从塔架底部为编号1开始计算)
+-1                                MassIdx             - 质量器与阻尼器的位置(-1表示顶部，从塔架底部为编号1开始计算)
 1                                TMDDir                 - TMD的运动方向{0：SS，1：FA}{1.300728358697235,1.300728358697235}
 0.5,0.5                       TMDStation                - 阻尼器的前后限位比率{前、后}
 3.8507e+05              TMDm0                      - 阻尼器的上部质量(机舱、轮毂、叶片的质量和，设置为0则系统会自动计算)
@@ -20,8 +21,9 @@ true                             TMDCentrifugal       -  是否考虑叶片离�
 
 
 ----------------------  BLADE TMDI [used only BladeTMDI=true] -------------------
-
-1,1,1                                  TMDIdx              - 惯容器安装位置(从塔架底部为编号1开始计算)
+true                                    TMDCentrifugal       -  是否考虑离心力（叶片建议考虑，否则警告！）
+1,1,1                                  InterIdx              - 惯容器安装位置(从叶根为编号1开始计算)
+-1                                       MassIdx             - 质量器与阻尼器的位置(-1表示叶尖，从叶根为编号1开始计算)
 0,0,0                                  TMDDir                 - TMD的运动方向{0：SS，1：FA}(1.12,0.6966)
 0.5,0.5                               TMDStation                - 阻尼器的截面安装位置
 900,900,900                          TMDm0                      - 阻尼器的上部质量(机舱、轮毂、叶片的质量和，设置为0则系统会自动计算)

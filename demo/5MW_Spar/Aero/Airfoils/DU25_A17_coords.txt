@@ -1,4 +1,4 @@
-        400   NumCoords         ! The number of coordinates in the airfoil shape file (including an extra coordinate for airfoil reference).  Set to zero if coordinates not included.
+        400   NumCoords         ! 翼型形状文件中的坐标数（包括用于翼型参考的额外坐标）如果不包括坐标，则设置为零
 ! ......... x-y coordinates are next if NumCoords > 0 .............
 ! x-y coordinate of airfoil reference
 !  x/c        y/c

@@ -1,14 +1,14 @@
 OpenWECD: 
   Information: 
-    YMLVersion: 2.0.0
+    YMLVersion: 2.0.013
     Auther: YML 模块由赵子祯独立开发 @copyright
-    最后修改时间: 2025/1/15 23:22:07
+    最后修改时间: 06/14/2025 21:50:20
   OpenHAST: 
     HAST: 
       MainfilePath: G:\2026\HawtC2\demo\5MW_Spar\HawtC2_5MW_PowerProduction_Spar.hst
-      MainfilesPathData: [ ------- OpenWECD  主文件 ------------------------------------------- , 5MW_PowerProduction_Spar , ---------------------- SIMULATION CONTROL --------------------------------------  , 2000                    TMax         - 总的仿真时长 , 0.05                   DT           - 仿真的时间间隔 , 1                      InterpOrder  - 插值方法 {0：线性插值，1：非线性插值} , true                   AeroElastic  - 是否考虑叶片的气动弹性 , false                  AfShowlog    - 是否在仿真的过程当中输出叶片的转矩和转速以及变桨信息 , 50                     Dtput        - 多少个DT_Out，输出一次时间（） , 4                      SimulateType -  {1=Performance Coefficients;2=Steady Power Curve and load;3=Steady Parked Loads;4=Power Production;5=Idirng;6=Parked} , 0                       PresetTime   - 一般的，积分器的前几秒会因为刚刚进入仿真而不稳定，该时间为稳定时间 , ---------------------- WINDTURBINE CONTROL ------------------------------------- , 2                      WTType       - 风力机类型{0：陆上固定式，1：SubFEML(地震等模拟),2:HydroL 海上漂浮式} , 3                      Solver       - {0：RK2,1:RK4,2:HHT-α,3：HOFG-4，4：CrankNicolson，5：staRK4（稳定但是速度极其缓慢！）) , 1                      LinSolver    - {0:Mathnet 默认求解器,1:自己写的共轭梯度法求解器，理论上有更快的求解速度} , ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------- , 9.81                   Gravity     - 重力加速度 (m/s^2) , 1.225                  AirDens     - 空气密度 (kg/m^3) , 1025                   WtrDens     - 水密度 (kg/m^3) , 1.464e-05              KinVisc     - 流体的运动粘度 (m^2/s) , 335                    SpdSound    - 声速 (m/s) , 320                    WtrDpth     - 水深 (m) , 0                      MSL2SWL     - 静水水位与平均海平面之间的偏移量(m) [positive upward] , ---------------------- INPUT FILES --------------------------------------------- , "./MBD2/HawtC2_MBD_Mainv2_5MW.dat"        MBDFile          - MBD 输入文件 , "./Wind/HawtC2_WindL_Main_5MW.dat"        windFile         - windL 输入文件 , "./Aero/HawtC2_AeroL_Main_5MW.dat"        AeroFile         - AeroL 输入文件 , "./ControL/HawtC2_ControlL_Main_5MW.dat"  ControlFile      - ControL 输入文件 , "./Hydro/HawtC2_HydroL_Main_5MW.dat"      HydroLFile       - HydroL输入文件 , "./OpenWECD_HydroL_Main_5MW.dat"          SubFEMLFile      - SubFEML输入文件 ,  , ----------------------  HAST VTK  --------------------------------- , false                            AfVTK                   - 是否开启 VTK 输出 , 0.8                              DT_VTK                  - 每多少s输出一个VTK文件（最小为DT,越小的DT_VTK以为着越高的帧率） , 2                                VTK_type                - VTK 的输出类型 {1:表示输出体类型 2：表示输出点线类型，线类型支持更高的帧率} , 1,4,7,8                          VTK_outlist             - VTK 显示的在节点上的数据{1：运动位移 2：运动速度 3：运动加速度 4：FX 5:Fy 6:Fz_Load 7:Mx 8:My 9:Mz} , 150                              VTK_SideNum             - VTK 描述模型柱体的侧面节点数量，越大越接近真实体的描述 , true                             VTK_Ground              - VTK 是否输出陆地或者海面 ,  , ----------------------  EmailSet  --------------------------------- , false                            AfEmail                 - 是否开启Email , 2                                ReMailNum               - 接收邮箱的数量 , "smtp.qq.com"                    Host                    - SMTP服务器 , 587                              Port                    - 端口号 , "wjvgdqoenbrbcbge"               SMIPServiceCode         - 服务器秘钥 , "1821216780@qq.com"              SendMailbox             - 秘钥对应的邮箱 , "1821216780@qq.com"              RecipientMail           - 接收邮箱，可以设置多个 ,  , ---------------------- OUTPUT -------------------------------------------------- , 0.001                                          DT_Out      - 每多少s输出一个数据（if DT_Out<0.0125 , DT_Out=DT） , 0                                              TStart      - 什么时候开始输出数据 , 0                                              OutType     - 输出的文件类型{0：文本形式；1：二进制形式} , "./TESTRES/Openhast_5MW_PowerProduction_SparV7cMBD2/"  SumPath     - 输出文件的路径 ]
-      modelname: 5MW_PowerProduction_Spar
-      TMax: 2000
+      MainfilesPathData: [ ------- OpenWECD  主文件 ------------------------------------------- , 5MW_PowerProduction_Spar2 , ---------------------- SIMULATION CONTROL --------------------------------------  , 150                     TMax         - 总的仿真时长 , 0.05                   DT           - 仿真的时间间隔 , 1                      InterpOrder  - 插值方法 {0：线性插值，1：非线性插值} , true                   AeroElastic  - 是否考虑叶片的气动弹性 , false                  AfShowlog    - 是否在仿真的过程当中输出叶片的转矩和转速以及变桨信息 , 50                     Dtput        - 多少个DT_Out，输出一次时间（） , 4                      SimulateType -  {1=Performance Coefficients;2=Steady Power Curve and load;3=Steady Parked Loads;4=Power Production;5=Idirng;6=Parked} , 0                      PresetTime   - 一般的，积分器的前几秒会因为刚刚进入仿真而不稳定，该时间为稳定时间 , ---------------------- WINDTURBINE CONTROL ------------------------------------- , 2                      WTType       - 风力机类型{0：陆上固定式，1：SubFEML(地震等模拟),2:HydroL 海上漂浮式} , 3                      Solver       - {0：RK2,1:RK4,2:HHT-α,3：HOFG-4，4：CrankNicolson，5：staRK4（稳定但是速度极其缓慢！）) , 1                      LinSolver    - {0:Mathnet 默认求解器,1:自己写的共轭梯度法求解器，理论上有更快的求解速度} , false                  Linearization - {true:开启模型线性化的功能，否则关闭} ,                   , ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------- , 9.81                   Gravity     - 重力加速度 (m/s^2) , 1.225                  AirDens     - 空气密度 (kg/m^3) , 1025                   WtrDens     - 水密度 (kg/m^3) , 1.464e-05              KinVisc     - 流体的运动粘度 (m^2/s) , 335                    SpdSound    - 声速 (m/s) , 320                    WtrDpth     - 水深 (m) , 0                      MSL2SWL     - 静水水位与平均海平面之间的偏移量(m) [positive upward] ,  , ---------------------- INPUT FILES --------------------------------------------- , "./MBD2/HawtC2_MBD_Mainv2_5MW.dat"        MBDFile          - MBD 输入文件 , "./Wind/HawtC2_WindL_Main_5MW.dat"        windFile         - windL 输入文件 , "./Aero/HawtC2_AeroL_Main_5MW.dat"        AeroFile         - AeroL 输入文件 , "./ControL/HawtC2_ControlL_Main_5MW.dat"  ControlFile      - ControL 输入文件 , "./Hydro/HawtC2_HydroL_Main_5MW.dat"      HydroLFile       - HydroL输入文件 , "./OpenWECD_HydroL_Main_5MW.dat"          SubFEMLFile      - SubFEML输入文件 , "./MLinL/HawtC2_MLinL_Main_5MW.dat"       MlinLFile        - MlinL 输入文件 ,  , ----------------------  HAST VTK  --------------------------------- , false                             AfVTK                   - 是否开启 VTK 输出 , 0.05                             DT_VTK                  - 每多少s输出一个VTK文件（最小为DT,越小的DT_VTK以为着越高的帧率） , 2                                VTK_type                - VTK 的输出类型 {1:表示输出体类型 2：表示输出点线类型，线类型支持更高的帧率} , 1,4,7,8                          VTK_outlist             - VTK 显示的在节点上的数据{1：运动位移 2：运动速度 3：运动加速度 4：FX 5:Fy 6:Fz_Load 7:Mx 8:My 9:Mz} , 150                              VTK_SideNum             - VTK 描述模型柱体的侧面节点数量，越大越接近真实体的描述 , true                             VTK_Ground              - VTK 是否输出陆地或者海面 ,  , ----------------------  EmailSet  --------------------------------- , false                            AfEmail                 - 是否开启Email , 2                                ReMailNum               - 接收邮箱的数量 , "smtp.qq.com"                    Host                    - SMTP服务器 , 587                              Port                    - 端口号 , "wjvgdqoenbrbcbge"               SMIPServiceCode         - 服务器秘钥 , "1821216780@qq.com"              SendMailbox             - 秘钥对应的邮箱 , "1821216780@qq.com"              RecipientMail           - 接收邮箱，可以设置多个 ,  , ---------------------- OUTPUT -------------------------------------------------- , 0.001                                          DT_Out      - 每多少s输出一个数据（if DT_Out<0.0125 , DT_Out=DT） , 0                                              TStart      - 什么时候开始输出数据 , 0                                              OutType     - 输出的文件类型{0：文本形式；1：二进制形式} , "./TESTRES/Openhast_5MW_PowerProduction_SparV7cMBD2/"  SumPath     - 输出文件的路径 ]
+      modelname: 5MW_PowerProduction_Spar2
+      TMax: 150
       DT: 0.05
       InterpOrder: 1
       AfShowlog: False
@@ -21,6 +21,7 @@ OpenWECD:
       Solver: HOFG_4
         enumvalue: 3
       LinSolver: 1
+      Linearization: False
       MathAcc: 0
       Gravity: 9.81
       AirDens: 1.225
@@ -49,7 +50,7 @@ OpenWECD:
       SumPath: G:\2026\HawtC2\demo\5MW_Spar\TESTRES\Openhast_5MW_PowerProduction_SparV7cMBD2\
     AeroL: 
       AeroLfilepath: G:\2026\HawtC2\demo\5MW_Spar\Aero\HawtC2_AeroL_Main_5MW.dat
-      AerolData: [ ------- OpenWECD.AeroL  主文件 v1.02.* This software design and writen By 赵子祯 ------------------------------------------------ , NREL 5.MW offshore baseline Powercurve , ======  计算选项   =================================================================================== , 2           ApOfMb             - 计算选项{0=外部调用将读取塔架叶片等模型参数，1=计算叶片Cp,2=计算叶片的功率，推力等变桨曲线表} ,  , ======  风力机叶片和塔基信息   ===================================== [used only when ApOfMb=0，1 and 2] , 1.5          HubRad              - 轮毂半径 , 3             Bldnum              - 叶片数量（非常重要!） ,  , ======  模型选项  ============================================================================ ,         2  WakeMod           - 气动力计算模型 {0=none, 1=SBEMT, 2=DBEMT,3=FreeWake,4=SBEMT_UMT,5=DBEMT_UMT} ,           1    AFAeroMod        - 动态失速模型 {1=steady model, 2=BL ，3=Øye ，4=IAG，5=GOR，6=ATEF}(使用BEMT方法的时候不建议使用ATEF模型) , false        TwrShadow        - 是否考虑塔影效应对叶片气动力的影响(flag) , false        TwrAero              - 是否计算塔架的气动力 (flag) , true        NacAero              - 是否计算机舱/(轮毂)的气动力 (flag) ,  , ======  环境参数 =================================================================== ,       1.225   AirDens            -  空气密度 (kg/m^3) ,   1.464E-05   KinVisc         -  客气运动粘度 (m^2/s) ,         335   SpdSound         -  声速 (m/s) ,  , ======  BEM 气动力计算参数  ====================================================== [used only when WakeMod=1] , 1                 SkewMod               - 偏斜尾流修正模型类型(switch) {1=uncoupled, 2=Pitt/Peters, 3=coupled} [unused when WakeMod=1 or 2] , default       SkewModFactor    - Pitt/Peters斜尾流模型中使用的常数 {or "default" is 15/32*pi} (-) [used only when SkewMod=2; unused when WakeMod=0 or 3] , True          TipLoss                   - 普朗特（Prandtl）叶尖损失模型 [used only when WakeMod=1] , True          HubLoss                 - 普朗特（Prandtl）叶根损失模型 (flag) [used only when WakeMod=1] , 1E-15        BemtError               - 叶素动量理论的迭代误差要求 [used only when WakeMod=1] , 300            MaxIter                    - 最大迭代步数 (-) [used only when WakeMod=1] ,  , ======  B-L 动态失速模型参数  ===================================== [used only when AFAeroMod=2] ,           3      UAMod              - Unsteady Aero Model Switch (switch) {1=Baseline model (Original), 2=Gonzalez s variant (changes in Cn,Cc,Cm), 3=Minemma/Pierce variant (changes in Cc and Cm)} [used only when AFAeroMod=2] , True          FLookup            - Flag to indicate whether a lookup for f' will be calculated (TRUE) or whether best-fit exponential equations will be used (FALSE); if FALSE S1-S4 must be provided in airfoil input files (flag) [used only when AFAeroMod=2] ,  , ======  自由涡尾迹模型(Free Vortex Wake)  ================== [used only when WakeMod=2] , "../IEA-5-240-RWT-OLAF/IEA-15-240-RWT_OLAF.dat"  OLAFInputFileName - Input file for OLAF [used only when WakeMod=2] ,  , ======  Rotor/Blade Properties  ===================================================================== , True          UseBlCm            - 在计算中包括气动俯仰力矩  (flag) , "../MBD2/HawtC2_MBD_blade_AMM.str"    ADBlFile(1)        - 叶片气动结构耦合文件路径 , "../MBD2/HawtC2_MBD_blade_AMM.str"    ADBlFile(2)        - 叶片气动结构耦合文件路径 , "../MBD2/HawtC2_MBD_blade_AMM.str"    ADBlFile(3)        - 叶片气动结构耦合文件路径 ,  , ======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True] , "../MBD2/HawtC2_MBD_tower_AMM.str"    ADTwrFile - 塔架气动结构耦合文件路径 ,  , ======  翼型信息 ========================================================================= ,           8   NumAFfiles         - Number of airfoil files used (-) ,  1    InterpOrd  - Interpolation order to use for quasi-steady table lookup {1=linear; 2=cubic spline; "default"} [default=1] , "./Airfoils/Cylinder1.dat"    AFNames            - Airfoil file names (NumAFfiles lines) (quoted strings)#填写完整的路径,既绝对路径 , "./Airfoils/Cylinder2.dat" , "./Airfoils/DU40_A17.dat" , "./Airfoils/DU35_A17.dat" , "./Airfoils/DU30_A17.dat" , "./Airfoils/DU25_A17.dat" , "./Airfoils/DU21_A17.dat" , "./Airfoils/NACA64_A17.dat" ,  , ======  计算Cp曲线  ===================================== [used only when ApOfMb=1] , 3             Minlamda            - 最小的叶尖速比 , 25            Maxlamda            - 最大的叶尖速比 , 0.1           lamdaStep           - 叶尖速比的间隔 , -0.1          MinPitch            - 最小的变桨角[rad] , 1.57          MaxPitch            - 最大的变桨角[rad] , 0.005          PitchStep           - 变桨角的间隔[rad] , "./Result/test_AeroL_cp.out"                     CpResultFilePath   - 计算Cp曲线的结果文件 ,  , ======  计算功率曲线  ===================================== [used only when ApOfMb=2] , 3             MinWindSpeed            - 最小风速[m/s] , 25            MaxWindSpeed            - 最大风速[m/s] , 0.01          WindSpeedStep           - 风速间隔[m/s] , 0.0           orig_pit                - 初始桨距角[rad] , 3             ωmin                    - 切入转速[rpm/min] , 5000          opt_KW                  - 额定功率[kw]</param> , 13            opt_rpm_rad             - 额定转速[rpm/min] , 96            η                       - 发电机效率% , 1.57          pitch_up                - 最大桨距角[rad] , 0.0           pitch_down              - 最小桨距角[rad] , True          ifpitch                 - 是否变桨 , 0.0           Fixed_pitch             - 固定桨距角[rad][used only when ifpitch=false] , 0.0           Fixed_rotationalspeed   - 固定转速[rpm/min][used only when ifpitch=false] , "./Result/test_AeroL_PowerCurve.out"                     PowerCurveResultFilePath   - 计算功率曲线的结果文件目录 ,  , ======  Outputs  ==================================================================================== , true                                       SumPrint  - 是否生成AeroL输出文件 "<rootname>.AL.out"?  (flag) , false                                        AfSpanput - 输出模式选择是节点·还是变量。如果是节点将生成下面节点数量的文件，否则生成输出变量个数的文件。当前先支持输出节点。 , 0                                            BldOutSig - 输出的叶片编号，默认只有0 , "./Result1/"                                SumPath   - 生成的文件夹名称，注意是文件夹！ , 7                                           NBlOuts   - Number of blade node outputs [0 - BlOutNd-1] (-) , 0,4,5,9,13,16,18               BlOutNd   - Blade nodes whose values will be output  (-)（从0开确实算） , 3                                           NTwOuts   - Number of tower node outputs [0 - BlOutNd-1]  (-) , 1,          1,        5                     TwOutNd   - Tower nodes whose values will be output  (-)（从0开确实算） ,                    OutList                  - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-) , "BkNjPhi", , "BkNjFl" , "BkNjFd" , "BkNjMm" , "BkNjVRel" , "RtArea" , "RtAeroCp" , "RtAeroCq" , "RtAeroCt" , BkNjVUndx , BkNjVUndy , BkNjVUndz , BkNjVDisx , BkNjVDisy , BkNjVDisz , BkNjSTVx , BkNjSTVy , BkNjSTVz , BkNjTheta , BPitch , BkNjAxInd , BkNjTnInd , BAzimuth ,  ,  ,  ,  ,  ,  ,  ,  , END 不允许删除！ , --------------------------------------------------------------------------------------- ]
+      AerolData: [ ------- HawtC.AeroL  主文件 v1.02.* This software design and writen By 赵子祯 ------------------------------------------------ , NREL 5.MW offshore baseline Powercurve , ======  计算选项   =================================================================================== , 2           ApOfMb             - 计算选项{0=外部调用将读取塔架叶片等模型参数，1=计算叶片Cp,2=计算叶片的功率，推力等变桨曲线表} ,  , ======  风力机叶片和塔基信息   ===================================== [used only when ApOfMb=0，1 and 2] , 1.5          HubRad              - 轮毂半径 , 3             Bldnum              - 叶片数量（非常重要!） ,  , ======  模型选项  ============================================================================ ,         2  WakeMod           - 气动力计算模型 {0=none, 1=SBEMT, 2=DBEMT,3=FreeWake,4=SBEMT_UMT,5=DBEMT_UMT} ,           1    AFAeroMod        - 动态失速模型 {1=steady model, 2=BL ，3=Øye ，4=IAG，5=GOR，6=ATEF}(使用BEMT方法的时候不建议使用ATEF模型) ,           0     3DRotationalEffect   - 三维旋转效应模型{0=不考虑旋转效应，1=Snel模型} , false        TwrShadow        - 是否考虑塔影效应对叶片气动力的影响(flag) , false        TwrAero              - 是否计算塔架的气动力 (flag) , true        NacAero              - 是否计算机舱/(轮毂)的气动力 (flag) ,  , ======  环境参数 =================================================================== ,       1.225   AirDens            -  空气密度 (kg/m^3) ,   1.464E-05   KinVisc         -  客气运动粘度 (m^2/s) ,         335   SpdSound         -  声速 (m/s) ,  , ======  BEM 气动力计算参数  ====================================================== [used only when WakeMod=1] , 1                 SkewMod               - 偏斜尾流修正模型类型(switch) {1=uncoupled, 2=Pitt/Peters, 3=coupled} [unused when WakeMod=1 or 2] , default       SkewModFactor    - Pitt/Peters斜尾流模型中使用的常数 {or "default" is 15/32*pi} (-) [used only when SkewMod=2; unused when WakeMod=0 or 3] , True          TipLoss                   - 普朗特（Prandtl）叶尖损失模型 [used only when WakeMod=1] , True          HubLoss                 - 普朗特（Prandtl）叶根损失模型 (flag) [used only when WakeMod=1] , 1E-15        BemtError               - 叶素动量理论的迭代误差要求 [used only when WakeMod=1] , 300            MaxIter                    - 最大迭代步数 (-) [used only when WakeMod=1] ,  , ======  B-L 动态失速模型参数  ===================================== [used only when AFAeroMod=2] ,           3      UAMod              - Unsteady Aero Model Switch (switch) {1=Baseline model (Original), 2=Gonzalez s variant (changes in Cn,Cc,Cm), 3=Minemma/Pierce variant (changes in Cc and Cm)} [used only when AFAeroMod=2] , True          FLookup            - Flag to indicate whether a lookup for f' will be calculated (TRUE) or whether best-fit exponential equations will be used (FALSE); if FALSE S1-S4 must be provided in airfoil input files (flag) [used only when AFAeroMod=2] ,  , ======  自由涡尾迹模型(Free Vortex Wake)  ================== [used only when WakeMod=2] , "../IEA-5-240-RWT-OLAF/IEA-15-240-RWT_OLAF.dat"  OLAFInputFileName - Input file for OLAF [used only when WakeMod=2] ,  , ======  Rotor/Blade Properties  ===================================================================== , True          UseBlCm            - 在计算中包括气动俯仰力矩  (flag) , "../MBD2/HawtC2_MBD_blade_AMM.str"    ADBlFile(1)        - 叶片气动结构耦合文件路径 , "../MBD2/HawtC2_MBD_blade_AMM.str"    ADBlFile(2)        - 叶片气动结构耦合文件路径 , "../MBD2/HawtC2_MBD_blade_AMM.str"    ADBlFile(3)        - 叶片气动结构耦合文件路径 ,  , ======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True] , "../MBD2/HawtC2_MBD_tower_AMM.str"    ADTwrFile - 塔架气动结构耦合文件路径 ,  , ======  翼型信息 ========================================================================= ,           8   NumAFfiles         - Number of airfoil files used (-) ,  1    InterpOrd  - Interpolation order to use for quasi-steady table lookup {1=linear; 2=cubic spline; "default"} [default=1] , "./Airfoils/Cylinder1.dat"    AFNames            - Airfoil file names (NumAFfiles lines) (quoted strings)#填写完整的路径,既绝对路径 , "./Airfoils/Cylinder2.dat" , "./Airfoils/DU40_A17.dat" , "./Airfoils/DU35_A17.dat" , "./Airfoils/DU30_A17.dat" , "./Airfoils/DU25_A17.dat" , "./Airfoils/DU21_A17.dat" , "./Airfoils/NACA64_A17.dat" ,  , ======  计算Cp曲线  ===================================== [used only when ApOfMb=1] , 3             Minlamda            - 最小的叶尖速比 , 25            Maxlamda            - 最大的叶尖速比 , 0.1           lamdaStep           - 叶尖速比的间隔 , -0.1          MinPitch            - 最小的变桨角[rad] , 1.57          MaxPitch            - 最大的变桨角[rad] , 0.005          PitchStep           - 变桨角的间隔[rad] , "./Result/test_AeroL_cp.out"                     CpResultFilePath   - 计算Cp曲线的结果文件 ,  , ======  计算功率曲线  ===================================== [used only when ApOfMb=2] , 3             MinWindSpeed            - 最小风速[m/s] , 25            MaxWindSpeed            - 最大风速[m/s] , 0.01          WindSpeedStep           - 风速间隔[m/s] , 0.0           orig_pit                - 初始桨距角[rad] , 3             ωmin                    - 切入转速[rpm/min] , 5000          opt_KW                  - 额定功率[kw]</param> , 13            opt_rpm_rad             - 额定转速[rpm/min] , 96            η                       - 发电机效率% , 1.57          pitch_up                - 最大桨距角[rad] , 0.0           pitch_down              - 最小桨距角[rad] , True          ifpitch                 - 是否变桨 , 0.0           Fixed_pitch             - 固定桨距角[rad][used only when ifpitch=false] , 0.0           Fixed_rotationalspeed   - 固定转速[rpm/min][used only when ifpitch=false] , "./Result/test_AeroL_PowerCurve.out"                     PowerCurveResultFilePath   - 计算功率曲线的结果文件目录 ,  , ======  Outputs  ==================================================================================== , true                                       SumPrint  - 是否生成AeroL输出文件 "<rootname>.AL.out"?  (flag) , false                                        AfSpanput - 输出模式选择是节点·还是变量。如果是节点将生成下面节点数量的文件，否则生成输出变量个数的文件。当前先支持输出节点。 , 0                                            BldOutSig - 输出的叶片编号，默认只有0 , "./Result1/"                                SumPath   - 生成的文件夹名称，注意是文件夹！ , 7                                           NBlOuts   - Number of blade node outputs [0 - BlOutNd-1] (-) , 0,4,5,9,13,16,18               BlOutNd   - Blade nodes whose values will be output  (-)（从0开确实算） , 3                                           NTwOuts   - Number of tower node outputs [0 - BlOutNd-1]  (-) , 1,          1,        5                     TwOutNd   - Tower nodes whose values will be output  (-)（从0开确实算） ,                    OutList                  - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-) , "BkNjPhi", , "BkNjFl" , "BkNjFd" , "BkNjMm" , "BkNjVRel" , "RtArea" , "RtAeroCp" , "RtAeroCq" , "RtAeroCt" , BkNjVUndx , BkNjVUndy , BkNjVUndz , BkNjVDisx , BkNjVDisy , BkNjVDisz , BkNjSTVx , BkNjSTVy , BkNjSTVz , BkNjTheta , BPitch , BkNjAxInd , BkNjTnInd , BAzimuth ,  ,  ,  ,  ,  ,  ,  ,  , END 不允许删除！ , --------------------------------------------------------------------------------------- ]
       ApOfMb: 0
       HubRad: 1.5
       Bldnum: 3
@@ -57,6 +58,8 @@ OpenWECD:
         enumvalue: 2
       AFAeroMod: SteadyModel
         enumvalue: 1
+      ThreeDRotationalEffect: None
+        enumvalue: 0
       TwrShadow: False
       TwrAero: False
       NacAero: True
@@ -4325,7 +4328,7 @@ OpenWECD:
          -  [ 20 , 11 ]
       SumPrint: True
       BldOutSig: [ 0 , 2 ]
-      SumPath: ./Result1/
+      SumPath: G:\2026\HawtC2\demo\5MW_Spar\Wind\Result1\
       NBlOuts: 18
       BlOutNd: [ 0 , 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 ]
       NTwOuts: 10
@@ -4673,82 +4676,82 @@ OpenWECD:
       PtfmPDOF: False
       PtfmYDOF: False
       AfTMDI: False
-      TwrTMDI: 
-        Length: 1
-        Item_0: 
-          AfOn: False
-          TMD_Idx: 0
-          TMD_m_dummy_TSS1: 0
-          TMDMassRatio: 0
-          TMDFreqfac: 0
-          TMDbeta: 0
-          TMDDir: 0
-          TMDOpt: False
-          TMDOptMaxItr: 0
-          TMDTuningRat: 0
-          TMDzeta_TMD: 0
-          TMDI_phi: 0
-          TMDI_b: 0
-          TMDI_mTMD: 0
-          TMDI_f1_TMD: 0
-          TMDI_k_TMD: 0
-          TMDI_H_I: 0
-      BldTMDI: 
-        Length: 3
-        Item_0: 
-          AfOn: False
-          TMD_Idx: 0
-          TMD_m_dummy_TSS1: 0
-          TMDMassRatio: 0
-          TMDFreqfac: 0
-          TMDbeta: 0
-          TMDDir: 0
-          TMDOpt: False
-          TMDOptMaxItr: 0
-          TMDTuningRat: 0
-          TMDzeta_TMD: 0
-          TMDI_phi: 0
-          TMDI_b: 0
-          TMDI_mTMD: 0
-          TMDI_f1_TMD: 0
-          TMDI_k_TMD: 0
-          TMDI_H_I: 0
-        Item_1: 
-          AfOn: False
-          TMD_Idx: 0
-          TMD_m_dummy_TSS1: 0
-          TMDMassRatio: 0
-          TMDFreqfac: 0
-          TMDbeta: 0
-          TMDDir: 0
-          TMDOpt: False
-          TMDOptMaxItr: 0
-          TMDTuningRat: 0
-          TMDzeta_TMD: 0
-          TMDI_phi: 0
-          TMDI_b: 0
-          TMDI_mTMD: 0
-          TMDI_f1_TMD: 0
-          TMDI_k_TMD: 0
-          TMDI_H_I: 0
-        Item_2: 
-          AfOn: False
-          TMD_Idx: 0
-          TMD_m_dummy_TSS1: 0
-          TMDMassRatio: 0
-          TMDFreqfac: 0
-          TMDbeta: 0
-          TMDDir: 0
-          TMDOpt: False
-          TMDOptMaxItr: 0
-          TMDTuningRat: 0
-          TMDzeta_TMD: 0
-          TMDI_phi: 0
-          TMDI_b: 0
-          TMDI_mTMD: 0
-          TMDI_f1_TMD: 0
-          TMDI_k_TMD: 0
-          TMDI_H_I: 0
+      MBDTMD: 
+        CheckDamperStroke: False
+        ErrorDamperStroke: False
+        TMDCentrifugal: False
+        TwrTMDI: 
+          Length: 1
+          Item_0: 
+            AfOn: False
+            InterIdx: 0
+            MassIdx: 0
+            TMDDir: 0
+            TMDm0: 0
+            TMDμ: 0
+            TMDωt: 0
+            TMDωr: 0
+            TMDβ: 0
+            TMDCd: 0
+            TMDI_phi: 0
+            TMDI_b: 0
+            TMDI_md: 0
+            TMDI_ωd: 0
+            TMDI_kd: 0
+            TMDI_ζd: 0
+        BldTMDI: 
+          Length: 3
+          Item_0: 
+            AfOn: False
+            InterIdx: 0
+            MassIdx: 0
+            TMDDir: 0
+            TMDm0: 0
+            TMDμ: 0
+            TMDωt: 0
+            TMDωr: 0
+            TMDβ: 0
+            TMDCd: 0
+            TMDI_phi: 0
+            TMDI_b: 0
+            TMDI_md: 0
+            TMDI_ωd: 0
+            TMDI_kd: 0
+            TMDI_ζd: 0
+          Item_1: 
+            AfOn: False
+            InterIdx: 0
+            MassIdx: 0
+            TMDDir: 0
+            TMDm0: 0
+            TMDμ: 0
+            TMDωt: 0
+            TMDωr: 0
+            TMDβ: 0
+            TMDCd: 0
+            TMDI_phi: 0
+            TMDI_b: 0
+            TMDI_md: 0
+            TMDI_ωd: 0
+            TMDI_kd: 0
+            TMDI_ζd: 0
+          Item_2: 
+            AfOn: False
+            InterIdx: 0
+            MassIdx: 0
+            TMDDir: 0
+            TMDm0: 0
+            TMDμ: 0
+            TMDωt: 0
+            TMDωr: 0
+            TMDβ: 0
+            TMDCd: 0
+            TMDI_phi: 0
+            TMDI_b: 0
+            TMDI_md: 0
+            TMDI_ωd: 0
+            TMDI_kd: 0
+            TMDI_ζd: 0
       SumPrint: True
       AfSpanput: True
       BldOutSig: [ 0 , 2 ]
@@ -4760,7 +4763,7 @@ OpenWECD:
       Outputs_OutList: [ QD2_B1E1 , QD2_B1F1 , QD2_B1F2 , QD2_B2E1 , QD2_B2F1 , QD2_B2F2 , QD2_B3E1 , QD2_B3F1 , QD2_B3F2 , QD2_DRTR , QD2_GEAZ , QD2_HV , QD2_P , QD2_R , QD2_RFRL , QD2_SG , QD2_SW , QD2_TFA1 , QD2_TFA2 , QD2_TFRL , QD2_TSS1 , QD2_TSS2 , QD2_Y , QD2_YAW , QD_B1E1 , QD_B1F1 , QD_B1F2 , QD_B2E1 , QD_B2F1 , QD_B2F2 , QD_B3E1 , QD_B3F1 , QD_B3F2 , QD_DRTR , QD_GEAZ , QD_HV , QD_P , QD_R , QD_RFRL , QD_SG , QD_SW , QD_TFA1 , QD_TFA2 , QD_TFRL , QD_TSS1 , QD_TSS2 , QD_Y , QD_YAW , Q_B1E1 , Q_B1F1 , Q_B1F2 , Q_B2E1 , Q_B2F1 , Q_B2F2 , Q_B3E1 , Q_B3F1 , Q_B3F2 , Q_DRTR , Q_GEAZ , Q_HV , Q_P , Q_R , Q_RFRL , Q_SG , Q_SW , Q_TFA1 , Q_TFA2 , Q_TFRL , Q_TSS1 , Q_TSS2 , Q_Y , Q_YAW , Q_TTMD , QD_TTMD , QD2_TTMD , OoPDefl , IPDefl , TipDzb , TipDxb , TipDyb , Tip2Twr , SpnTDxb , SpnTDyb , SpnTDzb , SpnRDxb , SpnRDyb , SpnRDzb , BlPitch , Azimuth , RotSpeed , RotAccel , GenSpeed , GenAccel , NcIMUTVxs , NcIMUTVys , NcIMUTVzs , NacYaw , YawRate , YawAccel , TTDspFA , TTDspSS , TTDspAx , TwHtALxt , TwHtALyt , TwHtALzt , TwHtTDxt , TwHtTDyt , TwHtTDzt , PtfmTDxt , PtfmTDyt , PtfmTDzt , PtfmSurge , PtfmSway , PtfmHeave , PtfmRoll , PtfmPitch , PtfmYaw , RootFxc , RootFyc , RootFzc , RootFxb , RootFyb , RootMxc , RootMyc , RootMzc , RootMxb , RootMyb , SpnMLxb , SpnMLyb , SpnMLzb , SpnFLxb , SpnFLyb , SpnFLzb , RotThrust , LSShftFya , LSShftFza , LSShftFys , LSShftFzs , LSShftTq , RotPwr , LSSGagMya , LSSGagMza , LSSGagMys , LSSGagMzs , HSShftTq , HSSBrTq , HSShftPwr , HSSGenPwr , YawBrFxn , YawBrFyn , YawBrFzn , YawBrFxp , YawBrFyp , YawBrMxn , YawBrMyn , YawBrMzn , YawBrMxp , YawBrMyp , TwrBsFxt , TwrBsFyt , TwrBsFzt , TwrBsMxt , TwrBsMyt , TwrBsMzt , TwHtMLxt , TwHtMLyt , TwHtMLzt , TwHtFLxt , TwHtFLyt , TwHtFLzt , PtfmFxt , PtfmFyt , PtfmFzt , PtfmFxi , PtfmFyi , PtfmFzi , PtfmMxt , PtfmMyt , PtfmMzt , PtfmMxi , PtfmMyi , PtfmMzi ]
     HydroL: 
       filepath: G:\2026\HawtC2\demo\5MW_Spar\Hydro\HawtC2_HydroL_Main_5MW.dat
-      filedata: [ ------- OpenWECD.HydroL  主文件 V1.0.0  -------------------------------------------- , NREL 5.0 MW offshore baseline floating platform HydroDyn input properties for the OC3 Hywind. ,         1            HydroMod       - 水动力计算功能{0:生成波浪文件.wave ; 1:Spar 平台} , 	1            MoorLine       - 系泊系统的控制{0:不使用系泊系统1：MoorDyn,2:OpenMoor,3:MoorL} , ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------- ,           1025   WtrDens        - 水的密度 (kg/m^3) ,            320   WtrDpth        - 水深 (meters) ,              0   MSL2SWL        - 静止水位和平均海平面之间的偏移量(m) [正为上] , 	  9.81    GRAVACC        - 重力加速度 , ---------------------- CURRENT -------------------------------------------------  , 0,-80,-160,-240,-320                        CurrentCoordinate  - 不同深度位置是一个数组 , 0.609, 0.609, 0.609,0.609,0.609              CurrentVelocity    - 不同深度位置下的流速度，是一个数组，大小与CurrentCoordinate匹配 , 3                                            CurrentPolyOrder   - 拟合阶数 , ---------------------- WAVES --------------------------------------------------- ,              2   WaveMod        - 入射波运动学模型 {0: none=still water, 1: regular (periodic), 1P#: regular with user-specified phase, 2: JONSWAP，3：Pierson-Moskowitz spectrum (irregular):     ,            3000  WaveTMax       - 入射波计算的分析时间 (sec)  ,            0.05   WaveDT         - 入射波计算的时间步长 (sec)  ,             10	 WaveHs         - 入射波的有效波高 (meters)  ,             11   WaveTp         - 入射波峰值谱周期 Peak-spectral period of incident waves (sec)  ,             0    WavePkShp      - 入射波谱的峰形参数（-）[used when WaveMod==2,程序一般会自动给定，需要自动给定，将这个值设置为0]  ,          0.00001    WvLowCOff      - 波谱的低截止频率或波谱的频率下限，超过该频率，波谱将归零 (rad/s)  ,            50    WvHiCOff       - 波谱的高截止频率或波谱的频率上限，超过该频率，波谱将归零 (rad/s)  , 	   120   WvNumCOff      - 波谱频率生成数量 (rad/s)  ,             0   WaveDir        - 入射波传播航向 (degrees)  ,      11111   WaveSeed       - 入射波的第一个随机种子[-2147483648 to 2147483647]    (-)       , TRUE             WaveNDAmp      - Flag for normally distributed amplitudes                            (flag)    [only used when WaveMod=2, 3, or 4]""               , 1                       FileGes   -  生成文件的格式{1: Matlab, 2: Binary, 3: MsExcle} , "E:\OpenhastV7\demo\HydroL\demo\test1mat.wave"        WvKinFile      - 外部生成的波数据文件的根名称(或者是要生成文件的绝对路径)(.wave)   如果为 "DEFAULT" 系统在计算时将读取上方参数，否则直接导入文件 , ---------------------- MoorLine ------------------------------------------------[used with MoorLine!=0] , "./Lines.dll"                             MoorLineDLL   -  外部调用的模块dll路径,openmoor填写"./HawtC.HydroL.MoorL.dll" ,MoorDYN填写"./Lines.dll"  , 0.01                                              MoorLineDT     - 调用MoorLine的时间步长 , "./NRELOffshrBsline5MW_HydroL_MoorDyn.dat"     MoorDynFile    - MoorDyn 和 MoorL 输入文件 , "./NRELOffshrBsline5MW_HydroL_OpenMoor.xml"	OpenMoorFile   - OpenMoorFile输入文件 , ---------------------- FLOATING PLATFORM --------------------------------------- [unused with WaveMod=6] ,             1                  PotMod         - Potential-flow model {0: none=no potential flow(不读取WvKinFile文件), 1: Wave 时域力，2：WAMIT file} ,      true                       ConRead       - Continue read wave file,if wave exceed time , "../5MW_Baseline/HydroData/Spar"    PotFile        -[PotMod==2] Root name of potential-flow model data; WAMIT output files containing the linear, nondimensionalized, hydrostatic restoring matrix (.hst), frequency-dependent hydrodynamic added mass matrix and damping matrix (.1), and frequency- and direction-dependent wave excitation force vector per unit wave amplitude (.3) (quoted string) [MAKE SURE THE FREQUENCIES INHERENT IN THESE WAMIT FILES SPAN THE PHYSICALLY-SIGNIFICANT RANGE OF FREQUENCIES FOR THE GIVEN PLATFORM; THEY MUST CONTAIN THE ZERO- AND INFINITE-FREQUENCY LIMITS!] ,              1                      WAMITULEN      -[PotMod==2]Characteristic body length scale used to redimensionalize WAMIT output (meters) [only used when PotMod=2] ,        8029.21                      PtfmVol0       -[unuseful]Displaced volume of water when the platform is in its undisplaced position (m^3) [only used when PotMod=1; USE THE SAME VALUE COMPUTED BY WAMIT AS OUTPUT IN THE .OUT FILE!] ,              0                      PtfmCOBxt      -[unuseful]The xt offset of the center of buoyancy (COB) from the platform reference point (meters)  [only used when PotMod=1,2] ,              0                      PtfmCOByt      -[unuseful]The yt offset of the center of buoyancy (COB) from the platform reference point (meters)  [only used when PotMod=1,2] , ---------------------- PLATFORM ADDITIONAL STIFFNESS AND DAMPING  -------------- ,              0             0      80708100             0             0             0   AddF0    - 附加预应力 (N, N-m) ,              1             0             0             0             0             0   AddCLin  - 附加静水压力 (N/m, N/rad, N-m/m, N-m/rad) ,              0             1             0             0             0             0 ,              0             0             1             0             0             0 ,              0             0             0             1             0             0 ,              0             0             0             0             1             0 ,              0             0             0             0             0      98340000    ,              0             0 	         0 	           0 	         0 	           0  AddCHydr0 - 静水力矩阵(我也不知道是什么玩意) ,              0             0 	         0 	           0 	         0 	           0  ,              0 	           0 	    332941 	           0 	         0 	           0  ,              0 	           0 	         0       -4999180000 	     0 	           0  ,              0             0 	         0             0   -4999180000 	           0  ,              0             0 	         0 	           0 	         0 	           0  ,         100000             0             0             0             0             0   AddBLin  - 附加线性阻尼(N/(m/s), N/(rad/s), N-m/(m/s), N-m/(rad/s)) ,              0        100000             0             0             0             0 ,              0             0        130000             0             0             0 ,              0             0             0             0             0             0 ,              0             0             0             0             0             0 ,              0             0             0             0             0      13000000 , ---------------------- AXIAL COEFFICIENTS -------------------------------------- ,              2   NAxCoef        - 轴向系数数量(-) , AxCoefID  AxCd     AxCa     AxCp ,    (-)    (-)      (-)      (-) ,     1     0.60     0.969954     1.00 ,     1     0.60     0.969954     1.00 , ---------------------- MEMBER JOINTS[目前只支持Spar] ------------------------------------------- ,              4   NJoints        - Number of joints (-)   [must be exactly 0 or at least 2] , JointID   Jointxi     Jointyi     Jointzi  JointAxID   JointOvrlp   [JointOvrlp= 0: do nothing at joint, 1: eliminate overlaps by calculating super member] ,    (-)     (m)         (m)         (m)        (-)       (switch) ,     1     0.00000     0.00000  -120.00000      1            0 ,     2     0.00000     0.00000   -12.00000      1            0 ,     3     0.00000     0.00000    -4.00000      1            0 ,     4     0.00000     0.00000     10.00000      2           0 , ---------------------- MEMBER CROSS-SECTION PROPERTIES ------------------------- ,              2   NPropSets      - Number of member property sets (-) , PropSetID    PropD         PropThck ,    (-)        (m)            (m) ,     1        9.40000        0.00010 ,     2        6.50000        0.00010 ,  , ======  Outputs  ==================================================================================== , true                                       SumPrint  - 是否生成AeroL输出文件 "<rootname>.AL.out"?  (flag) , "./Result1/"                                SumPath   - 生成的文件夹名称，注意是文件夹！ , 7                                           NBlOuts   - Number of Plat node outputs [0 - BlOutNd-1] (-) , 0,4,5,9,13,16,18               BlOutNd   - Blade nodes whose values will be output  (-)（从0开确实算） ,                    OutList                  - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-) , HydroFxi , HydroFyi , HydroFzi , HydroMxi , HydroMyi , HydroMzi ,  , END 不允许删除！ ]
+      filedata: [ ------- OpenWECD.HydroL  主文件 V1.0.0  -------------------------------------------- , NREL 5.0 MW offshore baseline floating platform HydroDyn input properties for the OC3 Hywind. ,         1            HydroMod       - 水动力计算功能{0:生成波浪文件.wave ; 1:Spar 平台} , 	1            MoorLine       - 系泊系统的控制{0:不使用系泊系统1：MoorDyn,2:OpenMoor,3:MoorL} , ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------- ,           1025   WtrDens        - 水的密度 (kg/m^3) ,            320   WtrDpth        - 水深 (meters) ,              0   MSL2SWL        - 静止水位和平均海平面之间的偏移量(m) [正为上] , 	  9.81    GRAVACC        - 重力加速度 , ---------------------- CURRENT -------------------------------------------------  , 0,-80,-160,-240,-320                        CurrentCoordinate  - 不同深度位置是一个数组 , 0.609, 0.609, 0.609,0.609,0.609              CurrentVelocity    - 不同深度位置下的流速度，是一个数组，大小与CurrentCoordinate匹配 , 3                                            CurrentPolyOrder   - 拟合阶数 , ---------------------- WAVES --------------------------------------------------- ,              2   WaveMod        - 入射波运动学模型 {0: none=still water, 1: regular (periodic), 1P#: regular with user-specified phase, 2: JONSWAP，3：Pierson-Moskowitz spectrum (irregular):     ,            660   WaveTMax       - 入射波计算的分析时间 (sec)  ,            0.05   WaveDT         - 入射波计算的时间步长 (sec)  ,              6	 WaveHs         - 入射波的有效波高 (meters)  ,             10   WaveTp         - 入射波峰值谱周期 Peak-spectral period of incident waves (sec)  ,             3.3   WavePkShp      - 入射波谱的峰形参数（-）[used when WaveMod==2,程序一般会自动给定，需要自动给定，将这个值设置为0]  ,       0.00001    WvLowCOff      - 波谱的低截止频率或波谱的频率下限，超过该频率，波谱将归零 (rad/s)  ,            5    WvHiCOff       - 波谱的高截止频率或波谱的频率上限，超过该频率，波谱将归零 (rad/s)  , 	   480   WvNumCOff      - 波谱频率生成数量 (-)  ,             0   WaveDir        - 入射波传播航向 (degrees)  ,          11111   WaveSeed       - 入射波的第一个随机种子[-2147483648 to 2147483647]    (-)       , TRUE             WaveNDAmp      - Flag for normally distributed amplitudes                            (flag)    [only used when WaveMod=2, 3, or 4]""               , 3                      FileGes   -  生成文件的格式{1: Matlab, 2: Binary, 3: MsExcle} , "./demo/test1excle.wave"        WvKinFile      - 外部生成的波数据文件的根名称(或者是要生成文件的绝对路径)(.wave)   如果为 "DEFAULT" 系统在计算时将读取上方参数，否则直接导入文件 ,  ,  , ---------------------- MoorLine ------------------------------------------------[used with MoorLine!=0] , 0.01                                              MoorLineDT     - 调用MoorLine的时间步长 , "./NRELOffshrBsline5MW_HydroL_MoorDyn.dat"     MoorDynFile    - MoorDyn 和 MoorL 输入文件 , "./NRELOffshrBsline5MW_HydroL_OpenMoor.xml"	OpenMoorFile   - OpenMoorFile输入文件 , ---------------------- FLOATING PLATFORM --------------------------------------- [unused with WaveMod=6] ,             0                 PotMod         - Potential-flow model {0: none=no potential flow(不读取WvKinFile文件), 1: Wave 时域力，2：WAMIT file} ,      true                       ConRead       - Continue read wave file,if wave exceed time , "../5MW_Baseline/HydroData/Spar"    PotFile        -[PotMod==2] Root name of potential-flow model data; WAMIT output files containing the linear, nondimensionalized, hydrostatic restoring matrix (.hst), frequency-dependent hydrodynamic added mass matrix and damping matrix (.1), and frequency- and direction-dependent wave excitation force vector per unit wave amplitude (.3) (quoted string) [MAKE SURE THE FREQUENCIES INHERENT IN THESE WAMIT FILES SPAN THE PHYSICALLY-SIGNIFICANT RANGE OF FREQUENCIES FOR THE GIVEN PLATFORM; THEY MUST CONTAIN THE ZERO- AND INFINITE-FREQUENCY LIMITS!] ,              1                      WAMITULEN      -[PotMod==2]Characteristic body length scale used to redimensionalize WAMIT output (meters) [only used when PotMod=2] ,        8029.21                      PtfmVol0       -[unuseful]Displaced volume of water when the platform is in its undisplaced position (m^3) [only used when PotMod=1; USE THE SAME VALUE COMPUTED BY WAMIT AS OUTPUT IN THE .OUT FILE!] ,              0                      PtfmCOBxt      -[unuseful]The xt offset of the center of buoyancy (COB) from the platform reference point (meters)  [only used when PotMod=1,2] ,              0                      PtfmCOByt      -[unuseful]The yt offset of the center of buoyancy (COB) from the platform reference point (meters)  [only used when PotMod=1,2] , ---------------------- PLATFORM ADDITIONAL STIFFNESS AND DAMPING  -------------- ,              0             0      80708100             0             0             0   AddF0    - 附加预应力 (N, N-m) ,              1             0             0             0             0             0   AddCLin  - 附加静水压力 (N/m, N/rad, N-m/m, N-m/rad) ,              0             1             0             0             0             0 ,              0             0             1             0             0             0 ,              0             0             0             1             0             0 ,              0             0             0             0             1             0 ,              0             0             0             0             0      98340000    ,              0             0 	         0 	           0 	         0 	           0  AddCHydr0 - 静水力矩阵(我也不知道是什么玩意) ,              0             0 	         0 	           0 	         0 	           0  ,              0 	           0 	    332941 	           0 	         0 	           0  ,              0 	           0 	         0       -4999180000 	     0 	           0  ,              0             0 	         0             0   -4999180000 	           0  ,              0             0 	         0 	           0 	         0 	           0  ,         100000             0             0             0             0             0   AddBLin  - 附加线性阻尼(N/(m/s), N/(rad/s), N-m/(m/s), N-m/(rad/s)) ,              0        100000             0             0             0             0 ,              0             0        130000             0             0             0 ,              0             0             0             0             0             0 ,              0             0             0             0             0             0 ,              0             0             0             0             0      13000000 , ---------------------- AXIAL COEFFICIENTS -------------------------------------- ,              2   NAxCoef        - 轴向系数数量(-) , AxCoefID  AxCd     AxCa     AxCp ,    (-)    (-)      (-)      (-) ,     1     0.60     0.969954     1.00 ,     1     0.60     0.969954     1.00 , ---------------------- MEMBER JOINTS[目前只支持Spar] ------------------------------------------- ,              5   NJoints        - Number of joints (-)   [must be exactly 0 or at least 2] , JointID   Jointxi     Jointyi     Jointzi  JointAxID   JointOvrlp   [JointOvrlp= 0: do nothing at joint, 1: eliminate overlaps by calculating super member] ,    (-)     (m)         (m)         (m)        (-)       (switch) ,     1     0.00000     0.00000  -120.00000      1            0 ,     2     0.00000     0.00000   -12.00000      1            0 ,     3     0.00000     0.00000    -4.00000      1            0 ,     4    0.00000     0.00000    0.0                2            0 ,   5     0.00000     0.00000     10.00000      2           0 , ---------------------- MEMBER CROSS-SECTION PROPERTIES ------------------------- ,              2   NPropSets      - Number of member property sets (-) , PropSetID    PropD         PropThck ,    (-)        (m)            (m) ,     1        9.40000        0.00010 ,     2        6.50000        0.00010 ,  , ======  Outputs  ==================================================================================== , true                                       SumPrint  - 是否生成AeroL输出文件 "<rootname>.AL.out"?  (flag) , "./Result1/"                                SumPath   - 生成的文件夹名称，注意是文件夹！ , 4                                           NSparOutNdnum   - Number of Plat node outputs [0 - partnum-1] (-) ,  0,1,2,3             SparOutNd   - Blade nodes whose values will be output  (-)（从0开确实算,从高处到低处） ,                    OutList                  - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-) , HydroFxi , HydroFyi , HydroFzi , HydroMxi , HydroMyi , HydroMzi , PRPSurge , PRPSway , PRPHeave , PRPRoll , PRPPitch , PRPYaw , PRPTVxi , PRPTVyi , PRPTVzi , PRPRVxi , PRPRVyi , PRPRVzi , PRPTAxi , PRPTAyi , PRPTAzi , PRPRAxi , PRPRAyi , PRPRAzi , SpnSpaFxi , SpnSpaFyi , SpnSpaFzi , SpnSpaMxi , SpnSpaMyi , SpnSpaMzi , MoorFxi , MoorFyi , MoorFzi , MoorMxi , MoorMyi , MoorMzi ,  ,  ,  ,  , END 不允许删除！ ]
       HydroMod: Spar
         enumvalue: 1
       MoorLine: MoorDyn
@@ -4779,13 +4782,12 @@ OpenWECD:
       WvHiCOff: 0
       WvNumCOff: 0
       WaveDir: 0
-      WvKinFile: E:\OpenhastV7\demo\HydroL\demo\test1mat.wave
-      fileGes: Matlab
-        enumvalue: 1
+      fileGes: MsExcle
+        enumvalue: 3
       WaveSeed: 0
       CurrentPolyOrder: 0
-      PotMod: 1
-      ConRead: True
+      PotMod: 0
+      ConRead: False
       WAMITULEN: 0
       PtfmVol0: 8029.21
       PtfmCOBxt: 0
@@ -4812,19 +4814,19 @@ OpenWECD:
          -  [ 0 , 0 , 0 , 0 , 0 , 0 ]
          -  [ 0 , 0 , 0 , 0 , 0 , 0 ]
          -  [ 0 , 0 , 0 , 0 , 0 , 13000000 ]
-      MoorLineDLL: G:\2026\HawtC2\demo\5MW_Spar\Hydro\Lines.dll
       MoorLineDT: 0.01
       MoorDynFile: G:\2026\HawtC2\demo\5MW_Spar\Hydro\NRELOffshrBsline5MW_HydroL_MoorDyn.dat
       NAxCoef: 2
       AxialCoefficientsMatrix: 
          -  [ 1 , 0.6 , 0.969954 , 1 ]
          -  [ 1 , 0.6 , 0.969954 , 1 ]
-      NJoints: 4
+      NJoints: 5
       JointMatrix: 
          -  [ 1 , 0 , 0 , -120 , 1 , 0 ]
          -  [ 2 , 0 , 0 , -12 , 1 , 0 ]
          -  [ 3 , 0 , 0 , -4 , 1 , 0 ]
-         -  [ 4 , 0 , 0 , 10 , 2 , 0 ]
+         -  [ 4 , 0 , 0 , 0 , 2 , 0 ]
+         -  [ 5 , 0 , 0 , 10 , 2 , 0 ]
       NPropSets: 2
       PropSetMatrix: 
          -  [ 1 , 9.4 , 0.0001 ]
@@ -4850,9 +4852,9 @@ OpenWECD:
         SeabedN: 0
       SumPrint: True
       SumPath: G:\2026\HawtC2\demo\5MW_Spar\Hydro\Result1\
-      NBlOuts: 7
-      BlOutNd: [ 0 , 4 , 5 , 9 , 13 , 16 , 18 ]
-      Outputs_OutList: [ HydroFxi , HydroFyi , HydroFzi , HydroMxi , HydroMyi , HydroMzi ]
+      NSparOutNdnum: 4
+      SparOutNd: [ 0 , 1 , 2 , 3 ]
+      Outputs_OutList: [ HydroFxi , HydroFyi , HydroFzi , HydroMxi , HydroMyi , HydroMzi , PRPSurge , PRPSway , PRPHeave , PRPRoll , PRPPitch , PRPYaw , PRPTVxi , PRPTVyi , PRPTVzi , PRPRVxi , PRPRVyi , PRPRVzi , PRPTAxi , PRPTAyi , PRPTAzi , PRPRAxi , PRPRAyi , PRPRAzi , SpnSpaFxi , SpnSpaFyi , SpnSpaFzi , SpnSpaMxi , SpnSpaMyi , SpnSpaMzi , MoorFxi , MoorFyi , MoorFzi , MoorMxi , MoorMyi , MoorMzi ]
     ControL: 
       ControlFilePath: G:\2026\HawtC2\demo\5MW_Spar\ControL\HawtC2_ControlL_Main_5MW.dat
       ControlFileData: [ ------- ControL v1.00.* 主输入文件 -------------------------------------------- , NREL 5.0 MW Baseline Wind Turbine for Use in Offshore Analysis. Properties from Dutch Offshore Wind Energy Converter (DOWEC) 6MW Pre-Design (10046_009.pdf) and REpower 5M 5MW (5m_uk.pdf) , ---------------------- SIMULATION CONTROL -------------------------------------- , 0.01     DT           - 与控制器的通讯时间间隔 , ---------------------- PITCH CONTROL ------------------------------------------- ,           2   PCMode       - 变桨模型 {0: 不采用控制器,  1：用户自定义控制器 ，2: 外部Bladed控制器} (switch) ,           2   PitManRat(1) - 变桨速度 (deg/s) ,           0   BlPitchF(1)  - 叶片最大变桨角度 (degrees) , ---------------------- GENERATOR AND TORQUE CONTROL ---------------------------- ,           2  VSContrl     - Variable-speed control mode {0: 不采用控制器,  1：用户自定义控制器 ，2: 外部Bladed控制器(开发完毕未经测试!)} ,           94.4   GenEff       - Generator efficiency [ignored by the Thevenin and user-defined generator models] (%) , ---------------------- SIMPLE PITCH CONTROL ------------------------------------ , 122.9096      PC_RefSpd    - , 0.0008965149  PC_KI        - , 0.1099965     PC_KK        - , 0.006275604   PC_KP        - , 1.570796      PC_MaxPit    - , 0.1396263     PC_MaxRat    - , 0             PC_MinPit    - , ---------------------- SIMPLE VARIABLE-SPEED TORQUE CONTROL -------------------- , 121.6805      VS_RtGnSp    - 简单控制器电机高速端(HSS)处的额定转速(rpm) [used only when VSContrl=1] , 43093.54      VS_RtTq      - 额定的电机扭矩/constant generator torque in Region 3 for simple variable-speed generator control (HSS side) (N-m) [used only when VSContrl=1] , 0.0255764     VS_Rgn2K     - Generator torque constant in Region 2 for simple variable-speed generator control (HSS side) (N-m/rpm^2) [used only when VSContrl=1] , 10.0          VS_SlPc      - Rated generator slip percentage in Region 2 1/2 for simple variable-speed generator control (%) [used only when VSContrl=1] , 70.16224      VS_CtInSp    - , 15000         VS_MaxRat    - , 47402.91      VS_MaxTq     - , 91.21091      VS_Rgn2Sp    - , 0.01745329    VS_Rgn3MP    - , 5296610.0     VS_RtPwr     - , ---------------------- NACELLE-YAW CONTROL ------------------------------------- ,           0   YCMode       - Yaw control mode {0: none, 3: user-defined from routine UserYawCont, 4: user-defined from Simulink/Labview, 5: user-defined from Bladed-style DLL} (switch) ,      9999.9   TYCOn        - Time to enable active yaw control (s) [unused when YCMode=0] ,           0   YawNeut      - Neutral yaw position--yaw spring force is zero at this yaw (degrees) , 9.02832E+09   YawSpr       - Nacelle-yaw spring constant (N-m/rad) ,   1.916E+07   YawDamp      - Nacelle-yaw damping constant (N-m/(rad/s)) ,           2   YawManRat    - Yaw maneuver rate (in absolute value) (deg/s) ,           0   NacYawF      - Final yaw angle for override yaw maneuvers (degrees) , ---------------------- BLADED INTERFACE ---------------------------------------- [used only with Bladed Interface] , "./DISCON_OC3Hywind_x64.dll"    DLL_FileName - Name/location of the dynamic library {.dll [Windows] or .so [Linux]} in the Bladed-DLL format (-) [used only with Bladed Interface] , "./DISCON.IN"    DLL_InFile   - Name of input file sent to the DLL (-) [used only with Bladed Interface] , "DISCON"      DLL_ProcName - Name of procedure in DLL to be called (-) [case sensitive; used only with DLL Interface] , false         DLL_Ramp     - Whether a linear ramp should be used between DLL_DT time steps [introduces time shift when true] (flag) [used only with Bladed Interface] ,      9999.9   BPCutoff     - Cuttoff frequency for low-pass filter on blade pitch from DLL (Hz) [used only with Bladed Interface] ,           0   NacYaw_North - Reference yaw angle of the nacelle when the upwind end points due North (deg) [used only with Bladed Interface] ,           0   Ptch_Cntrl   - Record 28: Use individual pitch control {0: collective pitch; 1: individual pitch control} (switch) [used only with Bladed Interface] ,           0   Ptch_SetPnt  - Record  5: Below-rated pitch angle set-point (deg) [used only with Bladed Interface] ,           0   Ptch_Min     - Record  6: Minimum pitch angle (deg) [used only with Bladed Interface] ,           0   Ptch_Max     - Record  7: Maximum pitch angle (deg) [used only with Bladed Interface] ,           0   PtchRate_Min - Record  8: Minimum pitch rate (most negative value allowed) (deg/s) [used only with Bladed Interface] ,           0   PtchRate_Max - Record  9: Maximum pitch rate  (deg/s) [used only with Bladed Interface] ,           0   Gain_OM      - Record 16: Optimal mode gain (Nm/(rad/s)^2) [used only with Bladed Interface] ,           0   GenSpd_MinOM - Record 17: Minimum generator speed (rpm) [used only with Bladed Interface] ,           0   GenSpd_MaxOM - Record 18: Optimal mode maximum speed (rpm) [used only with Bladed Interface] ,           0   GenSpd_Dem   - Record 19: Demanded generator speed above rated (rpm) [used only with Bladed Interface] ,           0   GenTrq_Dem   - Record 22: Demanded generator torque above rated (Nm) [used only with Bladed Interface] ,           0   GenPwr_Dem   - Record 13: Demanded power (W) [used only with Bladed Interface] , ---------------------- BLADED INTERFACE TORQUE-SPEED LOOK-UP TABLE ------------- ,           0   DLL_NumTrq   - Record 26: No. of points in torque-speed look-up table {0 = none and use the optimal mode parameters; nonzero = ignore the optimal mode PARAMETERs by setting Record 16 to 0.0} (-) [used only with Bladed Interface] ,  GenSpd_TLU   GenTrq_TLU ,  (rpm)          (Nm) , ---------------------- OUTPUT -------------------------------------------------- , true                                        SumPrint  - 是否生成MBD输出文件 "<rootname>.EL.out"?  (flag) , true                                        AfSpanput - 输出模式选择是节点·还是变量。如果是节点将生成下面节点数量的文件，否则生成输出变量个数的文件。当前先支持输出节点。 , 0,2                                         BldOutSig - 输出的叶片编号，默认只有0 , "./Result1/"                            SumPath   - 生成的文件夹名称，注意是文件夹！ , 18                                            NBlOuts   - Number of blade node outputs [0 - BlOutNd-1] (-) , 0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18               BlOutNd   - Blade nodes whose values will be output  (-)（从0开确实算） , 10                                               NTwOuts   - Number of tower node outputs [0 - BlOutNd-1]  (-) , 0,1,2,3,4,5,,7,8,9,10              TwOutNd   - Tower nodes whose values will be output  (-)（从0开确实算） ,               OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-) , "BlPitchC , "GenTq , "GenPwr , "HSSBrTqC , "YawMomCom ,  , END of input file (the word "END" must appear in the first 3 columns of this last OutList line) ,  ]

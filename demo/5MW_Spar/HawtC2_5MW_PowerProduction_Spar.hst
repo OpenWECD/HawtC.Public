@@ -1,7 +1,7 @@
 ------- OpenWECD  主文件 -------------------------------------------
 5MW_PowerProduction_Spar2
 ---------------------- SIMULATION CONTROL -------------------------------------- 
-600                    TMax         - 总的仿真时长
+150                    TMax         - 总的仿真时长
 0.05                   DT           - 仿真的时间间隔
 1                      InterpOrder  - 插值方法 {0：线性插值，1：非线性插值}
 true                   AeroElastic  - 是否考虑叶片的气动弹性
@@ -34,8 +34,8 @@ false                  Linearization - {true:开启模型线性化的功能，�
 "./MLinL/HawtC2_MLinL_Main_5MW.dat"       MlinLFile        - MlinL 输入文件
 
 ----------------------  HAST VTK  ---------------------------------
-false                            AfVTK                   - 是否开启 VTK 输出
-0.8                              DT_VTK                  - 每多少s输出一个VTK文件（最小为DT,越小的DT_VTK以为着越高的帧率）
+false                             AfVTK                   - 是否开启 VTK 输出
+0.05                             DT_VTK                  - 每多少s输出一个VTK文件（最小为DT,越小的DT_VTK以为着越高的帧率）
 2                                VTK_type                - VTK 的输出类型 {1:表示输出体类型 2：表示输出点线类型，线类型支持更高的帧率}
 1,4,7,8                          VTK_outlist             - VTK 显示的在节点上的数据{1：运动位移 2：运动速度 3：运动加速度 4：FX 5:Fy 6:Fz_Load 7:Mx 8:My 9:Mz}
 150                              VTK_SideNum             - VTK 描述模型柱体的侧面节点数量，越大越接近真实体的描述

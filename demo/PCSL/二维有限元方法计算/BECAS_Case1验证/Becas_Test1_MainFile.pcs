@@ -8,10 +8,22 @@
 3           Out_format       -    输出文件格式（1: 通用格式，2: BModes格式，3: 双格式，4:矩阵形式，5: 三格式）
 true       TabDelim        -  （真：制表符分隔表格；假：空格分隔表格）
 true      FEMSove       -     是否启用二维有限元方法计算截面特性参数
+true      SelfMesh           -     自定义网格参数，需要注意的是，如果你的计算目标不是翼型，该选项必须设置为true，设置true才支持自定义截面样式格式，且这个选项为true，一次只能计算一个截面
+false       CalStress         -  是否计算内力(必须有输出的Catch以及Node文件，开启后，不会计算截面参数！！！)
+"./materials.inp"     MaterialsPath  - 材料文件的路径
 
 -------------------------------- FEM 方法参数 -----------------------------------------------
 true      SelfMesh           -     自定义网格参数，需要注意的是，如果你的计算目标不是翼型，该选项必须设置为true，设置true才支持自定义截面样式格式，且这个选项为true，一次只能计算一个截面
 true      Shear_Center    -     得到的刚度矩阵是否关于剪切中心进行转换
+true       Shear_Center    -     得到的刚度矩阵是否关于剪切中心进行转换
+true        VTKShow            -      是否输出网格VTK可视化文件
+true        SaveCatch                      - 是否保存网格矩阵信息以便计算翼型的应力
+4          MeshWeb         -     腹板的网格数量{only used when SelfMesh=false}
+-1          SurMeshExpT      -     翼面网格在厚度方向上的加密离散化数量(当上下翼面的针对材料铺层不一致时需要对网格进行统一以拼接上下网格的最小离散数量，-1表示不加密){only used when SelfMesh=false}
+-1           SurMeshExpC      -     翼面网格在弦长方向上的加密离散化数量(-1表示不加密){only used when SelfMesh=false}
+0.3,0.95       SurMeshExpCNorm   -  翼面网格在弦长方向上的加密的弦向归一化加密区间位置{only used when SelfMesh=false}
+true        OutMeshfFile      -       是否将自动生成的网格信息输出为PcsL可以识别的网格数组文件，以供研究人员自动调整网格{only used when SelfMesh=false}
+true        ConsidertwistAndpitch  - 是否考虑结构、气动扭角以及变桨轴线的影响{only used when SelfMesh=false}
 
 -------------------------------- 叶片截面数据 ------------------------------------------
 截面跨度      气动中心         弦长      气动扭转角    翼型文件         内部结构
@@ -45,6 +57,19 @@ true      Shear_Center    -     得到的刚度矩阵是否关于剪切中心进
 腹板编号   内端弦向位置    外端弦向位置（弦长比例）(Web_num)  (Inb_end_ch_loc)  (Oub_end_ch_loc)
 1              0.15            0.15
 2              0.50            0.50
+
+======  Outputs  =============================================
+"./Result1/"                                SumPath   - 生成的文件夹名称，注意是文件夹！  
+
+-------------------------------- 自定义截面内力计算------------------------------------（used only  CalStress=true）
+"./Result1/SectionMesh_1_复合材料叶片截面属性示例弦长方向插值新的版本.out"         StrainMeshFile    -  用于计算的内应力和应变网格文件
+"./Result1/SectionCatch_1_复合材料叶片截面属性示例弦长方向插值新的版本.yaml"       StrainCache        -  用于计算的内应力和应变的预先矩阵文件
+false                        CalFailure               - 是否进行材料失效计算
+0                            FailureCriterion     - 翼型失效准则，可以多选，需要补充材料的失效特性{0：Tsai-Wu 失效准则；1：最大应力准则；2：Tsai-Hill 准则；3：Hashin 准则；4：Hoffman准则}
+2                            ExtForceNum         - 外部力的数量(Fx,Fy,Fz,Mx,My,Mz)的顺序
+0  0   0   2e4   1e4 0     !BeginEXTFORCE  开始力的矩阵的标志
+0  0   0   3e4   4e4 0    
+
 
 -------------------------------- 自定义网格 ----------------------------------------!由于网格与节点单元数量太多，请使用程序生成，手动不太行，未来我计划支持Ansys一笔Abcus当中的网格格式
 441                                   FEMNodeNum        -   自定义网格当中的有限元节点数量

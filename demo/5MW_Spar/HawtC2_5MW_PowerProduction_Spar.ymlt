@@ -14,6 +14,7 @@ OpenWECD.OpenHAST.HAST.PresetTime	System.Double
 OpenWECD.OpenHAST.HAST.WTType	OpenWECD.HawtC2.TurbineType
 OpenWECD.OpenHAST.HAST.Solver	OpenWECD.HawtC2.ODESolver
 OpenWECD.OpenHAST.HAST.LinSolver	System.Int32
+OpenWECD.OpenHAST.HAST.Linearization	System.Boolean
 OpenWECD.OpenHAST.HAST.Gravity	System.Double
 OpenWECD.OpenHAST.HAST.AirDens	System.Double
 OpenWECD.OpenHAST.HAST.WtrDens	System.Double
@@ -39,6 +40,7 @@ OpenWECD.OpenHAST.AeroL.HubRad	System.Double
 OpenWECD.OpenHAST.AeroL.Bldnum	System.Int32
 OpenWECD.OpenHAST.AeroL.WakeMod	OpenWECD.AeroL.WakeMode
 OpenWECD.OpenHAST.AeroL.AFAeroMod	OpenWECD.AeroL.DynamicStallMode
+OpenWECD.OpenHAST.AeroL.ThreeDRotationalEffect	OpenWECD.AeroL.ThreeDimRotationalEffect
 OpenWECD.OpenHAST.AeroL.TwrShadow	System.Boolean
 OpenWECD.OpenHAST.AeroL.TwrAero	System.Boolean
 OpenWECD.OpenHAST.AeroL.NacAero	System.Boolean
@@ -385,7 +387,6 @@ OpenWECD.OpenHAST.HydroL.WtrDpth	System.Double
 OpenWECD.OpenHAST.HydroL.MSL2SWL	System.Int32
 OpenWECD.OpenHAST.HydroL.GRAVACC	System.Double
 OpenWECD.OpenHAST.HydroL.fileGes.enumvalue	System.Int32
-OpenWECD.OpenHAST.HydroL.MoorLineDLL	System.String
 OpenWECD.OpenHAST.HydroL.MoorDynFile	System.String
 OpenWECD.OpenHAST.HydroL.MoorLineDT	System.Double
 OpenWECD.OpenHAST.HydroL.AddF0	System.Double[]
@@ -399,16 +400,12 @@ OpenWECD.OpenHAST.HydroL.JointMatrix	System.Double[,]
 OpenWECD.OpenHAST.HydroL.NPropSets	System.Int32
 OpenWECD.OpenHAST.HydroL.PropSetMatrix	System.Double[,]
 OpenWECD.OpenHAST.HydroL.PotMod	System.Int32
-OpenWECD.OpenHAST.HydroL.WvKinFile	System.String
-OpenWECD.OpenHAST.HydroL.ConRead	System.Boolean
 OpenWECD.OpenHAST.HydroL.PtfmVol0	System.Double
 OpenWECD.OpenHAST.HydroL.PtfmCOBxt	System.Double
 OpenWECD.OpenHAST.HydroL.PtfmCOByt	System.Double
 OpenWECD.OpenHAST.HydroL.SumPrint	System.Boolean
 OpenWECD.OpenHAST.HydroL.SumPath	System.String
 OpenWECD.OpenHAST.HydroL.SumPath	System.String
-OpenWECD.OpenHAST.HydroL.NBlOuts	System.Int32
-OpenWECD.OpenHAST.HydroL.BlOutNd	System.Int32[]
 OpenWECD.OpenHAST.HydroL.Outputs_OutList	System.String[]
 OpenWECD.OpenHAST.ControL.ControlFilePath	System.String
 OpenWECD.OpenHAST.ControL.ControlFileData	System.String[]

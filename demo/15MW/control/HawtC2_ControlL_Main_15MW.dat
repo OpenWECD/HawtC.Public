@@ -1,7 +1,7 @@
 ------- ControL v1.00.* 主输入文件 --------------------------------------------
 NREL 5.0 MW Baseline Wind Turbine for Use in Offshore Analysis. Properties from Dutch Offshore Wind Energy Converter (DOWEC) 6MW Pre-Design (10046_009.pdf) and REpower 5M 5MW (5m_uk.pdf)
 ---------------------- SIMULATION CONTROL --------------------------------------
-0.03      DT           - 与控制器的通讯时间间隔
+0.01      DT           - 与控制器的通讯时间间隔
 ---------------------- PITCH CONTROL -------------------------------------------
           2  PCMode       - 变桨模型 {0: 不采用控制器,  1：用户自定义控制器 ，2: 外部Bladed控制器(开发完毕未经测试!)} (switch)
           2   PitManRat(1) - 变桨速度 (deg/s)

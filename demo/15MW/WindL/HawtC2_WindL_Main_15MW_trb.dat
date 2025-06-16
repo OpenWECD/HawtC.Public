@@ -38,7 +38,7 @@
 "G:\2024\Openhast\demo\WindL\result\GenIECWind"                  - IECFileSavePath   - 用来保存IEC风文件的文件夹路径(必须为绝对路径)
 
 ================== Parameters for binary SimWind bts file [used only for WindType = 8]  =========
-"G:\2026\OpenhastV7\demo\WindL\res.bts"    -  SimWindFilePath   - Rootname of the full-field wind file to use (.bts)
+"../../../../OpenhastV7\demo\WindL\res.bts"    -  SimWindFilePath   - Rootname of the full-field wind file to use (.bts)
 
 ================== Generate windfile   [used only for WindType = 7] =========
 "../wind5MW/WindL_V_17_seed_3901.inp"    - GWindFilePath   - 用来生成风文件的模板文件(后缀必须是.inp)

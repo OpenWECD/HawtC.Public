@@ -1,0 +1,187 @@
+// OPERATE
+P_RatedPower = 15000000
+P_TorqueRatedNm = 196200000
+P_GearRatio = 100
+
+P_StartTorqueRampSpeed = 300000
+
+P_PitchSpeedTableAngle1 = 0
+P_PitchSpeedTableSpeed1 = 550
+P_PitchSpeedTableAngle2 = 1000
+P_PitchSpeedTableSpeed2 = 550
+P_PitchSpeedTableAngle3 = 2000
+P_PitchSpeedTableSpeed3 = 550
+P_PitchSpeedTableAngle4 = 3000
+P_PitchSpeedTableSpeed4 = 550
+P_PitchSpeedTableAngle5 = 4000
+P_PitchSpeedTableSpeed5 = 550
+P_PitchSpeedTableAngle6 = 5000
+P_PitchSpeedTableSpeed6 = 550
+P_PitchSpeedTableAngle7 = 6000
+P_PitchSpeedTableSpeed7 = 550
+P_PitchSpeedTableAngle8 = 7000
+P_PitchSpeedTableSpeed8 = 550
+P_PitchSpeedTableAngle9 = 8000
+P_PitchSpeedTableSpeed9 = 550
+P_PitchSpeedTableAngle10 = 9000
+P_PitchSpeedTableSpeed10 = 550
+
+P_OperGeneratorRpm = 756
+P_MaxGeneratorRpm = 1580
+
+P_MaxOperTorque = 196200000
+P_PitchStopPosition = 9000
+
+P_StartWindSpeed = 300
+
+P_FreeWheelInitPitchPos =1500
+P_FreeWheelInitPitchSpeed = 200
+P_FreeWheelRpm = 200
+P_FreeWheelTime = 1000
+
+P_FreeWheelG1RpmAcc = 50
+P_FreeWheelG1RpmEnd = 400
+P_FreeWheelG1DeltaRpmMax = 10
+
+P_GridConnectRpm = 400
+P_GridConnectRpmWindow = 200
+P_GridConnectTimeWindow = 1000
+
+P_FirstOperateG1RpmAcc = 100
+P_FreeWheelG1TimeMax = 3000
+P_FreeWheelG1G1Rpm = 380
+P_FreeWheelG1G1RpmMin = 380
+P_FreeWheelG1G1RpmMax = 450
+
+P_MaxGeneratorRpm = 800
+P_MaxRotorRpm = 800
+
+// TORQUE
+P_BrakeTorqueRampStartRpm = 1000
+P_BrakeTorqueDeAcc = 100000
+P_BrakeDeltaTorqueMax = 10000
+
+P_TorqueTbl1Gen1LtRpm  = 499.4
+P_TorqueTbl1Gen2LtRpm  = 499.5
+P_TorqueTbl1Gen3LtRpm  = 499.6
+P_TorqueTbl1Gen4LtRpm  = 499.8
+P_TorqueTbl1Gen5LtRpm  = 500.4
+P_TorqueTbl1Gen6LtRpm  = 501.7
+P_TorqueTbl1Gen7LtRpm  = 538.3
+P_TorqueTbl1Gen8LtRpm  = 644.5
+P_TorqueTbl1Gen9LtRpm  = 731.6
+P_TorqueTbl1Gen10LtRpm  = 755.7
+P_TorqueTbl1Gen11LtRpm  = 800
+
+
+P_TorqueTbl1Torque1Nm	=	1386768.58
+P_TorqueTbl1Torque2Nm	=	64864390.61
+P_TorqueTbl1Torque3Nm	=	71582516.33
+P_TorqueTbl1Torque4Nm	=	82959073.91
+P_TorqueTbl1Torque5Nm	=	83953629.85
+P_TorqueTbl1Torque6Nm	=	84804751.53
+P_TorqueTbl1Torque7Nm	=	98096774.43
+P_TorqueTbl1Torque8Nm	=	141640150.1
+P_TorqueTbl1Torque9Nm	=	184380495.8
+P_TorqueTbl1Torque10Nm	=	196240471.3
+P_TorqueTbl1Torque11Nm	=	185379906.3
+
+
+P_TorqueTbl2Gen1LtRpm = 792
+P_TorqueTbl2Gen2LtRpm = 858
+P_TorqueTbl2Gen3LtRpm = 990
+P_TorqueTbl2Gen4LtRpm = 1070
+P_TorqueTbl2Gen5LtRpm = 1155
+P_TorqueTbl2Gen6LtRpm = 1240
+P_TorqueTbl2Gen7LtRpm = 1320
+P_TorqueTbl2Gen8LtRpm = 1400
+P_TorqueTbl2Gen9LtRpm = 1650
+P_TorqueTbl2Gen10LtRpm = 1700
+P_TorqueTbl2Gen11LtRpm = 1800
+
+
+P_TorqueTbl2Torque1Nm = 2286730
+P_TorqueTbl2Torque2Nm = 2683730
+P_TorqueTbl2Torque3Nm = 3573010
+P_TorqueTbl2Torque4Nm = 4193320
+P_TorqueTbl2Torque5Nm = 4863260
+P_TorqueTbl2Torque6Nm = 5582830
+P_TorqueTbl2Torque7Nm = 6352020
+P_TorqueTbl2Torque8Nm = 7170830
+P_TorqueTbl2Torque9Nm = 13061630
+P_TorqueTbl2Torque10Nm = 12680000
+P_TorqueTbl2Torque11Nm = 11970000
+                      
+
+// PITCH
+P_RPMSpanPos = 100
+P_RPMSpanNeg = 100
+P_PowerSpanPos = 150
+P_PowerSpanNeg = 100
+P_PIDkp =1200
+P_PIDki = 0
+P_PIDkd = 1800
+P_PIDkd_Neg = 3000
+P_PIDkpFw = 300
+P_PIDkiFw = 0
+P_PIDkdFw = 2000
+P_PosWindup = 1000
+P_NegWindup = -1000
+
+P_MaxPitchRPM = 600
+P_HighRPMPitchSpeedFactor = 300
+P_MaxPitchRate = 400
+P_MinPitchRate = -400
+
+V_PID_Sel_Man = 1
+P_UseRealPower = 2
+
+P_BP50Pitch = 400
+P_BP99Pitch = 400
+P_BP199Pitch = 600
+P_BP200Pitch = 600
+
+P_CloseBrakeHighTorque = 5000
+
+P_AngleMaxDeviation = 200
+P_AngleMaxIndividualDeviation = 200
+
+
+// YAW
+P_MaxYawErrorHighWindSpeed = 900
+P_MaxYawErrorLowWindSpeed = 900
+
+P_StartYawDeg = 160
+P_StopYawDeg = 20
+P_StartYawDelay = 120000
+P_StopYawDelay = 0
+P_StartYawDegTwo = 80
+P_StartYawDelayTwo = 60000
+P_StartYawDegNow = 300
+P_YawProTwoToOneWindSpeed = 600
+P_YawProTwoToTwoWindSpeed = 700
+P_MaxNacelleTwistDeg = 8000
+P_YawStartWindSpeed = 250
+P_AutoUntwistDegHighWind = 9000
+P_AutoUntwistDegLowPower = 7200
+P_AutoUntwistDegHighPower = 7200
+P_YawBrakeOnDelay = 0
+P_YawBrakeOffDelay = 0
+P_UntwistingDelay = 5
+P_NorthOffset = 0
+P_YawTwistSensorOffset = 0
+P_YawTwistSensorOffsetDevi = 2
+P_YawElectricalBrakeOnDelay = 3000
+P_WindSpeedAutoUntwist = 1600
+P_YawCWSPeed = 5
+P_YawCCWSPeed = 5
+P_YawBrakeTorque = 1100000
+P_ControllerState = 0
+
+P_TrigTimeForBP50 = -1
+P_TrigTimeForBP99 = -1
+P_TrigTimeForBP199 = -1
+P_TrigTimeForBP200 = -1
+
+P_DisableStatusCode = 311
+P_DisableStatusCode = 250                                            
