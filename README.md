@@ -22,7 +22,50 @@
 - 3、基于商业软件Bladed理论的全新软件框架，MBD 2.0支持双机头与单点系泊动力学的高精度计算</br>
 - 4、提供了面向Python/c++等用户的动态链接库和手册支持，方便与其他软件耦合</br>
 
+## 3、重大更新预告
+- 我计划在2.0.016 仍然以PCS模块的Bug修复和精确度开发为主，现在的版本为不考虑翘曲的简化版本，我们将在下一个版本提供非简化的选择
+- 我计划在2.0.017版本开始逐步开发稳定性分析模块 MSA，该模块主要包含了动力学线性化分析以及时域下的气动阻尼分析：
+##### 1）在这个版本当中我们首先实现了气动功与气动阻尼的计算和输出，以评判叶片的失稳分险，探讨叶片在TMDI作用下的不稳定现象，揭示增稳机理。主要是针对大论文的创新点3提供计算工具
+##### 2）模态线性化模块，该模块可以对整机模型进行线性化以分析结构动力学特征，并输出相关的参数，该模块将会逐步开发完善。但不是当前重点，开发时间可能与年底或者毕业后开始。
+##### 3）叶片的稳定性分析会跟随BeamL的开发进度进行规划，目前可以计算不同转速下的魔套和频率特征，我们将在未来更新当中支持气动-结构的稳定性耦合分析，主要包含颤振分析以及多风速下的载荷分析，该功能与Bladed 当中的Steady Operational Loads模块一致。
 
+## 0、当前开发进度与功能
+我们的目标是实现Bladed的全工况覆盖，并逐步开发UI界面（技术验证已经完成！，使用C# AOT来实现界面，可下载HawtC.UI来体验预览）
+与Bladed的模块功能对比实现进度：
+
+#### 0.1 功能与模块对比
+| Bladed模块      |HawtC对应模块          |完成进度与支持情况             |HawtC模型|
+| :----:     | :----:         | :----:          | :----:          |
+|Modal Analysis          |            BeamL            |           :white_check_mark:基本实现，还在开发|  :white_check_mark:CR/:white_check_mark:TK/:warning:GEBT|
+|Wind Turbulence        |       WindL.SimWind     |    :white_check_mark:完成  |     谐波叠加、风谱模型   |
+|Earthquake Generation      |       SubFEML     |     :x: 已规划，未开发  |  线性有限元 | 
+|Sea State      |       HydroL.WaveL     |    :white_check_mark:完成  | JS/PM 谱模型|
+|水动力模块| HyderoL |  :warning:只支持Spar平台| :x:势流理论（计划开发）、:white_check_mark:Morison方程|
+|Aerodynamic Information     |       AeroL/MBD    |    :white_check_mark:完成   | BEMT/FVM 以及动态失速Oye|
+|Performance Coefficients    |       AeroL    |    :white_check_mark:完成,x: 柔性Cp未开发，可以使用MBD平替   |-|
+|Steady Power Curve     |       AeroL/MBD    |    :white_check_mark:完成   |-|
+|Steady Operational Loads     |       AeroL/MBD    |    :white_check_mark:完成   |-|
+|Steady Parked Loads     |       AeroL/MBD    |    :white_check_mark:完成   |Kane多体动力学/FEM有限元耦合|
+|Model Linearisation    |       MSAL    |    :warning: 正在开发当中。。。  | -|
+|Electrical performance    |      -    |    :x: 不支持   |-|
+|Power Production Loading     |       AeroL/MBD /ControL /HydroL/SubFEML/BeamL   |    :white_check_mark:完成   |耦合模型|
+|Normal Stop     |       AeroL/MBD /ControL /HydroL/SubFEML/BeamL   |    :warning: 可以模拟，但是没有直接提供功能选择，开发中   |耦合模型|
+|Emergency Stop   |       AeroL/MBD//ControL /HydroL/SubFEML/BeamL   |     :x: 错误控制模块位于ControL当中，尚未开发  |耦合模型|
+|Idling    |       AeroL/MBD /BeamL   |    :white_check_mark:完成   |耦合模型|
+|Parked    |       AeroL/MBD /HydroL/SubFEML/BeamL   |    :white_check_mark:完成   |耦合模型|
+|Hardware Test   |       -   |    :x: 不支持  |-|
+|Post Processing   |     PostL   |    :white_check_mark: 部分支持（年发电量、疲劳载荷，极限载荷，雨流计数以完全支持！）  |
+|Bladed API |     APIL  |    外部应用接口，独有且便捷  |
+
+
+#### 0.2 独有功能
+| Bladed模块      |HawtC对应模块          |功能            |原理与模型|
+| :----:     | :----:         | :----:          | :----:          |
+| :x:不支持   |     :white_check_mark: PCSL  |    梁截面参数计算工具，独有  |FEM|
+| :x:不支持  |     :white_check_mark: MoptL |    多目标并行优化算法程序，独有 |NSGA2/GDE3/MCell|
+| :x:不支持  |     :white_check_mark: APIL/MoptL |  整机全参数一体化优化，独有 |耦合模型|
+| :x:不支持  |    :white_check_mark: WTAI/MoptL |  数据驱动与实时数据驱动代理模块，独有 |Python、C++接口以及内置BP神经网络|
+| :x:不支持  |    :white_check_mark: VTKL |  数据显示与动画输出模块 |-|
 ##  HawtC 与 OpenFAST/Bladed 4.11 计算验证对比
 
 ### 1. 与OpenFAST对比的陆上IEA 15MW 稳态无风剪切验证
