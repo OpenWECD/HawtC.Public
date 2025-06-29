@@ -19,7 +19,7 @@
 - 6、提出了实时数据驱动与多目标耦合的优化算法,通过建立真实数据参考向量,解决了传统数据驱动方法预测结果差,模型泛化能力弱的问题,大幅提高了优化效率和预测精度.
 - 7、攻克了叶片铺层(结构设计)-叶片翼型应力(安全性设计)-叶片气动(高效气动外形设计)的超长柔性叶片耦合设计难题，实现了大型机组的翼型-叶片-整机耦合的设计方法，并提供了建模和仿真工具。
 
-### 技术创新 
+### 技术创新
 
 - 1、完全的100%基于c#的原生代码，采用面向对象的编程形式，打破仿真软件的国外垄断
 - 2、具有完全的CLI系统、支持界面/命令双向操作的面向开发者的可执行命令
@@ -44,7 +44,7 @@
 
 #### 01.1 功能与模块对比
 
-|        Bladed模块        |      OpenFAST模块      |              HawtC对应模块              |                        完成进度与支持情况                        |               HawtC模型               |
+|        Bladed模块        |    OpenFAST对应模块    |              HawtC对应模块              |                      HawtC完成进度与支持情况                      |               HawtC模型               |
 | :----------------------: | :--------------------: | :--------------------------------------: | :---------------------------------------------------------------: | :-----------------------------------: |
 |      Modal Analysis      | Bmodes(非OpenFAST模块) |                  BeamL                  |                       ✅基本实现，还在开发                       |          ✅CR/✅TK/⚠️GEBT          |
 |     Wind Turbulence     |        TurbSim        |              WindL.SimWind              |                              ✅完成                              |          谐波叠加、风谱模型          |
@@ -56,7 +56,7 @@
 |    Steady Power Curve    |        AeroDyn        |               AeroL/BeamL               |                              ✅完成                              |                   -                   |
 | Steady Operational Loads |        AeroDyn        |               AeroL/BeamL               |                              ✅完成                              |                   -                   |
 |   Steady Parked Loads   |        AeroDyn        |             AeroL/MBD/BeamL             |                              ✅完成                              |     Kane多体动力学/FEM有限元耦合     |
-|   Model Linearisation   |          FAST          |                   MSAL                   |                      ⚠️ 正在开发当中。。。                      |                   -                   |
+|   Model Linearisation   |       FAST主模块       |                   MSAL                   |                      ⚠️ 正在开发当中。。。                      |                   -                   |
 |  Electrical performance  |           -           |                    -                    |                             ❌ 不支持                             |                   -                   |
 | Power Production Loading |   BeamDyn/ElastoDyn   | AeroL/MBD /ControL /HydroL/SubFEML/BeamL |                              ✅完成                              |               耦合模型               |
 |       Normal Stop       |           -           | AeroL/MBD /ControL /HydroL/SubFEML/BeamL |          ⚠️ 可以模拟，但是没有直接提供功能选择，开发中          |               耦合模型               |
@@ -64,19 +64,20 @@
 |          Idling          |   BeamDyn/ElastoDyn   |             AeroL/MBD /BeamL             |                              ✅完成                              |               耦合模型               |
 |          Parked          |   BeamDyn/ElastoDyn   |     AeroL/MBD /HydroL/SubFEML/BeamL     |                              ✅完成                              |               耦合模型               |
 |      Hardware Test      |           -           |                    -                    |                             ❌ 不支持                             |                   -                   |
-|     Post Processing     |           -           |                  PostL                  | ✅ 部分支持（年发电量、疲劳载荷，极限载荷，雨流计数以完全支持！） |                                      |
-|        Bladed API        |       pyOpenFAST       |                   APIL                   |                     外部应用接口，独有且便捷                     |                                      |
+|     Post Processing     |           -           |                  PostL                  | ✅ 部分支持（年发电量、疲劳载荷，极限载荷，雨流计数以完全支持！） |      S-N疲劳损伤理论、雨流计数法      |
+|        Bladed API        |       pyOpenFAST       |                   APIL                   |                     外部应用接口，独有且便捷                     |                   -                   |
+|          Batch          |       ❌ 不支持       |                  Batch                  |        ⚠️ 支持大部分工况的批次处理和运行，但代码尚未完善        |                   -                   |
 
 #### 01.2 独有功能
 
-| Bladed模块 | OpenFAST模块 |         HawtC对应模块         |                 功能                 |            原理与模型            |
-| :---------: | :----------: | :---------------------------: | :----------------------------------: | :-------------------------------: |
-|  ❌不支持  |    IVABS    |            ✅ PCSL            |       梁截面参数计算工具，独有       |                FEM                |
-|  ❌不支持  |   ❌不支持   |           ✅ MoptL           |     多目标并行优化算法程序，独有     |         NSGA2/GDE3/MCell         |
-|  ❌不支持  |   ❌不支持   |         ✅ APIL/MoptL         |      整机全参数一体化优化，独有      |             耦合模型             |
-|  ❌不支持  |   ❌不支持   |         ✅ WTAI/MoptL         | 数据驱动与实时数据驱动代理模块，独有 | Python、C++接口以及内置BP神经网络 |
-|  ❌不支持  |     FAST     |            ✅ VTKL            |        数据显示与动画输出模块        |                 -                 |
-| ❌只支持TMD | ❌只支持TMD | ✅ TMD/TMDI(独有叶片)/陀螺仪 |     TMD/TMDI/陀螺仪下的减振计算     |        MBD多体动力学的耦合        |
+| Bladed模块 |              OpenFAST模块              |         HawtC对应模块         |                 功能                 |                原理与模型                |
+| :---------: | :-------------------------------------: | :---------------------------: | :----------------------------------: | :--------------------------------------: |
+|  ❌不支持  |          IVABS(非OpenFAST模块)          |            ✅ PCSL            |       梁截面参数计算工具，独有       |                   FEM                   |
+|  ❌不支持  |                ❌不支持                |           ✅ MoptL           |     多目标并行优化算法程序，独有     |   NSGA2/GDE3/MCell(改进的多线程c#实现)   |
+|  ❌不支持  |                ❌不支持                |         ✅ APIL/MoptL         |      整机全参数一体化优化，独有      |                 耦合模型                 |
+|  ❌不支持  |                ❌不支持                |         ✅ WTAI/MoptL         | 数据驱动与实时数据驱动代理模块，独有 |    Python、C++接口以及内置BP神经网络    |
+|  ❌不支持  |               ✅ VTK支持               |            ✅ VTKL            |        数据显示与动画输出模块        |                    -                    |
+| ❌只支持TMD | ⚠️只支持TMD(支持基础/塔架/叶片等结构) | ✅ TMD/TMDI(独有叶片)/陀螺仪 |     TMD/TMDI/陀螺仪下的减振计算     | MBD/FEM 多体动力学-有限元耦合模型的耦合 |
 
 ## HawtC 与 OpenFAST/Bladed 4.11 计算验证对比
 
