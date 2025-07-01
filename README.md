@@ -60,10 +60,10 @@
 |        水动力模块        |        HydroDyn        |                 HyderoL                 |                        ⚠️只支持Spar平台                        | ❌势流理论（计划开发）、✅Morison方程 |
 | Aerodynamic Information |        AeroDyn        |               AeroL/BeamL               |                              ✅完成                              |       BEMT/FVM 以及动态失速Oye       |
 | Performance Coefficients | AeroDyn(不支持柔性Cp) |               AeroL/BeamL               |              ✅完成,❌ 柔性Cp未开发，可以使用MBD平替              |                   -                   |
-|    Steady Power Curve    |        AeroDyn        |               AeroL/BeamL               |                              ✅完成                              |                   -                   |
-| Steady Operational Loads |        AeroDyn        |               AeroL/BeamL               |                              ✅完成                              |                   -                   |
-|   Steady Parked Loads   |        AeroDyn        |             AeroL/MBD/BeamL             |                              ✅完成                              |     Kane多体动力学/FEM有限元耦合     |
-|   Model Linearisation   |       FAST主模块       |                   MSAL                   |                      ⚠️ 正在开发当中。。。                      |                   -                   |
+|    Steady Power Curve    |        AeroDyn        |               TurbineL               |                              ✅完成                              |                   -                   |
+| Steady Operational Loads |        AeroDyn        |               TurbineL               |                              ✅完成                              |                   -                   |
+|   Steady Parked Loads   |        AeroDyn        |                 TurbineL             |                              ✅完成                              |     浮动坐标法     |
+|   Model Linearisation   |       FAST主模块       |                   MSAL/TurbineL                   |                      ⚠️ 正在开发当中。。。                      |                   -                   |
 |  Electrical performance  |           -           |                    -                    |                             ❌ 不支持                             |                   -                   |
 | Power Production Loading |   BeamDyn/ElastoDyn   | AeroL/MBD /ControL /HydroL/SubFEML/BeamL |                              ✅完成                              |               耦合模型               |
 |       Normal Stop       |           -           | AeroL/MBD /ControL /HydroL/SubFEML/BeamL |          ⚠️ 可以模拟，但是没有直接提供功能选择，开发中          |               耦合模型               |
