@@ -105,8 +105,6 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 ### 4.HawtC.MBD.VTK 多体动力学可视化的NREL 5MW Spar海上漂浮式风力机测试
 
 ![windturbine](./docs/image/TheoryManualandBarchMarkreport/wind-farm.webp)
-`<br/>`
-`<br/>`
 
 #### HAWTC.FARM:
 
