@@ -23,19 +23,24 @@
 
 - 1、完全的100%基于c#的原生代码，采用面向对象的编程形式，打破仿真软件的国外垄断
 - 2、具有完全的CLI系统、支持界面/命令双向操作的面向开发者的可执行命令
-- 3、基于商业软件Bladed理论的全新软件框架，MBD 2.0支持双机头与单点系泊动力学的高精度计算
-- 4、提供了面向Python/c++等用户的动态链接库和手册支持，方便与其他软件耦合
+- 3、提供了面向Python/c++等用户的动态链接库和手册支持，方便与其他软件耦合
 
 ## 0、重大更新预告
 
-- 我计划在2.0.016 仍然以PCS模块的Bug修复和精确度开发为主，现在的版本为不考虑翘曲的简化版本，我们将在下一个版本提供非简化的选择
-- 我计划在2.0.017版本开始逐步开发稳定性分析模块 MSA，该模块主要包含了动力学线性化分析以及时域下的气动阻尼分析：
+- 年度更新2.1.000版本，该版本包含如下的重大功能改进和实现：
 
-##### 1）在这个版本当中我们首先实现了气动功与气动阻尼的计算和输出，以评判叶片的失稳分险，探讨叶片在TMDI作用下的不稳定现象，揭示增稳机理。主要是针对大论文的创新点3提供计算工具
+##### 1）全新TurbineL模块
+- 该模块支持气动功与气动阻尼的计算和输出，以评判叶片的失稳分险，探讨叶片在TMDI作用下的不稳定现象，揭示增稳机理。主要是针对大论文的创新点3提供计算工具。
+- 有限元梁与MBD的气弹耦合将从MBD多体动力学当中独立出来并转移到TurbineL当中，以实现独立的柔性气弹计算，包含柔性Cp，柔性气动功率曲线。（AeroL只计算刚性的机组参数）
+- TurbineL 支持刚性/柔性的叶片载荷计算，该计算不包括塔架、机舱、轮毂等下部结构，只关注于风轮。该功能在OpenFASTV4.0以及Bladed当中可见。
 
-##### 2）模态线性化模块，该模块可以对整机模型进行线性化以分析结构动力学特征，并输出相关的参数，该模块将会逐步开发完善。但不是当前重点，开发时间可能与年底或者毕业后开始。
 
-##### 3）叶片的稳定性分析会跟随BeamL的开发进度进行规划，目前可以计算不同转速下的魔套和频率特征，我们将在未来更新当中支持气动-结构的稳定性耦合分析，主要包含颤振分析以及多风速下的载荷分析，该功能与Bladed 当中的Steady Operational Loads模块一致。
+##### 2）全新MSAL 模型线性化模块
+- 该模块可以对整机模型进行线性化以分析结构动力学特征，并输出相关的参数，目前的理论学习尚未开展。
+
+##### 3）可能支持
+
+- MBD 的双机头功能，尽管该功能开发较为简单，但涉及的代码量巨大，忙于毕业，可能不会发布。如果有需要，可前往论坛提出改进和开发意见。
 
 ## 01、当前开发进度与功能
 
@@ -53,10 +58,10 @@
 |        水动力模块        |        HydroDyn        |                 HyderoL                 |                        ⚠️只支持Spar平台                        | ❌势流理论（计划开发）、✅Morison方程 |
 | Aerodynamic Information |        AeroDyn        |               AeroL/BeamL               |                              ✅完成                              |       BEMT/FVM 以及动态失速Oye       |
 | Performance Coefficients | AeroDyn(不支持柔性Cp) |               AeroL/BeamL               |              ✅完成,❌ 柔性Cp未开发，可以使用MBD平替              |                   -                   |
-|    Steady Power Curve    |        AeroDyn        |               AeroL/BeamL               |                              ✅完成                              |                   -                   |
-| Steady Operational Loads |        AeroDyn        |               AeroL/BeamL               |                              ✅完成                              |                   -                   |
-|   Steady Parked Loads   |        AeroDyn        |             AeroL/MBD/BeamL             |                              ✅完成                              |     Kane多体动力学/FEM有限元耦合     |
-|   Model Linearisation   |       FAST主模块       |                   MSAL                   |                      ⚠️ 正在开发当中。。。                      |                   -                   |
+|    Steady Power Curve    |        AeroDyn        |               TurbineL               |                              ✅完成                              |                   -                   |
+| Steady Operational Loads |        AeroDyn        |               TurbineL               |                              ✅完成                              |                   -                   |
+|   Steady Parked Loads   |        AeroDyn        |                 TurbineL             |                              ✅完成                              |     浮动坐标法     |
+|   Model Linearisation   |       FAST主模块       |                   MSAL/TurbineL                   |                      ⚠️ 正在开发当中。。。                      |                   -                   |
 |  Electrical performance  |           -           |                    -                    |                             ❌ 不支持                             |                   -                   |
 | Power Production Loading |   BeamDyn/ElastoDyn   | AeroL/MBD /ControL /HydroL/SubFEML/BeamL |                              ✅完成                              |               耦合模型               |
 |       Normal Stop       |           -           | AeroL/MBD /ControL /HydroL/SubFEML/BeamL |          ⚠️ 可以模拟，但是没有直接提供功能选择，开发中          |               耦合模型               |
