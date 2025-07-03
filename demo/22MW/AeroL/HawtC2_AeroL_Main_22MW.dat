@@ -6,11 +6,15 @@ NREL 22.MW offshore baseline Powercurve
 ======  风力机叶片和塔基信息   ===================================== [used only when ApOfMb=0，1 and 2]
 4.2           HubRad              - 轮毂半径
 3              Bldnum              - 叶片数量（非常重要!）
+3             CutInWSpeed    - 切入风速
+25           CutOutWSpeed   - 切出风速
+22000         RatedPower                  - 额定功率[kw]</param>
+10.65           RatedRotorSpeed             - 额定转速[rpm/min]
 
 ======  模型选项  ============================================================================
           2     WakeMod           - 气动力计算模型 {0=none, 1=SBEMT, 2=DBEMT,3=FreeWake,4=SBEMT_UMT,5=DBEMT_UMT}
           1    AFAeroMod        - 动态失速模型 {1=steady model, 2=BL ，3=Øye ，4=IAG，5=GOR，6=ATEF}(使用BEMT方法的时候不建议使用ATEF模型)
-          1     3DRotationalEffect   - 三维旋转效应模型{0=不考虑旋转效应，1=Snel模型}
+          0     3DRotationalEffect   - 三维旋转效应模型{0=不考虑旋转效应，1=Snel模型}
 false        TwrShadow        - 是否考虑塔影效应对叶片气动力的影响(flag)
 false        TwrAero              - 是否计算塔架的气动力 (flag)
 true         NacAero              - 是否计算机舱的气动力 (flag)

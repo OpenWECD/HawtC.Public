@@ -23,7 +23,7 @@ false                  AfShowlog    - 是否在仿真的过程当中输出叶片
 0                      MSL2SWL     - 静水水位与平均海平面之间的偏移量(m) [positive upward]
 ---------------------- INPUT FILES ---------------------------------------------
 "./MBD2/HawtC2_MBD_Mainv2_15MW.dat"         MBDFile           - MBD 输入文件
-"./windl/HawtC2_WindL_Main_15MW_trb.dat"       windFile         - windL 输入文件
+"./windl/HawtC2_WindL_Main_15MW_trb.dat"       WindFile         - windL 输入文件
 "./Aero/HawtC2_AeroL_Main_15MW.dat"        AeroFile         - AeroL 输入文件
 "./control/HawtC2_ControlL_Main_15MW.dat"  ControlFile      - ControL 输入文件
 "./Hydro/Openhast_HydroL_Main_15MW.dat"    HydroLFile       - HydroL输入文件

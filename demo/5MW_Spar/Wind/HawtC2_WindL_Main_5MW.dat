@@ -1,7 +1,7 @@
 ------- OpenWECD.WindL  主文件 v1.01.* This software design and writen By 赵子祯 --------------------------------------------------------------------
 5MW_ReadTurSimWind
 ---------------------------------------------------------------------------------------------------------------
-    4 WindType       - 风文件类型和功能选择 (1=steady; 2=user define; 3=binary TurbSim FF; 4=binary Bladed;5=IEC Wind,6=Generate windfile[IEC WIndfile],7= Generate windfile[turbsim]，8=SimWind bts)
+    1 WindType       - 风文件类型和功能选择 (1=steady; 2=user define; 3=binary TurbSim FF; 4=binary Bladed;5=IEC Wind,6=Generate windfile[IEC WIndfile],7= Generate windfile[turbsim]，8=SimWind bts)
   	true  CreadW        -  是否循环读取风文件，如果仿真时间大于风文件的时长，将会从头读取风文件        
 	 1   NWindVel       - Number of points to output the wind velocity    (0 to 9)
           0, 0   WindVxiList    - List of coordinates in the inertial X direction (m)

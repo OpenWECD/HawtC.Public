@@ -1,8 +1,8 @@
 ------- OpenWECD  主文件 -------------------------------------------
-15MW_Land_BaseLine_LinearBlade_NTM11.01
+15MW_Land_BaseLine_LinearBlade_NTM11.0
 ---------------------- SIMULATION CONTROL -------------------------------------- 
 300                    TMax         - 总的仿真时长
-0.05                   DT           - 仿真的时间间隔0.079176563737
+0.03                   DT           - 仿真的时间间隔0.079176563737
 1                      InterpOrder  - 插值方法 {0：线性插值，1：非线性插值}
 true                   AeroElastic  - 是否考虑叶片的气动弹性
 false                  AfShowlog    - 是否在仿真的过程当中输出叶片的转矩和转速以及变桨信息
@@ -25,7 +25,7 @@ true                   Linearization - {true:开启模型线性化的功能，�
 0                      MSL2SWL     - 静水水位与平均海平面之间的偏移量(m) [positive upward]
 ---------------------- INPUT FILES ---------------------------------------------
 "./MBD2/HawtC2_MBD_Mainv2_15MW.dat"        MBDFile           - MBD 输入文件
-"./windl/HawtC2_WindL_Main_15MW.dat"       windFile         - windL 输入文件
+"./windl/HawtC2_WindL_Main_15MW.dat"       WindFile         - windL 输入文件
 "./Aero/HawtC2_AeroL_Main_15MW.dat"        AeroFile         - AeroL 输入文件
 "./control/HawtC2_ControlL_Main_15MW.dat"  ControlFile      - ControL 输入文件
 "./Hydro/Openhast_HydroL_Main_15MW.dat"    HydroLFile       - HydroL输入文件

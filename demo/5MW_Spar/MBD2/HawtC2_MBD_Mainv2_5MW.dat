@@ -61,6 +61,7 @@ NREL 15.0MW_MBD_MainFile
 
 -------------------------------  基础质量和惯性定义 (Ptfm  MASS AND INERTIA )  --------------------------
 10                   TowerBsHt   - TowerHt减去TowerBsHt为塔架高度。如果是陆上，这里应该是0(m）
+87.6                TowerHt     - 塔顶到水平面的距离，如果是陆上，TowerHt就是塔架高度(m）
 0.0                  PtfmCMxt     -  从地面水平[陆上]或平均海平面[海上]到平台质心（CM）的顺风距离（m）
 0.0                  PtfmCMyt     -  从地面水平[陆上]或平均海平面[海上]到平台质心（CM）的侧风距离（m）
 -89.9155        PtfmCMzt     -  从地面水平[陆上]或平均海平面[海上]到平台质心（CM）的垂直距离（m）
@@ -72,16 +73,6 @@ NREL 15.0MW_MBD_MainFile
 0                    PtfmXYIner  -    平台绕其质心的横滚-俯仰惯性矩（Ixy=-∫xydm ） (kg m^2)
 0                    PtfmYZIner  -   平台绕其质心的俯仰-偏航惯性矩（Iyz=-∫yzdm ） (kg m^2)
 0                    PtfmXZIner  -  平台绕其质心的横滚-偏航惯性矩（Ixz=-∫xzdm ） (kg m^2)
-
--------------------------------  叶片结构模型 ( Blade structure MODEL )  ------------------------------------
-"./HawtC2_MBD_blade_AMM.str"    BldFile     - 叶片结构文件
-"./HawtC2_MBD_blade_AMM.str"     
-"./HawtC2_MBD_blade_AMM.str"    
-
-------------------------------- 塔架结构模型  (Tower structure MODEL)  ------------------------------------
-87.6                TowerHt     - 塔顶到水平面的距离，如果是陆上，TowerHt就是塔架高度(m）
-"./HawtC2_MBD_tower_AMM.str"    TwrFile     - 塔架结构文件，数量与塔架数量一致
-"./HawtC2_MBD_tower_AMM.str"   !如果是双机头可以读取这一行
 
 ----------------- 自由度开关 （ Degree of Freedom Switch ）--------------------------------------
 true                   FlapDOF1       -  叶片一阶挥舞模态(AMM模型可用) (flag)

@@ -25,7 +25,7 @@ false                   Linearization - {true:开启模型线性化的功能，�
 0                      MSL2SWL     - 静水水位与平均海平面之间的偏移量(m) [positive upward]
 ---------------------- INPUT FILES ---------------------------------------------
 "./MBD2/HawtC2_MBD_Mainv2_22MW.dat"        MBDFile           - MBD 输入文件
-"./windl/HawtC2_WindL_Main_22MW.dat"       windFile         - windL 输入文件
+"./windl/HawtC2_WindL_Main_22MW.dat"       WindFile         - windL 输入文件
 "./AeroL/HawtC2_AeroL_Main_22MW.dat"        AeroFile         - AeroL 输入文件
 "./control/HawtC2_ControlL_Main_22MW.dat"  ControlFile      - ControL 输入文件
 "./Hydro/Openhast_HydroL_Main_22MW.dat"    HydroLFile       - HydroL输入文件

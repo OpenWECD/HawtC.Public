@@ -6,6 +6,10 @@ NREL 15.MW offshore baseline Powercurve
 ======  风力机叶片和塔基信息   ===================================== [used only when ApOfMb=0，1 and 2]
 3.97          HubRad              - 轮毂半径
 3             Bldnum              - 叶片数量（非常重要!）
+3             CutInWSpeed    - 切入风速
+25           CutOutWSpeed   - 切出风速
+15000         RatedPower                  - 额定功率[kw]</param>
+10.5            RatedRotorSpeed             - 额定转速[rpm/min]
 
 ======  模型选项  ============================================================================
           2     WakeMod           - 气动力计算模型 {0=none, 1=SBEMT, 2=DBEMT,3=FreeWake,4=SBEMT_UMT,5=DBEMT_UMT}

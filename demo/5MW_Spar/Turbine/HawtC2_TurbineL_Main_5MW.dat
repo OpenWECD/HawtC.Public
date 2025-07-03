@@ -1,0 +1,55 @@
+------- HawtC.TurbineL  主文件 v1.00 * This software design and writen By 赵子祯 ------------------------------------------------
+NREL 5.MW offshore baseline Powercurve
+======  运行信息   ===================================== 
+2           ApOfMb             - 计算选项{0=外部调用将读取塔架叶片等模型参数，1=计算叶片Cp,2=计算叶片的功率，推力等变桨曲线表}
+
+======  风力机叶片信息   ===================================== 
+1.5          HubRad              - 轮毂半径
+3             Bldnum              - 叶片数量（单个风轮上的叶片数量）
+-2.5,-2.5,-2.5           PreCone      - 风轮的锥角 (deg) 
+-5		        ShftTilt      - 主轴的仰角，与平行于地面的面的夹角(deg) 
+ -5.0191          OverHang    - 轮毂中心点到塔架中心点（偏航位置）的距离(m)
+3                      CutInWindSpeed  - 切入风速
+25                    CutOutWindSpeed   - 切出风速
+5000                Opt_KW                  - 额定功率[kw]</param>
+13                    Opt_rpm_rad             - 额定转速[rpm/min]
+"./HawtC2_Blade_AMM.str"    ADBlFile        - 叶片气动结构耦合文件路径
+"./HawtC2_AeroL_Main_5MW.dat"    AeroLFile       - 叶片气动力模型输入文件
+
+======  计算Cp曲线  ===================================== [used only when ApOfMb=1]
+3             Minlamda            - 最小的叶尖速比
+25            Maxlamda            - 最大的叶尖速比
+0.1           lamdaStep           - 叶尖速比的间隔
+-0.1          MinPitch            - 最小的变桨角[rad]
+1.57          MaxPitch            - 最大的变桨角[rad]
+0.005          PitchStep           - 变桨角的间隔[rad]
+"./Result/test_AeroL_cp.out"                     CpResultFilePath   - 计算Cp曲线的结果文件
+
+======  计算功率曲线  ===================================== [used only when ApOfMb=2]
+3             MinWindSpeed            - 最小风速[m/s]
+25            MaxWindSpeed            - 最大风速[m/s]
+0.01          WindSpeedStep           - 风速间隔[m/s]
+0.0           orig_pit                - 初始桨距角[rad]
+96            η                       - 发电机效率%
+1.57          pitch_up                - 最大桨距角[rad]
+0.0           pitch_down              - 最小桨距角[rad]
+True          ifpitch                 - 是否变桨
+0.0           Fixed_pitch             - 固定桨距角[rad][used only when ifpitch=false]
+0.0           Fixed_rotationalspeed   - 固定转速[rpm/min][used only when ifpitch=false]
+"./Result/test_AeroL_PowerCurve.out"                     PowerCurveResultFilePath   - 计算功率曲线的结果文件目录
+
+======  Outputs  ====================================================================================
+true                                       SumPrint  - 是否生成AeroL输出文件 "<rootname>.AL.out"?  (flag)
+false                                        AfSpanput - 输出模式选择是节点·还是变量。如果是节点将生成下面节点数量的文件，否则生成输出变量个数的文件。当前先支持输出节点。
+0                                            BldOutSig - 输出的叶片编号，默认只有0
+"./Result1/"                                SumPath   - 生成的文件夹名称，注意是文件夹！
+7                                           NBlOuts   - Number of blade node outputs [0 - BlOutNd-1] (-)
+0,4,5,9,13,16,18               BlOutNd   - Blade nodes whose values will be output  (-)（从0开确实算）
+3                                           NTwOuts   - Number of tower node outputs [0 - BlOutNd-1]  (-)
+1,          1,        5                     TwOutNd   - Tower nodes whose values will be output  (-)（从0开确实算）
+                   OutList                  - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+
+
+
+END 不允许删除！
+---------------------------------------------------------------------------------------
