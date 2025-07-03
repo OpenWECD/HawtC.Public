@@ -29,7 +29,7 @@
 
 HawtC 是部分开源且免费使用的计算软件，需要您申请免费的许可证来使用，我们提供了自动化的许可证管理系统，您只需要登录我们的
 
-网站：http://www.hawtc.cn 或 http://http://www.openwecd.fun/ 获取支持！
+网站：http://www.hawtc.cn 或 http://www.openwecd.fun/ 获取支持！
 
 ![1751571229053](image/README/1751571229053.png)
 
