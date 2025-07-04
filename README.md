@@ -40,7 +40,7 @@ HawtC 是部分开源且免费使用的计算软件，需要您申请免费的�
   </a>
   
   <h2>🌐 语言</h2>
-  <img src="https://skillicons.dev/icons?i=js,ts,python,java,go,cpp,rust" />
+  <img src="https://skillicons.dev/icons?i=csharp,python,c++" />
 </div>
 
 ## 01、当前开发进度与功能
