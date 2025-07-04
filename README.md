@@ -30,6 +30,17 @@ HawtC 是部分开源且免费使用的计算软件，需要您申请免费的�
 
 ![1751571229053](image/README/1751571229053.png)
 
+<<<<<<< HEAD
+=======
+## 🧑‍💻 开发环境
+
+
+<div align="center">
+  <h2>🌐 项目语言与开发环境</h2>
+  <img src="https://skillicons.dev/icons?i=cs,python,cpp,dotnet,visualstudio,vscode,windows" />
+</div>
+
+>>>>>>> 52148c1de12e64587ab801c6ec8e354441e0c2a2
 ## 01、当前开发进度与功能
 
 我们的目标是实现Bladed的全工况覆盖，并逐步开发UI界面（技术验证已经完成！，使用C# AOT来实现界面，可下载HawtC.UI来体验预览）
@@ -130,6 +141,7 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 
 Beta V2.0.014及其之后版本支持FEM方法计算截面特性以及翼型网格自动化算法,输入文件参考了PreComp开源软件的输入格式,但是算法完全不一致.该软件包支持API函数自定义计算实现.
 
+<<<<<<< HEAD
 #### 案例1 均匀矩形截面验证
 
 ##### 1、截面模型网格
@@ -153,6 +165,30 @@ Beta V2.0.014及其之后版本支持FEM方法计算截面特性以及翼型网�
 
 ![1751613198604](image/README/1751613198604.png)
 
+=======
+#### 案例1 典型截面的自定义网格分析(以矩形横截面分析)
+案例网格:
+
+![1750150781639](image/README/1750150781639.png)
+
+计算结果:
+
+![计算结果](./demo/PCSL/二维有限元方法计算/BECAS_Case1验证/Result1/SectionInf_复合材料叶片截面属性示例.out)
+
+该算例以和BECAS交叉验证,计算结果完全一致!
+
+#### 案例2 异形截面的自动化网格生成与计算(以翼型为例)
+
+##### 1、输入主文件定义:
+
+主输入文件
+
+![主输入文件](./demo/PCSL/二维有限元方法计算/BECAS_Case3翼型验证/Becas_Test3_MainFile.pcs)
+
+初始的翼型上下弦线几何外形为:
+
+![1750151211121](image/README/1750151211121.png)
+>>>>>>> 52148c1de12e64587ab801c6ec8e354441e0c2a2
 
 ##### 3、基于PCSL网格自动化算法生成的网格为:
 
@@ -185,13 +221,6 @@ PCSL支持外部力输入下的截面应力/应变计算及其失效分析计算
 
 ![1750171585343](image/README/1750171585343.png)
 
-失效分析:
-
-![失效分析计算](./demo/PCSL/二维有限元方法计算/BECAS_Case3翼型验证/Result1/SectionFailure_Force_0_0_0_20000_10000_0_SectionMESH_1_复合材料叶片截面属性示例弦长方向插值新的版本.out)
-
-##### 4、当前的问题
-
-当前V2.0.014版本采用Q4单元对截面进行离散，当前模型不能考虑高阶插值函数，使得与弯曲和剪切相关的系数计算精度相对较差(但远比PreComp精确)。该问题我们将在2.0.015版本当中引入Q8单元来解决。但是,为了加速计算,我们考虑到叶片单元的闭合壳结构和叶片的小应变特点,我们在代码当中忽略了截面翘曲的能量.如果需要计算非闭合截面,请等待年度更新的V2.1.000 大版本!
 
 ### 9.HawtC.WindL.SimWind 湍流风生成模块验证
 
@@ -218,6 +247,15 @@ PCSL支持外部力输入下的截面应力/应变计算及其失效分析计算
 ## 交流论坛
 
 交流论坛 http://www.openwecd.fun:22304/
+
+## 开发者
+<div align="center">
+  <h2>✨ 开发者</h2>
+  <a href="https://github.com/OpenWECD/HawtC.Public/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=OpenWECD/HawtC.Public&max=100&columns=8&size=60" />
+  </a>
+</div>
+
 
 #### 参考文献
 
