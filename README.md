@@ -30,15 +30,10 @@ HawtC 是部分开源且免费使用的计算软件，需要您申请免费的�
 
 ![1751571229053](image/README/1751571229053.png)
 
-## 🧑‍💻 Contributors
+## 🧑‍💻 开发工具
 
 
 <div align="center">
-  <h2>✨ 贡献者</h2>
-  <a href="https://github.com/OpenWECD/HawtC.Public/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=OpenWECD/HawtC.Public&max=100&columns=8&size=60" />
-  </a>
-  
   <h2>🌐 项目语言与开发工具</h2>
   <img src="https://skillicons.dev/icons?i=cs,python,cpp,dotnet,visualstudio,vscode" />
 </div>
@@ -245,6 +240,15 @@ PCSL支持外部力输入下的截面应力/应变计算及其失效分析计算
 ## 交流论坛
 
 交流论坛 http://www.openwecd.fun:22304/
+
+## 开发者
+<div align="center">
+  <h2>✨ 开发者</h2>
+  <a href="https://github.com/OpenWECD/HawtC.Public/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=OpenWECD/HawtC.Public&max=100&columns=8&size=60" />
+  </a>
+</div>
+
 
 #### 参考文献
 
