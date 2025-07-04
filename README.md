@@ -35,9 +35,7 @@ HawtC 是部分开源且免费使用的计算软件，需要您申请免费的�
 
 
 <div align="center">
-  <h2>🌐 项目语言与开发环境</h2>
   <img src="https://skillicons.dev/icons?i=cs,python,cpp,dotnet,visualstudio,vscode,windows" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&hide_progress=true" />
 </div>
 
 
