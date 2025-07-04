@@ -30,7 +30,9 @@ HawtC 是部分开源且免费使用的计算软件，需要您申请免费的�
 
 ![1751571229053](image/README/1751571229053.png)
 
+## 🧑‍💻 Contributors
 
+![Project Contributors](CONTRIBUTORS.svg)
 ## 01、当前开发进度与功能
 
 我们的目标是实现Bladed的全工况覆盖，并逐步开发UI界面（技术验证已经完成！，使用C# AOT来实现界面，可下载HawtC.UI来体验预览）
