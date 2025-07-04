@@ -30,12 +30,12 @@ HawtC 是部分开源且免费使用的计算软件，需要您申请免费的�
 
 ![1751571229053](image/README/1751571229053.png)
 
-## 🧑‍💻 开发工具
+## 🧑‍💻 开发环境
 
 
 <div align="center">
-  <h2>🌐 项目语言与开发工具</h2>
-  <img src="https://skillicons.dev/icons?i=cs,python,cpp,dotnet,visualstudio,vscode" />
+  <h2>🌐 项目语言与开发环境</h2>
+  <img src="https://skillicons.dev/icons?i=cs,python,cpp,dotnet,visualstudio,vscode,windows" />
 </div>
 
 ## 01、当前开发进度与功能
