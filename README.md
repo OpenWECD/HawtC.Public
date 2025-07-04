@@ -30,15 +30,11 @@ HawtC 是部分开源且免费使用的计算软件，需要您申请免费的�
 
 ![1751571229053](image/README/1751571229053.png)
 
-
 ## 🧑‍💻 开发环境
-
 
 <div align="center">
   <img src="https://skillicons.dev/icons?i=cs,python,cpp,dotnet,visualstudio,vscode,windows" />
 </div>
-
-
 
 ## 01、当前开发进度与功能
 
@@ -148,14 +144,7 @@ Beta V2.0.014及其之后版本支持FEM方法计算截面特性以及翼型网�
 
 ##### 2、计算结果
 
-| 截面参数 | BECAS    | VABS     | PcsL     | Diff.(BECAS) | Diff.(VABS) |
-| -------- | -------- | -------- | -------- | ------------ | ----------- |
-| Ks11     | 3.49E-01 | 3.49E-01 | 3.47E-01 | -0.62%       | -0.62%      |
-| Ks22     | 3.49E-01 | 3.49E-01 | 3.47E-01 | -0.62%       | -0.62%      |
-| Ks33     | 1.00E+00 | 1.00E+00 | 1.00E+00 | 0.00%        | 0.00%       |
-| Ks44     | 8.34E-04 | 8.34E-04 | 8.33E-04 | -0.06%       | -0.06%      |
-| Ks55     | 8.34E-04 | 8.34E-04 | 8.33E-04 | -0.06%       | -0.06%      |
-| Ks66     | 5.91E-04 | 5.91E-04 | 5.87E-04 | -0.67%       | -0.67%      |
+![1751648002857](image/README/1751648002857.png)
 
 #### 案例2 非均匀矩形截面验证
 
@@ -163,59 +152,21 @@ Beta V2.0.014及其之后版本支持FEM方法计算截面特性以及翼型网�
 
 ![1751613198604](image/README/1751613198604.png)
 
-#### 案例1 典型截面的自定义网格分析(以矩形横截面分析)
-案例网格:
+##### 2、计算结果
 
-![1750150781639](image/README/1750150781639.png)
+![1751647968980](image/README/1751647968980.png)
 
-计算结果:
+#### 案例3 圆环结构
 
-![计算结果](./demo/PCSL/二维有限元方法计算/BECAS_Case1验证/Result1/SectionInf_复合材料叶片截面属性示例.out)
+##### 1、截面模型网格
 
-该算例以和BECAS交叉验证,计算结果完全一致!
+![1751646962310](image/README/1751646962310.png)
 
-#### 案例2 异形截面的自动化网格生成与计算(以翼型为例)
+##### 2、计算结果
 
-##### 1、输入主文件定义:
+![1751648043462](image/README/1751648043462.png)
 
-主输入文件
-
-![主输入文件](./demo/PCSL/二维有限元方法计算/BECAS_Case3翼型验证/Becas_Test3_MainFile.pcs)
-
-初始的翼型上下弦线几何外形为:
-
-![1750151211121](image/README/1750151211121.png)
-
-##### 3、基于PCSL网格自动化算法生成的网格为:
-
-![1750151905931](image/README/1750151905931.png)
-
-###### 3.1 截面特性分析计算:
-
-计算结果
-
-![!计算结果](./demo/PCSL/二维有限元方法计算/BECAS_Case3翼型验证/Result1/SectionInf_复合材料叶片截面属性示例弦长方向插值新的版本.out)
-
-###### 3.2 截面应力与应变分析:
-
-PCSL支持外部力输入下的截面应力/应变计算及其失效分析计算方法.
-上述翼型的应力/应变以及失效分析主文件:
-
-![应力/应变以及失效分析主文件](./demo/PCSL/二维有限元方法计算/BECAS_Case3翼型验证/Becas_Test3_MainFile_计算应力和应变.pcs)
-应变分析:
-
-![1750152148363](image/README/1750152148363.png)
-
-应力分析:
-
-![1750152198505](image/README/1750152198505.png)
-
-网格自动加密:
-![1750171439541](image/README/1750171439541.png)
-
-![1750171535423](image/README/1750171535423.png)
-
-![1750171585343](image/README/1750171585343.png)
+![1751648124507](image/README/1751648124507.png)
 
 
 ### 9.HawtC.WindL.SimWind 湍流风生成模块验证
@@ -245,13 +196,13 @@ PCSL支持外部力输入下的截面应力/应变计算及其失效分析计算
 交流论坛 http://www.openwecd.fun:22304/
 
 ## 开发者
+
 <div align="center">
   <h2>✨ 开发者</h2>
   <a href="https://github.com/OpenWECD/HawtC.Public/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=OpenWECD/HawtC.Public&max=100&columns=8&size=60" />
   </a>
 </div>
-
 
 #### 参考文献
 
@@ -260,3 +211,5 @@ PCSL支持外部力输入下的截面应力/应变计算及其失效分析计算
 [^2]: Chen, L., Basu, B. & Nielsen, S.R.K. (2018). A coupled finite difference mooring dynamics model for floating offshore wind turbine analysis. Ocean Engineering,162, 304-315
     
 [^3]: https://github.com/FloatingArrayDesign/MoorDyn?tab=readme-ov-file
+    
+[^4]: Amaral J P A. A cross section analysis tool for anisotropic and inhomogeneous beam sections of arbitrary geometry[J].
