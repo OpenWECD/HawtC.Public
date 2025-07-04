@@ -30,17 +30,18 @@ HawtC 是部分开源且免费使用的计算软件，需要您申请免费的�
 
 ![1751571229053](image/README/1751571229053.png)
 
-<<<<<<< HEAD
-=======
+
 ## 🧑‍💻 开发环境
 
 
 <div align="center">
   <h2>🌐 项目语言与开发环境</h2>
   <img src="https://skillicons.dev/icons?i=cs,python,cpp,dotnet,visualstudio,vscode,windows" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&hide_progress=true" />
 </div>
 
->>>>>>> 52148c1de12e64587ab801c6ec8e354441e0c2a2
+
+
 ## 01、当前开发进度与功能
 
 我们的目标是实现Bladed的全工况覆盖，并逐步开发UI界面（技术验证已经完成！，使用C# AOT来实现界面，可下载HawtC.UI来体验预览）
@@ -141,7 +142,6 @@ http://www.openwecd.fun/data/湍流Compare.ipynb
 
 Beta V2.0.014及其之后版本支持FEM方法计算截面特性以及翼型网格自动化算法,输入文件参考了PreComp开源软件的输入格式,但是算法完全不一致.该软件包支持API函数自定义计算实现.
 
-<<<<<<< HEAD
 #### 案例1 均匀矩形截面验证
 
 ##### 1、截面模型网格
@@ -165,7 +165,6 @@ Beta V2.0.014及其之后版本支持FEM方法计算截面特性以及翼型网�
 
 ![1751613198604](image/README/1751613198604.png)
 
-=======
 #### 案例1 典型截面的自定义网格分析(以矩形横截面分析)
 案例网格:
 
@@ -188,7 +187,6 @@ Beta V2.0.014及其之后版本支持FEM方法计算截面特性以及翼型网�
 初始的翼型上下弦线几何外形为:
 
 ![1750151211121](image/README/1750151211121.png)
->>>>>>> 52148c1de12e64587ab801c6ec8e354441e0c2a2
 
 ##### 3、基于PCSL网格自动化算法生成的网格为:
 
