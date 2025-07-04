@@ -1,0 +1,29 @@
+name: Update Contributors
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天更新一次
+  push:
+    branches: [ main ]
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Generate contributors
+        uses: contributors-img/contributors-img@main
+        with:
+          # 配置选项
+          template: grid # 网格布局
+          image_size: 100 # 头像大小
+          columns: 7 # 每行列数
+          filename: CONTRIBUTORS.svg # 保存文件名
+          
+      - name: Commit changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add CONTRIBUTORS.svg
+          git commit -m "Update contributors" || echo "No changes"
+          git push
