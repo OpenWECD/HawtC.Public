@@ -39,8 +39,8 @@ HawtC 是部分开源且免费使用的计算软件，需要您申请免费的�
     <img src="https://contrib.rocks/image?repo=OpenWECD/HawtC.Public&max=100&columns=8&size=60" />
   </a>
   
-  <h2>🌐 语言</h2>
-  <img src="https://skillicons.dev/icons?i=cs,python,cpp" />
+  <h2>🌐 项目语言与开发工具</h2>
+  <img src="https://skillicons.dev/icons?i=cs,python,cpp,dotnet,visualstudio,vscode" />
 </div>
 
 ## 01、当前开发进度与功能
