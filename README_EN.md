@@ -127,79 +127,37 @@ Image source from [http://openmoor.org/](http://openmoor.org/)
 
 Beta V2.0.014 and subsequent versions support FEM method for calculating section properties and airfoil grid automation algorithms. The input file references the input format of the open-source software PreComp, but the algorithms are completely different. This package supports API function customization for calculation implementation.
 
-#### Case 1: Custom grid analysis of a typical section (analyzing a rectangular cross-section)
+#### Case 1: Uniform Rectangular Cross-Section Validation
 
-##### 1\. Input file definition:
+##### 1\. Section Model Mesh
 
-Main input file
+![1751612560460](image/README/1751612560460.png)
 
-![主输入文件](./demo/PCSL/%E4%BA%8C%E7%BB%B4%E6%9C%89%E9%99%90%E5%85%83%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%97/BECAS_Case1%E9%AA%8C%E8%AF%81/Becas_Test1_MainFile.pcs)
+##### 2\. Calculation Results
 
-##### 2\. Material Input File Definition:
+![1751648002857](image/README/1751648002857.png)
 
-Material Input File
+#### Case 2: Non-Uniform Rectangular Cross-Section Validation
 
-![材料输入文件](./demo/PCSL/%E4%BA%8C%E7%BB%B4%E6%9C%89%E9%99%90%E5%85%83%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%97/BECAS_Case1%E9%AA%8C%E8%AF%81/materials.inp)
+##### 1\. Section Model Mesh
 
-##### 3\. PCSL Calculation:
+![1751613198604](image/README/1751613198604.png)
 
-Case Grid:
+##### 2\. Calculation Results
 
-![1750150781639](image/README/1750150781639.png)
+![1751647968980](image/README/1751647968980.png)
 
-Calculation results:
+#### Case 3: Ring Structure
 
-![计算结果](./demo/PCSL/%E4%BA%8C%E7%BB%B4%E6%9C%89%E9%99%90%E5%85%83%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%97/BECAS_Case1%E9%AA%8C%E8%AF%81/Result1/SectionInf_%E5%A4%8D%E5%90%88%E6%9D%90%E6%96%99%E5%8F%B6%E7%89%87%E6%88%AA%E9%9D%A2%E5%B1%9E%E6%80%A7%E7%A4%BA%E4%BE%8B.out)
+##### 1\. Section Model Mesh
 
-This example is cross-validated with BECAS, and the calculation results are completely consistent!
+![1751646962310](image/README/1751646962310.png)
 
-#### Case 2: Automated mesh generation and calculation for irregular cross-sections (using airfoil as an example)
+##### 2\. Calculation Results
 
-##### 1\. Input main file definition:
+![1751648043462](image/README/1751648043462.png)
 
-Main input file
-
-![主输入文件](./demo/PCSL/%E4%BA%8C%E7%BB%B4%E6%9C%89%E9%99%90%E5%85%83%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%97/BECAS_Case3%E7%BF%BC%E5%9E%8B%E9%AA%8C%E8%AF%81/Becas_Test3_MainFile.pcs)
-
-The initial upper and lower camber line geometry of the airfoil is:
-
-![1750151211121](image/README/1750151211121.png)
-
-##### 3\. The mesh generated based on the PCSL grid automation algorithm is:
-
-![1750151905931](image/README/1750151905931.png)
-
-###### 3.1 Sectional characteristic analysis calculation:
-
-Calculation Results
-
-![!计算结果](./demo/PCSL/%E4%BA%8C%E7%BB%B4%E6%9C%89%E9%99%90%E5%85%83%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%97/BECAS_Case3%E7%BF%BC%E5%9E%8B%E9%AA%8C%E8%AF%81/Result1/SectionInf_%E5%A4%8D%E5%90%88%E6%9D%90%E6%96%99%E5%8F%B6%E7%89%87%E6%88%AA%E9%9D%A2%E5%B1%9E%E6%80%A7%E7%A4%BA%E4%BE%8B%E5%BC%A6%E9%95%BF%E6%96%B9%E5%90%91%E6%8F%92%E5%80%BC%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC.out)
-
-###### 3.2 Cross-sectional Stress and Strain Analysis:
-
-PCSL supports the calculation of cross-sectional stress/strain and failure analysis methods under external force input. The main file for stress/strain and failure analysis of the aforementioned airfoil:
-
-![应力/应变以及失效分析主文件](./demo/PCSL/%E4%BA%8C%E7%BB%B4%E6%9C%89%E9%99%90%E5%85%83%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%97/BECAS_Case3%E7%BF%BC%E5%9E%8B%E9%AA%8C%E8%AF%81/Becas_Test3_MainFile_%E8%AE%A1%E7%AE%97%E5%BA%94%E5%8A%9B%E5%92%8C%E5%BA%94%E5%8F%98.pcs)Strain Analysis:
-
-![1750152148363](image/README/1750152148363.png)
-
-Stress Analysis:
-
-![1750152198505](image/README/1750152198505.png)
-
-Automatic Mesh Encryption:![1750171439541](image/README/1750171439541.png)
-
-![1750171535423](image/README/1750171535423.png)
-
-![1750171585343](image/README/1750171585343.png)
-
-Failure Analysis:
-
-![失效分析计算](./demo/PCSL/%E4%BA%8C%E7%BB%B4%E6%9C%89%E9%99%90%E5%85%83%E6%96%B9%E6%B3%95%E8%AE%A1%E7%AE%97/BECAS_Case3%E7%BF%BC%E5%9E%8B%E9%AA%8C%E8%AF%81/Result1/SectionFailure_Force_0_0_0_20000_10000_0_SectionMESH_1_%E5%A4%8D%E5%90%88%E6%9D%90%E6%96%99%E5%8F%B6%E7%89%87%E6%88%AA%E9%9D%A2%E5%B1%9E%E6%80%A7%E7%A4%BA%E4%BE%8B%E5%BC%A6%E9%95%BF%E6%96%B9%E5%90%91%E6%8F%92%E5%80%BC%E6%96%B0%E7%9A%84%E7%89%88%E6%9C%AC.out)
-
-##### 4\. Current Issues
-
-The current version V2.0.014 uses Q4 elements for discretizing the cross-section. The current model cannot consider higher-order interpolation functions, resulting in relatively poor accuracy in the calculation of coefficients related to bending and shear (though far more accurate than PreComp). We will address this issue by introducing Q8 elements in version 2.0.015. However, to accelerate computation, considering the closed shell structure of the blade elements and the small strain characteristics of the blade, we have ignored the energy of cross-section warping in the code. If you need to calculate non-closed sections, please wait for the annual update of the major version V2.1.000!
+![1751648124507](image/README/1751648124507.png)
 
 ### 9\. HawtC.WindL.SimWind Turbulent Wind Generation Module Verification
 
