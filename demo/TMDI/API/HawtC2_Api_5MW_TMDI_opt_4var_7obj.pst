@@ -1,0 +1,56 @@
+------- OpenHast.Mopt  主文件 -------------------------------------------
+ Openhast_5MW_PowerProduction_Spar_TMDOPT
+Tel:13935201274 QQ:1821216780
+=======================================  HawtC.PostAPI 设置   =============================================
+
+!  变量约定和声明！
+!  HastApi 类似与bladedApi 但是远比bladedapi先进，在这里你可以无需编程，轻松实现结果读取和后处理以及多目标优化
+!  使用API功能，模块当中的风,控制器等其他没有被APi修改的变量使用绝对路径，否则可能会有意想不到的错误！同时，要求hst文件目录下的文件夹包含所有输入文件，而不要包含dll,wind等其他文件
+!  如果包含了这些文件，这些文件都将会被复制到ProJect路径当中造成资源浪费！目前的APi只能支持TMDI优化，并给出了代码案例，其他API需要自己开发，因为这是一个相当大的工程，尽管非常简单，
+!  但是工作量巨大!程序使用C# 开发，尽管C# 效率只有c++的80%，但是其易读性和开发效率远高于C++.、
+		
+		
+!  下面约定 ResultAPI 变量表:
+
+!  第 1 行列的文本为模块下的变量名称，暨你想要读取的变量名称
+
+!  第 2 行列的数字为后处理实现:
+!       {0：min  ，1：max      2 ：mean  3：std   4：absMIN  5： absMAX  6：ori   7：PostAPI}
+
+!  第 3 行列的数字为后处理的控制点：格式为：K,J 表示部件编号和节点编号，从0开始。
+
+!  第 4 行列的数字代表目标编号，从0开始，注意！相同目标编号下的值会取最大值，且编号存在顺序，不允许0，0,1,0这种格式
+
+!  第 5 行列的路径只有开启postL处理时才会读取
+
+!  WANING!------------------------------------
+!  1、不同列之间的变量严格使用空格来间隔，这与其他的输入文件不同
+!  2、相同列下的变量必须使用英文的逗号(,)来间隔，我建议使用Notepad++软件来编辑输入文件
+!  3、当将Post模块作为单独模块来使用的时候，第五列的目标编号将成为输出文件的编号
+=======================================  生成极限载荷的后处理设置   =============================================
+=======================================  生成疲劳载荷的后处理设置   =============================================
+=======================================  读取数据的后处理设置   =============================================
+21      -  OApiNum   列表的行数，这个值应该和多目标优化算法当中的一致
+OoPDefl   1      0     0    "./HawtC2_PostL_5MW_Main.dat"
+OoPDefl   1      1     0    "./ HawtC2_PostL_5MW_Main.dat"
+OoPDefl   1      2     0     "./HawtC2_PostL_5MW_Main.dat"
+IPDefl   5      0     1     "./HawtC2_PostL_5MW_Main.dat"
+IPDefl   5      1     1     "./HawtC2_PostL_5MW_Main.dat"
+IPDefl   5      2     1     "./HawtC2_PostL_5MW_Main.dat"
+RootFxyc  1     0      2     "./HawtC2_PostL_5MW_Main.dat"
+RootFxyc  1     1      2     "./HawtC2_PostL_5MW_Main.dat"
+RootFxyc  1     2      2     "./HawtC2_PostL_5MW_Main.dat"
+RootFxyc  7     0      3     "./HawtC2_PostL_5MW_Main.dat"
+RootFxyc  7     1      3     "./HawtC2_PostL_5MW_Main.dat"
+RootFxyc  7     2      3     "./HawtC2_PostL_5MW_Main.dat"
+RootMxyc  1     0      4     "./HawtC2_PostL_5MW_Main.dat"
+RootMxyc  1     1      4     "./HawtC2_PostL_5MW_Main.dat"
+RootMxyc  1     2      4     "./HawtC2_PostL_5MW_Main.dat"
+RootMxyc  7     0      5     "./HawtC2_PostL_5MW_Main.dat"
+RootMxyc  7     1      5     "./HawtC2_PostL_5MW_Main.dat"
+RootMxyc  7     2      5     "./HawtC2_PostL_5MW_Main.dat"
+Q_BTMD  5     0      6     "./HawtC2_PostL_5MW_Main.dat"
+Q_BTMD  5     1      6     "./HawtC2_PostL_5MW_Main.dat"
+Q_BTMD  5     2      6     "./HawtC2_PostL_5MW_Main.dat"
+
+

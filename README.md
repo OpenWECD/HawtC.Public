@@ -210,6 +210,6 @@ Beta V2.0.014及其之后版本支持FEM方法计算截面特性以及翼型网�
     
 [^2]: Chen, L., Basu, B. & Nielsen, S.R.K. (2018). A coupled finite difference mooring dynamics model for floating offshore wind turbine analysis. Ocean Engineering,162, 304-315
     
-[^3]: https://github.com/FloatingArrayDesign/MoorDyn?tab=readme-ov-file
-    
+[^3]: https://github.com/FloatingArrayDesign/MoorDyn?tab=readme-ov-file  
+
 [^4]: Amaral J P A. A cross section analysis tool for anisotropic and inhomogeneous beam sections of arbitrary geometry[J].

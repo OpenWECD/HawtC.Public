@@ -1,0 +1,31 @@
+------- OpenHast.Mopt  主文件 -------------------------------------------
+ Openhast_5MW_PowerProduction_Spar_TMDOPT
+Tel:13935201274 QQ:1821216780
+=======================================  HastAPI 设置   =============================================
+
+!  变量约定和声明！
+!  HastApi 类似与bladedApi 但是远比bladedapi先进，在这里你可以无需编程，轻松实现结果读取和后处理以及多目标优化
+!  使用API功能，模块当中的风,控制器等其他没有被APi修改的变量使用绝对路径，否则可能会有意想不到的错误！同时，要求hst文件目录下的文件夹包含所有输入文件，而不要包含dll,wind等其他文件
+!  如果包含了这些文件，这些文件都将会被复制到ProJect路径当中造成资源浪费！目前的APi只能支持TMDI优化，并给出了代码案例，其他API需要自己开发，因为这是一个相当大的工程，尽管非常简单，
+!  但是工作量巨大!程序使用C# 开发，尽管C# 效率只有c++的80%，但是其易读性和开发效率远高于C++.、
+!  下面约定 API 变量表:
+
+
+!  第 1 行列的文本为模块下的变量名称，暨你想要修改的变量名称
+
+!  第 2列约定了多目标算法给定的变量数组的读取起始编号
+!  第 3列约定了多目标算法给定的变量数组的读取的个数
+=======================================  自变量设置   =============================================
+12      -  VApiNum   列表的行数，这个值应该和多目标优化算法当中的一致
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_0.TMDμ          0    1
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_1.TMDμ          0    1
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_2.TMDμ          0    1
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_0.TMDωr                1     1
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_1.TMDωr               1     1
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_2.TMDωr                1     1
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_0.InterIdx                      2      1
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_1.InterIdx                      2      1                          
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_2.InterIdx                      2      1
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_0.TMDDir                        3       1
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_1.TMDDir                        3       1
+OpenWECD.OpenHAST.MBD.MBDTMD.BldTMDI.Item_2.TMDDir                        3       1
